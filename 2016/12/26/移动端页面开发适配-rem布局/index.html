@@ -112,7 +112,7 @@
 <meta property="og:image" content="http://p1.bqimg.com/1949/093703fb4628acfd.jpg">
 <meta property="og:image" content="http://p1.bqimg.com/1949/1738571c30672750.jpg">
 <meta property="og:image" content="http://p1.bqimg.com/1949/16027e18f880e1ab.jpg">
-<meta property="og:updated_time" content="2016-12-26T16:02:31.000Z">
+<meta property="og:updated_time" content="2016-12-26T16:08:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="移动端页面开发适配-rem布局">
 <meta name="twitter:description" content="前言：现在的手机终端各式各样，分辨率不同，逻辑像素不同 ，适口不同，所以为了让我们的页面在每个设备上都可以良好的展示，那么就需要为这些设备做统一的处理，这个过程就称为移动端适配，目前基本采用rem布局方式来适配。">
@@ -354,15 +354,15 @@
 </li>
 </ul>
 <p>接下来我会分别解释上面2个概念：</p>
-<h5 id="物理像素"><a href="#物理像素" class="headerlink" title="物理像素"></a>物理像素</h5><p>买手机的时候会有一个 n<em>m 的分辨率，那是屏幕的n</em>m个呈像的点，一个点（小方格）为一个物理像素。它是屏幕能显示的最小粒度  </p>
+<h5 id="物理像素"><a href="#物理像素" class="headerlink" title="物理像素"></a>物理像素</h5><p>买手机的时候会有一个 n*m 的分辨率，那是屏幕的n*m个呈像的点，一个点（小方格）为一个物理像素。它是屏幕能显示的最小粒度  </p>
 <h4 id="CSS像素"><a href="#CSS像素" class="headerlink" title="CSS像素"></a>CSS像素</h4><p>css的1px 和物理的1px有什么关系呢？？那么CSS中的1px是什么？浏览器是怎么渲染它的？</p>
 <p>网页在一个叫viewport的东西里渲染，可以理解为画布，画布被分成 N x M 个小方格，1个CSS像素，就是其中的一个小方格。</p>
 <h5 id="viewport又是什么？"><a href="#viewport又是什么？" class="headerlink" title="viewport又是什么？"></a>viewport又是什么？</h5><p>网页在viewport上渲染，可以想像在PS上画东西时，上面也有个画布，这个画布分割了 N x M 个方格，N是它的宽度，M是它的高度。宽高都可以任意设置，所以说viewport是虚拟的。假设设置宽度是400，那么浏览器显示区域的横向将被分为400份，CSS的1px占的宽度就是显示区域的 1/400。如果是980，那就是1/980。</p>
 <p><img src="http://p1.bqimg.com/1949/1738571c30672750.jpg" alt=""></p>
-<pre><code>viewport = 500
-</code></pre><p><img src="http://p1.bqimg.com/1949/16027e18f880e1ab.jpg" alt=""></p>
-<pre><code>viewport = 900
-</code></pre><p>viewport取不同值时，对布局会产生影响，很明显900的布局缩小了。例如我们只分析用户头像的图片，已知头像宽度是50px。</p>
+<p>viewport = 500</p>
+<p><img src="http://p1.bqimg.com/1949/16027e18f880e1ab.jpg" alt=""></p>
+<p>viewport = 900</p>
+<p>viewport取不同值时，对布局会产生影响，很明显900的布局缩小了。例如我们只分析用户头像的图片，已知头像宽度是50px。</p>
 <ul>
 <li><p>当viewport宽度为500时，屏幕横向被分为500份，每份1px，所以头像宽度是屏幕的1/10。（500/50=10）</p>
 </li>
