@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[移动端页面开发适配-rem布局]]></title>
+      <url>%2F2016%2F12%2F26%2F%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%A1%B5%E9%9D%A2%E5%BC%80%E5%8F%91%E9%80%82%E9%85%8D-rem%E5%B8%83%E5%B1%80%2F</url>
+      <content type="text"><![CDATA[前言：现在的手机终端各式各样，分辨率不同，逻辑像素不同 ，适口不同，所以为了让我们的页面在每个设备上都可以良好的展示，那么就需要为这些设备做统一的处理，这个过程就称为移动端适配，目前基本采用rem布局方式来适配。 基本概念像素 pixel - px前端一般分为两种 物理像素 设备独立像素( （dips） 物理像素 一个物理像素是显示器(手机屏幕)上最小的物理显示单元，可以理解为我们平时说的分辨率；每个设备的物理像素是固定的 设备独立像素 dips首先明确一点，css像素是相对值。在高PPI的设备上，CSS像素甚至在默认状态下就相当于多个物理像素的尺寸。 像素密度 PPIPPI全称为Pixel Per Inch，译为每英寸像素取值，更确切的说法应该是像素密度，也就是衡量单位物理面积内拥有像素值的情况。密度越大，PPI值就越高，并且设备的PPI都是固定的。 设备像素比(device pixel ratio )设备像素比(简称dpr)定义了物理像素和设备独立像素的对应关系，它的值可以按如下的公式的得到： 设备像素比 = 物理像素 / 设备独立像素 // 在某一方向上，x方向或者y方向 在javascript中，可以通过window.devicePixelRatio获取到当前设备的dpr。 多屏适配布局移动端布局，为了适配各种大屏手机，目前最好用的方案莫过于使用相对单位rem。 基于rem的原理，我们要做的就是: 针对不同手机屏幕尺寸和dpr动态的改变根节点html的font-size大小(基准值)。 目前采用淘宝的做法（1）动态设置viewport的scale 1234var scale = 1 / devicePixelRatio;document.querySelector('meta[name="viewport"]').setAttribute('content','initial-scale=' + scale + ', maximum-scale=' + scale + ',minimum-scale=' + scale + ', user-scalable=no'); （2）动态计算html的font-size 1document.documentElement.style.fontSize = document.documentElement.clientWidth / 10 + 'px'; （3）布局的时候，各元素的css尺寸=设计稿标注尺寸/设计稿横向分辨率/10 （4）font-size可能需要额外的媒介查询，并且font-size不使用rem，还有一个情况要说明，跟网易一样，淘宝也设置了一个临界点，当设备竖着时横向物理分辨率大于1080时，html的font-size就不会变化了，原因也是一样的，分辨率已经可以去访问电脑版页面了。 参考链接 [1]:http://www.infoq.com/cn/articles/development-of-the-mobile-web-deep-concept [2]:http://www.cnblogs.com/lyzg/p/4877277.html]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[爆裂鼓手观后感]]></title>
       <url>%2F2016%2F12%2F18%2F%E7%88%86%E8%A3%82%E9%BC%93%E6%89%8B%2F</url>
       <content type="text"><![CDATA[前言：比你牛逼的人比你还努力！！！ 首先这部电影在评价上有很多分歧，但是大家基本都认为这是一部还不错的电影，不管是技巧和艺术价值上。有巨大的分歧，说明电影让观众得到了不同的感受，这是成功的。正如一千个读者就有一千个哈姆雷特。 其次，我个人认为追求价值和梦想时，背后往往是黑暗、孤独等很多负面的东西，因为现实往往是残酷的。这点是大多数人应该认可的，当然不乏有天赋的人并没有经历这残酷的事实同样也获得个人价值的提升，但是有天赋的人毕竟是少数。 最后对我而言，让我觉得大多数的人（包括我自己）对梦想和个人价值的追求根本谈不上努力，看看安德鲁就知道了，那是要付出血的代价！！！]]></content>
