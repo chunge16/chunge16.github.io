@@ -109,7 +109,7 @@
 <meta property="og:site_name" content="石头">
 <meta property="og:description" content="前言：　　工作中开发移动端页面时会有部分内容字体无故变大，自己排查代码却没有解决，后来搜索问题才发现这是webkit内核下的特性 Text Autosizer」，又称「Font Boosting」、「Font Inflation」导致的。">
 <meta property="og:image" content="http://i1.piimg.com/1949/0ac7f63a12c32ff2.jpg">
-<meta property="og:updated_time" content="2017-03-23T07:42:56.000Z">
+<meta property="og:updated_time" content="2017-03-23T07:44:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="开发移动端页面时，字体自动变大">
 <meta name="twitter:description" content="前言：　　工作中开发移动端页面时会有部分内容字体无故变大，自己排查代码却没有解决，后来搜索问题才发现这是webkit内核下的特性 Text Autosizer」，又称「Font Boosting」、「Font Inflation」导致的。">
@@ -367,7 +367,7 @@
 </blockquote>
 <h4 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h4><ul>
 <li><p>元素单独设置width或height或max-height；</p>
-<p>有的人喜欢<code>max-height: 999999px;</code>，一般推荐<code>{max-height：100%;}</code>，因为内容显示一般不会固定高和宽。</p>
+<p>推荐<code>{max-height：100%;}</code>，因为内容显示一般不会固定高和宽。</p>
 </li>
 <li><p>给元素设置 -webkit-text-size-adjust: none;</p>
 <p>可禁用Text Autosizer，这个属性还能使得我们在移动端使用小于12px的字体。此属性在桌面版中无效。</p>
