@@ -109,7 +109,7 @@
 <meta property="og:site_name" content="石头">
 <meta property="og:description" content="前言：　　工作中开发移动端页面时会有部分内容字体无故变大，自己排查代码却没有解决，后来搜索问题才发现这是webkit内核下的特性 Text Autosizer」，又称「Font Boosting」、「Font Inflation」导致的。">
 <meta property="og:image" content="http://i1.piimg.com/1949/0ac7f63a12c32ff2.jpg">
-<meta property="og:updated_time" content="2017-03-23T07:36:14.000Z">
+<meta property="og:updated_time" content="2017-03-23T07:40:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="开发移动端页面时，字体自动变大">
 <meta name="twitter:description" content="前言：　　工作中开发移动端页面时会有部分内容字体无故变大，自己排查代码却没有解决，后来搜索问题才发现这是webkit内核下的特性 Text Autosizer」，又称「Font Boosting」、「Font Inflation」导致的。">
@@ -365,8 +365,7 @@
 <blockquote>
 <p>问题解决思路：关闭该特性或让其无效，让字体无法变大</p>
 </blockquote>
-<p>解决方法：</p>
-<ul>
+<h4 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h4><ul>
 <li><p>元素单独设置width或height或max-height；</p>
 <p>有的人喜欢<code>max-height: 999999px;</code>，一般推荐<code>{max-height：100%;}</code>，因为内容显示一般不会固定高和宽。</p>
 </li>
@@ -379,6 +378,7 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 或 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span> =<span class="string">"viewport"</span> <span class="attr">content</span> =<span class="string">"initial-scale=1, maximum-scale=1, minimum-scale=1"</span>&gt;</span></div></pre></td></tr></table></figure>
 <h3 id="个人思考"><a href="#个人思考" class="headerlink" title="个人思考"></a>个人思考</h3><p>什么条件下会触发这个<code>Text Autosizer</code>??</p>
 <p><strong>个人水平有限，如有不对之处，还望指正！！！</strong></p>
+<hr>
 <blockquote>
 <p>参考链接</p>
 </blockquote>
@@ -571,7 +571,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言："><span class="nav-number">1.</span> <span class="nav-text">前言：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述"><span class="nav-number">2.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决之路"><span class="nav-number">3.</span> <span class="nav-text">解决之路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#个人思考"><span class="nav-number">4.</span> <span class="nav-text">个人思考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言："><span class="nav-number">1.</span> <span class="nav-text">前言：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述"><span class="nav-number">2.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决之路"><span class="nav-number">3.</span> <span class="nav-text">解决之路</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解决方法："><span class="nav-number">3.1.</span> <span class="nav-text">解决方法：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#个人思考"><span class="nav-number">4.</span> <span class="nav-text">个人思考</span></a></li></ol></div>
             
           </div>
         </section>
