@@ -108,10 +108,16 @@
 <meta property="og:url" content="http://yoursite.com/2017/03/29/JavaScript数据结构与算法-二叉树/index.html">
 <meta property="og:site_name" content="石头">
 <meta property="og:description" content="前言：之前做百度前端练习题时，遇到二叉树遍历的问题，由于不了解二叉树这种数据机构，自己只好学习一番并且总结如下。">
-<meta property="og:updated_time" content="2017-03-29T10:01:30.000Z">
+<meta property="og:image" content="http://i1.piimg.com/1949/0cf24bab444fb327.jpg">
+<meta property="og:image" content="http://i2.muimg.com/1949/b372fb0275ef4904.jpg">
+<meta property="og:image" content="http://i2.muimg.com/1949/b2aa7b9f19693213.jpg">
+<meta property="og:image" content="http://i4.buimg.com/1949/0ee6f353441f1995.jpg">
+<meta property="og:image" content="http://i4.buimg.com/1949/f1dc0b3ea57f254b.jpg">
+<meta property="og:updated_time" content="2017-03-30T14:25:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript数据结构与算法-二叉树">
 <meta name="twitter:description" content="前言：之前做百度前端练习题时，遇到二叉树遍历的问题，由于不了解二叉树这种数据机构，自己只好学习一番并且总结如下。">
+<meta name="twitter:image" content="http://i1.piimg.com/1949/0cf24bab444fb327.jpg">
 
 
 
@@ -362,12 +368,85 @@
 <li>有且只有一个根节点（root）</li>
 <li>当n&gt;1时，其余结点可分为m(m&gt;0)个互不相交的有限集T1,T2,T3,…Tm，其中每一个集合本身又是一棵树，并且称为根的子树（Subtree）。</li>
 </ul>
-<h5 id="树的节点"><a href="#树的节点" class="headerlink" title="树的节点"></a>树的节点</h5><h5 id="结点的层次"><a href="#结点的层次" class="headerlink" title="结点的层次"></a>结点的层次</h5><h5 id="有序和无序树"><a href="#有序和无序树" class="headerlink" title="有序和无序树"></a>有序和无序树</h5><h5 id="森林"><a href="#森林" class="headerlink" title="森林"></a>森林</h5><hr>
-<h3 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h3><p>二叉树（Binary Tree）是另一种树型结构，它的特点是每个结点至多只有两棵子树（即二叉树中不存在度大于2的结点），并且，二叉树的子树有左右之分（其次序不能任意颠倒。）</p>
+<p><img src="http://i1.piimg.com/1949/0cf24bab444fb327.jpg" alt="Markdown"><br>(a) 图只有一个根节点A ，（b）A是根节点，13个子节点，13个子节点分成3个互不相交的子集：T1={B,E,F,K,L},t2={D,H,I,J,M};T1,T2和T3都是根A的子树，且本身也是一棵树。</p>
+<h5 id="树的节点"><a href="#树的节点" class="headerlink" title="树的节点"></a>树的节点</h5><p>树中的每个元素，都叫做节点。<br>树的结点包含一个数据元素及若干指向其子树的分支。该节点的子树被称为该节点的孩子并且该节点同时也是孩子的双亲</p>
+<blockquote>
+<p>度：节点拥有的子树数目被称为<code>度</code></p>
+</blockquote>
+<p>  例如（b）B节点的度为2，D节点的度为3，度为0的节点称为<code>叶子</code>或者终端结点,反之称为非终端结点或分支结点。该树的度为拥有节点的度的最大值</p>
+<h5 id="节点的层次"><a href="#节点的层次" class="headerlink" title="节点的层次"></a>节点的层次</h5><p>节点的层次（Level）从根开始定义起，根为第一层，然后为第二层，依次顺序下去为n层。</p>
+<blockquote>
+<p>深度： 树中节点的最大层数被称为树的深度或高度</p>
+</blockquote>
+<p>例如 （b）树的深度为4</p>
+<h5 id="有序和无序树"><a href="#有序和无序树" class="headerlink" title="有序和无序树"></a>有序和无序树</h5><p>如果将树中节点的各子树看成从左至右是有次序的（即不能交换），则称该树为有序树，否则称为无序树。在有序树中最左边的子树的根称为第一个孩子，最右边的称为最后一个孩子。</p>
+<h5 id="森林"><a href="#森林" class="headerlink" title="森林"></a>森林</h5><p>森林（Forest）是m（m&gt;=0）棵互不相交的树的集合。对树中每个结点而言，其子树的集合即为森林。</p>
+<hr>
+<h3 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h3><p><code>二叉树</code>（Binary Tree）是另一种树型结构，它的特点是每个结点至多只有两棵子树（即二叉树中不存在度大于2的结点），并且，二叉树的子树有左右之分（其次序不能任意颠倒。）</p>
+<h4 id="二叉树的性质"><a href="#二叉树的性质" class="headerlink" title="二叉树的性质"></a>二叉树的性质</h4><ul>
+<li>二叉树的第i层上最多有2的(i-1)方个节点。（i&gt;=1）</li>
+<li>深度为k的树最多有2的k次方-1个节点。（k&gt;=1）</li>
+<li>对任何一棵二叉树T，如果其终端结点数为n0，度为2的结点数为n2，则n0 = n2 + 1;<ul>
+<li>一棵深度为k且有2的k次方-1个结点的二叉树称为<code>满二叉树</code>。</li>
+<li>深度为k的，有n个结点的二叉树，当且仅当其每一个结点都与深度为k的满二叉树中编号从1至n的结点一一对应时，称之为<code>完全二叉树</code>。<br>(我的理解是有限的节点个数里从左到右的编号要一一对应，否则不能称为完全二叉树)</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://i2.muimg.com/1949/b372fb0275ef4904.jpg" alt="Markdown"></p>
+<blockquote>
+<p>注意：满二叉树一定是完全二叉树，但完全二叉树不一定是满二叉树。</p>
+</blockquote>
+<h4 id="二叉树的5个基本形态"><a href="#二叉树的5个基本形态" class="headerlink" title="二叉树的5个基本形态"></a>二叉树的5个基本形态</h4><ul>
+<li>空二叉树</li>
+<li>只有一个根结点</li>
+<li>根结点只有左子树</li>
+<li>根结点只有右子树</li>
+<li>根结点既有左子树又有右子树</li>
+</ul>
+<p><img src="http://i2.muimg.com/1949/b2aa7b9f19693213.jpg" alt="Markdown"></p>
+<h4 id="二叉树的存储结构"><a href="#二叉树的存储结构" class="headerlink" title="二叉树的存储结构"></a>二叉树的存储结构</h4><ul>
+<li><p>顺序存储结构</p>
+<p>用一维数组依照顺序存储树的节点，编号为i节点依次存储在数组下标i-1的元素里。i为0意味不存在此节点，这样的顺序存储适合完全二叉树。但是最坏的情况下，深刻为k并且只有k个节点的二叉树（每个节点的度小于2），那么意味着需要长度为2的k次方-1的一维数组来存储，非常浪费存储空间。</p>
+<p><img src="http://i4.buimg.com/1949/0ee6f353441f1995.jpg" alt="Markdown"></p>
+</li>
+<li><p>链式存储结构</p>
+<p>二叉树的结点由一个数据元素和分别指向其左右子树的两个分支构成，则表示二叉树的链表中的结点至少包含三个域：数据域和左右指针域。有时，为了便于找到结点的双亲，则还可在结点结构中增加一个指向其双亲结点的指针域。利用这两种结构所得的二叉树的存储结构分别称之为二叉链表和三叉链表。<br>在含有n个结点的二叉链表中有n+1个空链域，我们可以利用这些空链域存储其他有用信息，从而得到另一种链式存储结构—线索链表。</p>
+<p><img src="http://i4.buimg.com/1949/f1dc0b3ea57f254b.jpg" alt="Markdown"></p>
+</li>
+</ul>
+<h4 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h4><p>二叉树的遍历(traversing binary tree)是指从根结点出发，按照某种次序依次访问二叉树中所有结点，使得每个结点被访问一次且仅被访问一次。</p>
+<p>二叉树的遍历有三种方式，如下：</p>
+<ul>
+<li><p>（1）前序遍历（DLR），首先访问根结点，然后遍历左子树，最后遍历右子树。简记根-左-右。</p>
+</li>
+<li><p>（2）中序遍历（LDR），首先遍历左子树，然后访问根结点，最后遍历右子树。简记左-根-右。</p>
+</li>
+<li><p>（3）后序遍历（LRD），首先遍历左子树，然后遍历右子树，最后访问根结点。简记左-右-根。</p>
+</li>
+</ul>
+<h4 id="前序遍历（DLR）"><a href="#前序遍历（DLR）" class="headerlink" title="前序遍历（DLR）"></a>前序遍历（DLR）</h4><p><strong>算法思路</strong><br>若二叉树为空，则遍历结束；否则</p>
+<p>　　⑴ 访问根结点；</p>
+<p>　　⑵ 先序遍历左子树(递归调用本算法)；</p>
+<p>　　⑶ 先序遍历右子树(递归调用本算法)。</p>
+<p>遍历的顺序为：A B D H I E J C F K G</p>
+<p><strong>算法实现</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//先序遍历</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">preOrder</span>(<span class="params">node</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(!node == <span class="literal">null</span>)&#123;</div><div class="line">        putstr(node.show()+ <span class="string">" "</span>);</div><div class="line">        preOrder(node.left);</div><div class="line">        preOrder(node.right);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="中序遍历（LDR）"><a href="#中序遍历（LDR）" class="headerlink" title="中序遍历（LDR）"></a>中序遍历（LDR）</h4><p><strong>算法思路</strong><br>若二叉树为空，则遍历结束；否则</p>
+<p>　　⑴ 中序遍历左子树(递归调用本算法)；</p>
+<p>　　⑵ 访问根结点；</p>
+<p>　　⑶ 中序遍历右子树(递归调用本算法)。</p>
+<p>遍历的顺序为：A B D H I E J C F K G</p>
+<p><strong>算法实现</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//使用递归方式实现中序遍历</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">inOrder</span>(<span class="params">node</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(!(node == <span class="literal">null</span>))&#123;</div><div class="line">        inOrder(node.left);<span class="comment">//先访问左子树</span></div><div class="line">        putstr(node.show()+ <span class="string">" "</span>);<span class="comment">//再访问根节点</span></div><div class="line">        inOrder(node.right);<span class="comment">//最后访问右子树</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="后序遍历（LRD）"><a href="#后序遍历（LRD）" class="headerlink" title="后序遍历（LRD）"></a>后序遍历（LRD）</h4><p><strong>算法思路</strong><br>   若二叉树为空，则遍历结束；否则</p>
+<p>　　⑴ 后序遍历左子树(递归调用本算法)；</p>
+<p>　　⑵ 后序遍历右子树(递归调用本算法) ；</p>
+<p>　　⑶ 访问根结点 。</p>
+<p>遍历的顺序为：H I D J E B K F G C A</p>
+<p><strong>算法实现</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//后序遍历</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">postOrder</span>(<span class="params">node</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(!node == <span class="literal">null</span>)&#123;</div><div class="line">        postOrder(node.left);</div><div class="line">        postOrder(node.right);</div><div class="line">        putStr(node.show()+ <span class="string">" "</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <blockquote>
 <p>参考链接</p>
 </blockquote>
 <p><a href="http://www.cnblogs.com/webFrontDev/p/3865719.html" target="_blank" rel="external">javascript实现数据结构： 树和二叉树,二叉树的遍历和基本操作</a></p>
+<p><a href="http://www.jb51.net/article/61021.htm" target="_blank" rel="external">JavaScript数据结构和算法之二叉树详解</a></p>
 
       
     </div>
@@ -559,7 +638,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言："><span class="nav-number">1.</span> <span class="nav-text">前言：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#树的简介"><span class="nav-number">2.</span> <span class="nav-text">树的简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基础概念"><span class="nav-number">2.1.</span> <span class="nav-text">基础概念</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#树的定义"><span class="nav-number">2.1.1.</span> <span class="nav-text">树的定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#树的节点"><span class="nav-number">2.1.2.</span> <span class="nav-text">树的节点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#结点的层次"><span class="nav-number">2.1.3.</span> <span class="nav-text">结点的层次</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#有序和无序树"><span class="nav-number">2.1.4.</span> <span class="nav-text">有序和无序树</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#森林"><span class="nav-number">2.1.5.</span> <span class="nav-text">森林</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二叉树"><span class="nav-number">3.</span> <span class="nav-text">二叉树</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言："><span class="nav-number">1.</span> <span class="nav-text">前言：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#树的简介"><span class="nav-number">2.</span> <span class="nav-text">树的简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基础概念"><span class="nav-number">2.1.</span> <span class="nav-text">基础概念</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#树的定义"><span class="nav-number">2.1.1.</span> <span class="nav-text">树的定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#树的节点"><span class="nav-number">2.1.2.</span> <span class="nav-text">树的节点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#节点的层次"><span class="nav-number">2.1.3.</span> <span class="nav-text">节点的层次</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#有序和无序树"><span class="nav-number">2.1.4.</span> <span class="nav-text">有序和无序树</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#森林"><span class="nav-number">2.1.5.</span> <span class="nav-text">森林</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二叉树"><span class="nav-number">3.</span> <span class="nav-text">二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#二叉树的性质"><span class="nav-number">3.1.</span> <span class="nav-text">二叉树的性质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二叉树的5个基本形态"><span class="nav-number">3.2.</span> <span class="nav-text">二叉树的5个基本形态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二叉树的存储结构"><span class="nav-number">3.3.</span> <span class="nav-text">二叉树的存储结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二叉树的遍历"><span class="nav-number">3.4.</span> <span class="nav-text">二叉树的遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#前序遍历（DLR）"><span class="nav-number">3.5.</span> <span class="nav-text">前序遍历（DLR）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#中序遍历（LDR）"><span class="nav-number">3.6.</span> <span class="nav-text">中序遍历（LDR）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#后序遍历（LRD）"><span class="nav-number">3.7.</span> <span class="nav-text">后序遍历（LRD）</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
