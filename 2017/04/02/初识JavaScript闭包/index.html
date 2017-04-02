@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -102,16 +102,16 @@
 
 
 
-<meta name="description" content="行到水穷处，坐看云起时。">
+<meta name="description" content="前言：学习JavaScript的时候老是听说闭包，感觉他很厉害的样子，所以就来会会他吧！">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初识JavaScript闭包">
 <meta property="og:url" content="http://yoursite.com/2017/04/02/初识JavaScript闭包/index.html">
 <meta property="og:site_name" content="石头">
-<meta property="og:description" content="行到水穷处，坐看云起时。">
-<meta property="og:updated_time" content="2017-04-01T16:36:52.000Z">
+<meta property="og:description" content="前言：学习JavaScript的时候老是听说闭包，感觉他很厉害的样子，所以就来会会他吧！">
+<meta property="og:updated_time" content="2017-04-02T03:41:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初识JavaScript闭包">
-<meta name="twitter:description" content="行到水穷处，坐看云起时。">
+<meta name="twitter:description" content="前言：学习JavaScript的时候老是听说闭包，感觉他很厉害的样子，所以就来会会他吧！">
 
 
 
@@ -306,6 +306,25 @@
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
             
@@ -335,7 +354,48 @@
       
 
       
-        
+        <h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><p>学习JavaScript的时候老是听说<code>闭包</code>，感觉他很厉害的样子，所以就来会会他吧！</p>
+<a id="more"></a>
+<h3 id="闭包是什么？"><a href="#闭包是什么？" class="headerlink" title="闭包是什么？"></a>闭包是什么？</h3><p><code>闭包</code>是指有权访问另外一个函数作用域里的变量和参数的函数</p>
+<h3 id="闭包的特点以及优缺点"><a href="#闭包的特点以及优缺点" class="headerlink" title="闭包的特点以及优缺点"></a>闭包的特点以及优缺点</h3><p><strong>特点</strong></p>
+<ol>
+<li>函数嵌套函数</li>
+<li>函数内部可以引用外部的参数和变量</li>
+<li>参数和变量不会被垃圾回收机制回收</li>
+</ol>
+<p>一般函数执行结束后，局部变量会被销毁（垃圾回收机制所回收），内存只会保存全局作用域的变量。</p>
+<p>但是闭包就不同了，闭包会使变量继续保存在内存里，当然如果使用不当会增大内存使用量。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">aaa</span>(<span class="params"></span>) </span>&#123;  </div><div class="line">  <span class="keyword">var</span> a = <span class="number">1</span>;  </div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      alert(a++)</div><div class="line">    &#125;;  </div><div class="line">&#125;         </div><div class="line"><span class="keyword">var</span> fun = aaa();  </div><div class="line">fun();<span class="comment">// 1 执行后 a++，，然后a还在~  </span></div><div class="line">fun();<span class="comment">// 2   </span></div><div class="line">fun = <span class="literal">null</span>;<span class="comment">//a被回收！！</span></div></pre></td></tr></table></figure>
+<p><strong>优点</strong></p>
+<ol>
+<li>希望一个变量长期驻扎在内存中</li>
+<li>避免全局变量的污染</li>
+<li>私有成员的存在</li>
+</ol>
+<p><strong>缺点</strong></p>
+<p>闭包的缺点就是常驻内存，会增大内存使用量，使用不当很容易造成内存泄露。</p>
+<h3 id="循环中的闭包"><a href="#循环中的闭包" class="headerlink" title="循环中的闭包"></a>循环中的闭包</h3><p>一个常见错误是在循环中使用变量，我们看个例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">count</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> arr = [];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">1</span>; i&lt;=<span class="number">3</span>; i++) &#123;</div><div class="line">        arr.push(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">return</span> i * i;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> arr;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> results = count();</div><div class="line"><span class="keyword">var</span> f1 = results[<span class="number">0</span>];</div><div class="line"><span class="keyword">var</span> f2 = results[<span class="number">1</span>];</div><div class="line"><span class="keyword">var</span> f3 = results[<span class="number">2</span>];</div></pre></td></tr></table></figure>
+<p>你可能认为调用f1()，f2()和f3()结果应该是<code>1</code>，<code>4</code>，<code>9</code>，但实际结果是:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">f1(); <span class="comment">// 16</span></div><div class="line">f2(); <span class="comment">// 16</span></div><div class="line">f3(); <span class="comment">// 16</span></div></pre></td></tr></table></figure>
+<p>原因很简单，当你执行返回的函数时，闭包继续保持对变量<code>i</code>的访问，此时for循环已经结束并且<code>i = 4</code>,所以结果都是16。</p>
+<p>为了得到想要的结果，需要在每次循环中创建变量 i 的拷贝。为此我们一般采用<code>自执行匿名函数</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">count</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> arr = [];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">1</span>; i&lt;=<span class="number">3</span>; i++) &#123;</div><div class="line">        arr.push((<span class="function"><span class="keyword">function</span> (<span class="params">n</span>) </span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                <span class="keyword">return</span> n * n;</div><div class="line">            &#125;</div><div class="line">        &#125;)(i));</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> arr;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> results = count();</div><div class="line"><span class="keyword">var</span> f1 = results[<span class="number">0</span>];</div><div class="line"><span class="keyword">var</span> f2 = results[<span class="number">1</span>];</div><div class="line"><span class="keyword">var</span> f3 = results[<span class="number">2</span>];</div><div class="line"></div><div class="line">f1(); <span class="comment">// 1</span></div><div class="line">f2(); <span class="comment">// 4</span></div><div class="line">f3(); <span class="comment">// 9</span></div></pre></td></tr></table></figure>
+<p><code>自执行匿名函数</code></p>
+<p>创建一个自执行匿名函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> x * x;</div><div class="line">&#125;)(<span class="number">3</span>); <span class="comment">// 9</span></div><div class="line"></div><div class="line"><span class="comment">//另外一种写法</span></div><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123; <span class="keyword">return</span> x * x &#125;) (<span class="number">3</span>);</div></pre></td></tr></table></figure></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>很多初学者学了闭包后，可能也不懂到底在哪里才有用到，甚至不懂闭包到底有啥用。其实你写的每一个js函数都是闭包，一个js函数的顶层作用域就是window对象，js的执行环境本身就是一个scope（浏览器的window/node的global），我们通常称之为全局作用域。每个函数，不论多深，都可以认为是全局scope的子作用域，可以理解为闭包。</p>
+<p>闭包的概念其实是针对作用域而言的，闭包的当前作用域总是能够访问外部作用域中的变量，因为 函数 是 JavaScript 中唯一拥有自身作用域的结构，因此闭包的创建依赖于函数。</p>
+<blockquote>
+<p>文笔有限，才疏学浅，文中若有不对之处，还望告知。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>参考文章</p>
+</blockquote>
+<p><a href="https://segmentfault.com/a/1190000000652891#articleHeader1" target="_blank" rel="external">详解js闭包</a></p>
+<p><a href="http://bonsaiden.github.io/JavaScript-Garden/zh/#function.closures" target="_blank" rel="external">JavaScript 秘密花园</a></p>
+<p><a href="http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/00143449934543461c9d5dfeeb848f5b72bd012e1113d15000" target="_blank" rel="external">廖雪峰JavaScript教程-闭包</a></p>
+
       
     </div>
 
@@ -375,6 +435,12 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+          
+        </div>
       
 
       
@@ -467,7 +533,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -476,7 +542,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -516,7 +582,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言："><span class="nav-number">1.</span> <span class="nav-text">前言：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包是什么？"><span class="nav-number">2.</span> <span class="nav-text">闭包是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包的特点以及优缺点"><span class="nav-number">3.</span> <span class="nav-text">闭包的特点以及优缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环中的闭包"><span class="nav-number">4.</span> <span class="nav-text">循环中的闭包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
           </div>
         </section>
