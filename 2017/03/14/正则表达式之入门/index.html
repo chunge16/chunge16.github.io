@@ -115,7 +115,7 @@
 <meta property="og:image" content="http://i1.piimg.com/1949/b94a5abd46e8553b.jpg">
 <meta property="og:image" content="http://i1.piimg.com/1949/c52393510efba79c.jpg">
 <meta property="og:image" content="http://i1.piimg.com/1949/96161e9f1b9b9f7e.jpg">
-<meta property="og:updated_time" content="2017-03-17T08:53:17.000Z">
+<meta property="og:updated_time" content="2017-04-04T05:56:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式之入门">
 <meta name="twitter:description" content="前言：自己有之前刷FCC的算法题，发现自己的正则了解的很少，所以自己找各种资料学习，并且总结了一下。">
@@ -402,7 +402,7 @@
 <h4 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h4><p>我们可以重复单个字符多次，但是怎么可以重复多个字符多次呢？？你可以用小括号<code>()</code>来指定子表达式(也叫做分组)，然后你就可以指定这个子表达式的重复次数了</p>
 <p>模式 <code>(foo) (bar) \1 \2</code> 中的 ‘(foo)’ 和 ‘(bar)’ 匹配并记住字符串 <code>&quot;foo bar foo bar&quot;</code> 中前两个单词,每个小括号表示一个分组，1和2是组号而<code>\1</code>表示第一个分组匹配。</p>
 <p>例如：<code>\b(\w+)\b\s+\1\b</code>可以用来匹配重复的单词，像<code>go go</code>, 或者<code>kitty kitty</code></p>
-<h4 id="贪婪与懒惰"><a href="#贪婪与懒惰" class="headerlink" title="贪婪与懒惰"></a>贪婪与懒惰</h4><p>正则表达式默认是尽可能匹配多的字符，以这个表达式为例：<code>a.*?b</code>,这样，它将会匹配最长的以a开始，以b结束的字符串。如果用它来搜索<code>aabab</code>的话，它会匹配整个字符串<code>aabab</code>。这被称为<code>贪婪匹配</code>。</p>
+<h4 id="贪婪与懒惰"><a href="#贪婪与懒惰" class="headerlink" title="贪婪与懒惰"></a>贪婪与懒惰</h4><p>正则表达式默认是尽可能匹配多的字符，以这个表达式为例：<code>a.*b</code>,这样，它将会匹配最长的以a开始，以b结束的字符串。如果用它来搜索<code>aabab</code>的话，它会匹配整个字符串<code>aabab</code>。这被称为<code>贪婪匹配</code>。</p>
 <p>但是很明显有时候我们需要尽可能匹配少的字符，那我们可以加限定符<code>?</code>,<br><code>a.*?b</code>,这样如果用它来搜索<code>aabab</code>的话，它会匹配整个字符串<code>aab</code>和<code>ab</code></p>
 <p><img src="http://i1.piimg.com/1949/1cfe5c278a1b7a8d.jpg" alt="Markdown"></p>
 <h4 id="标志"><a href="#标志" class="headerlink" title="标志"></a>标志</h4><p>正则表达式有四个可选参数进行全局和不分大小写搜索。这些参数既可以单独使用也可以一起使用在任何顺序和包含正则表达式的部分中。</p>
