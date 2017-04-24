@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="前端," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -102,21 +102,16 @@
 
 
 
-<meta name="description" content="前言：之前自己一直没有弄清楚伪类和伪元素的区别，所以自己打算总结回顾一下。">
+<meta name="description" content="行到水穷处，坐看云起时。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS 属性 - 伪类和伪元素的区别">
-<meta property="og:url" content="http://yoursite.com/2017/03/13/CSS-属性-伪类和伪元素的区别/index.html">
+<meta property="og:title" content="说说Javascript原型链">
+<meta property="og:url" content="http://yoursite.com/2017/04/24/说说Javascript原型链/index.html">
 <meta property="og:site_name" content="石头">
-<meta property="og:description" content="前言：之前自己一直没有弄清楚伪类和伪元素的区别，所以自己打算总结回顾一下。">
-<meta property="og:image" content="http://p1.bqimg.com/1949/3b7d4bcf6e02a12b.png">
-<meta property="og:image" content="http://p1.bqimg.com/1949/18964454726acd34.png">
-<meta property="og:image" content="http://p1.bpimg.com/1949/1eed5e866e013897.jpg">
-<meta property="og:image" content="http://p1.bpimg.com/1949/f656321e33062a2d.jpg">
-<meta property="og:updated_time" content="2017-03-17T08:49:37.000Z">
+<meta property="og:description" content="行到水穷处，坐看云起时。">
+<meta property="og:updated_time" content="2017-04-24T14:34:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS 属性 - 伪类和伪元素的区别">
-<meta name="twitter:description" content="前言：之前自己一直没有弄清楚伪类和伪元素的区别，所以自己打算总结回顾一下。">
-<meta name="twitter:image" content="http://p1.bqimg.com/1949/3b7d4bcf6e02a12b.png">
+<meta name="twitter:title" content="说说Javascript原型链">
+<meta name="twitter:description" content="行到水穷处，坐看云起时。">
 
 
 
@@ -137,10 +132,10 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/13/CSS-属性-伪类和伪元素的区别/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/24/说说Javascript原型链/"/>
 
 
-  <title> CSS 属性 - 伪类和伪元素的区别 | 石头 </title>
+  <title> 说说Javascript原型链 | 石头 </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -293,7 +288,7 @@
             
             
               
-                CSS 属性 - 伪类和伪元素的区别
+                说说Javascript原型链
               
             
           </h1>
@@ -305,8 +300,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-03-13T16:10:00+08:00" content="2017-03-13">
-              2017-03-13
+            <time itemprop="dateCreated" datetime="2017-04-24T22:32:57+08:00" content="2017-04-24">
+              2017-04-24
             </time>
           </span>
 
@@ -319,8 +314,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -335,8 +330,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/03/13/CSS-属性-伪类和伪元素的区别/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/13/CSS-属性-伪类和伪元素的区别/" itemprop="commentsCount"></span>
+                <a href="/2017/04/24/说说Javascript原型链/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/24/说说Javascript原型链/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -359,48 +354,7 @@
       
 
       
-        <h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><p>之前自己一直没有弄清楚伪类和伪元素的区别，所以自己打算总结回顾一下。</p>
-<a id="more"></a>
-<h3 id="一、伪类和伪元素的定义"><a href="#一、伪类和伪元素的定义" class="headerlink" title="一、伪类和伪元素的定义"></a>一、伪类和伪元素的定义</h3><h4 id="伪类-Pseudo-classes"><a href="#伪类-Pseudo-classes" class="headerlink" title="伪类(Pseudo-classes)"></a>伪类(Pseudo-classes)</h4><blockquote>
-<p>CSS 伪类用于向某些选择器添加特殊的效果</p>
-</blockquote>
-<h4 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h4><blockquote>
-<p>CSS 伪元素用于向某些选择器设置特殊效果。</p>
-</blockquote>
-<p>分析一下有2点共同点：</p>
-<ul>
-<li>作用于选择器</li>
-<li>显示特殊效果</li>
-</ul>
-<h3 id="二、伪类和伪元素分类"><a href="#二、伪类和伪元素分类" class="headerlink" title="二、伪类和伪元素分类"></a>二、伪类和伪元素分类</h3><h4 id="伪类的分类"><a href="#伪类的分类" class="headerlink" title="伪类的分类"></a>伪类的分类</h4><p><img src="http://p1.bqimg.com/1949/3b7d4bcf6e02a12b.png" alt="Markdown"></p>
-<h4 id="伪元素分类"><a href="#伪元素分类" class="headerlink" title="伪元素分类"></a>伪元素分类</h4><p><img src="http://p1.bqimg.com/1949/18964454726acd34.png" alt="Markdown"></p>
-<h3 id="三、伪类和伪元素的区别"><a href="#三、伪类和伪元素的区别" class="headerlink" title="三、伪类和伪元素的区别"></a>三、伪类和伪元素的区别</h3><p>这里用伪类 <code>:first-child</code> 和伪元素 <code>::first-letter</code> 来进行比较。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//css</div><div class="line">.par p:first-child&#123;</div><div class="line">  color:red;</div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;div class='par'&gt;</div><div class="line">    &lt;p class='one'&gt;123&lt;/p&gt;</div><div class="line">    &lt;p class='two'&gt;456&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<p>//伪类 <code>:first-child</code>将样式添加给第一个p子元素<br><img src="http://p1.bpimg.com/1949/1eed5e866e013897.jpg" alt="Markdown"></p>
-<p>但是如果不用伪类first-child，那么应该怎么显示这个效果呢？我们来试试</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//css</div><div class="line">.one&#123;</div><div class="line">  color:red;</div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;div class='par'&gt;</div><div class="line">    &lt;p class='one'&gt;123&lt;/p&gt;</div><div class="line">    &lt;p class='two'&gt;456&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<p>效果是一样的，伪类 <code>:first-child</code>相当于给子元素添加一个类并且定义样式</p>
-<p>我们来看看伪元素<code>::first-letter</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//CSS</span></div><div class="line">.text:first-letter&#123;</div><div class="line">  <span class="attr">color</span>: red</div><div class="line">&#125;</div><div class="line"> &lt;p <span class="class"><span class="keyword">class</span></span>=<span class="string">'text'</span>&gt;文本啊&lt;<span class="regexp">/p&gt;</span></div></pre></td></tr></table></figure>
-<p><img src="http://p1.bpimg.com/1949/f656321e33062a2d.jpg" alt="Markdown"></p>
-<p>但是，如果我们不用伪元素<code>::first-letter</code>，应该怎么显示这个效果呢？<br>我们继续来尝试一下</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//css</span></div><div class="line">.text-one&#123;</div><div class="line">   <span class="attr">color</span>: red;</div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;p&gt;&lt;span class='text-one'&gt;文&lt;/span&gt;本啊&lt;<span class="regexp">/p&gt;</span></div></pre></td></tr></table></figure>
-<p>到达这样的效果，我先添加元素span，然后添加样式。</p>
-<p>到这里伪类和伪元素的区别已经很明显了</p>
-<blockquote>
-<p>针对作用选择器的效果，伪类需要添加类来达到效果，而伪元素需要增加元素，所以一个叫伪类，另外一个叫伪元素。</p>
-</blockquote>
-<p>由于二者之间产生的效果十分相似，所以CSS3标准里，为了区分二者已经规定伪类用单冒号<code>:</code>，伪元素用双冒号<code>::</code>，但是由于兼容性问题，大部分还是使用单冒号，如果不存在兼容问题，还是建议使用标准写法</p>
-<blockquote>
-<p>:Pseudo-classes</p>
-<p>::Pseudo-elements</p>
-</blockquote>
-<p>个人水平有限，如有不对之处，还望指正！！！</p>
-<hr>
-<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="http://www.haorooms.com/post/css_wl_wys" target="_blank" rel="external">谈谈css的伪类和伪元素</a></p>
-<p><a href="https://segmentfault.com/a/1190000000484493" target="_blank" rel="external">详解 CSS 属性 - 伪类和伪元素的区别</a></p>
-<p><a href="http://www.cnblogs.com/keyi/p/5943178.html" target="_blank" rel="external">CSS中伪类及伪元素用法详解</a></p>
-
+        
       
     </div>
 
@@ -443,7 +397,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/前端/" rel="tag">#前端</a>
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
         </div>
       
@@ -452,17 +406,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/13/Flex-布局入门/" rel="next" title="Flex 布局入门">
-                <i class="fa fa-chevron-left"></i> Flex 布局入门
+              <a href="/2017/04/16/《一念无明》/" rel="next" title="《一念无明》的感触">
+                <i class="fa fa-chevron-left"></i> 《一念无明》的感触
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/14/正则表达式之入门/" rel="prev" title="正则表达式之入门">
-                正则表达式之入门 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -488,8 +438,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/13/CSS-属性-伪类和伪元素的区别/"
-           data-title="CSS 属性 - 伪类和伪元素的区别" data-url="http://yoursite.com/2017/03/13/CSS-属性-伪类和伪元素的区别/">
+      <div class="ds-thread" data-thread-key="2017/04/24/说说Javascript原型链/"
+           data-title="说说Javascript原型链" data-url="http://yoursite.com/2017/04/24/说说Javascript原型链/">
       </div>
     
   </div>
@@ -591,7 +541,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言："><span class="nav-number">1.</span> <span class="nav-text">前言：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一、伪类和伪元素的定义"><span class="nav-number">2.</span> <span class="nav-text">一、伪类和伪元素的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#伪类-Pseudo-classes"><span class="nav-number">2.1.</span> <span class="nav-text">伪类(Pseudo-classes)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#伪元素"><span class="nav-number">2.2.</span> <span class="nav-text">伪元素</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、伪类和伪元素分类"><span class="nav-number">3.</span> <span class="nav-text">二、伪类和伪元素分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#伪类的分类"><span class="nav-number">3.1.</span> <span class="nav-text">伪类的分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#伪元素分类"><span class="nav-number">3.2.</span> <span class="nav-text">伪元素分类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、伪类和伪元素的区别"><span class="nav-number">4.</span> <span class="nav-text">三、伪类和伪元素的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考链接"><span class="nav-number">5.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>
