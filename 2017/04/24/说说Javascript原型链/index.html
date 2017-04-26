@@ -112,7 +112,7 @@
 <meta property="og:image" content="http://i1.piimg.com/1949/e19b8b5fe093ed93.jpg">
 <meta property="og:image" content="http://i2.muimg.com/1949/9831c6c4fbaaae31.jpg">
 <meta property="og:image" content="http://i1.piimg.com/1949/8eaf7886aa90ef2f.jpg">
-<meta property="og:updated_time" content="2017-04-25T15:52:32.000Z">
+<meta property="og:updated_time" content="2017-04-26T15:39:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="说说Javascript原型链">
 <meta name="twitter:description" content="前言在写复杂的 JavaScript 应用之前，充分理解原型链继承的工作方式是每个 JavaScript 程序员必修的功课。">
@@ -372,7 +372,7 @@
   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> f3 = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"console.log('This is function f3!');"</span>);  </div><div class="line">f3();        <span class="comment">//=&gt; 'This is function f3!'  </span></div><div class="line"><span class="keyword">typeof</span>(f3);  <span class="comment">//=&gt; 'function'</span></div><div class="line"></div><div class="line"><span class="keyword">typeof</span>(<span class="built_in">Function</span>); <span class="comment">//=&gt; 'function'</span></div></pre></td></tr></table></figure>
 <p>  Object，它用于生成对象类型，其简写形式为{}，其实和function和Function的关系类似。</p>
   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> o1 = <span class="keyword">new</span> <span class="built_in">Object</span>();  </div><div class="line"><span class="keyword">typeof</span>(o1);      <span class="comment">//=&gt; 'object'</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> o2 = &#123;&#125;;  </div><div class="line"><span class="keyword">typeof</span>(o2);     <span class="comment">//=&gt; 'object'</span></div><div class="line"></div><div class="line"><span class="keyword">typeof</span>(<span class="built_in">Object</span>); <span class="comment">//=&gt; 'function'</span></div></pre></td></tr></table></figure>
-<h3 id="二、prototype-和-proto"><a href="#二、prototype-和-proto" class="headerlink" title="二、prototype 和 __proto__"></a>二、prototype 和 __proto__</h3><p><code>prototype</code>属性只有函数类型对象才有，上面说的很清楚了。而<code>__proto__</code>是所有JavaScript对象都内置的属性[[Prototype]]，而这个属性指向构造函数（类似父类）的<code>prototype</code>属性，从而继承属性.</p>
+<h3 id="二、prototype-和-proto"><a href="#二、prototype-和-proto" class="headerlink" title="二、prototype 和 __proto__"></a>二、prototype 和 __proto__</h3><p><code>prototype</code>属性只有函数类型对象才有，上面说的很清楚了。而<code>__proto__</code>是所有JavaScript对象都内置的属性[[Prototype]]，而这个属性指向构造函数（类似父类）的<code>prototype</code>属性，从而继承属性. 通俗一点讲，<code>prototype</code>中定义的属性和方法都是留给自己的“后代”用的，因此，子类完全可以访问prototype中的属性和方法。</p>
 <p>举个例子：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Person = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;  </div><div class="line">Person.prototype.type = <span class="string">'Person'</span>;  </div><div class="line">Person.prototype.maxAge = <span class="number">100</span>;</div><div class="line"></div><div class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();  </div><div class="line"><span class="built_in">console</span>.log(p.maxAge);  </div><div class="line">p.name = <span class="string">'rainy'</span>;</div><div class="line"></div><div class="line"><span class="comment">// 修正Person.prototype.constructor为Person本身</span></div><div class="line">Person.prototype.constructor === Person;  <span class="comment">//=&gt; true  </span></div><div class="line">p.__proto__ === Person.prototype;         <span class="comment">//=&gt; true  </span></div><div class="line"><span class="built_in">console</span>.log(p.prototype);                 <span class="comment">//=&gt; undefined</span></div></pre></td></tr></table></figure>
 <p><strong>一图胜千言</strong></p>
@@ -387,7 +387,7 @@
 <p>来张图更直观一些</p>
 <p><img src="http://i1.piimg.com/1949/8eaf7886aa90ef2f.jpg" alt="Markdown"></p>
 <p>到了这里，其实有个问题大家没注意，<code>new</code>关键词到底起了什么作用呢？</p>
-<p>其实开头的图已经给出答案：<code>new</code>关键词的作用就是完成上图所示实例与父类原型之间关系的串接，并创建一个新的对象.</p>
+<p>其实开头的图已经给出答案：<code>new</code>关键词的作用就是完成上图所示实例与父类原型之间关系的串接，并创建一个新的对象.简单来说，<code>new</code>就是把<code>父类</code>的<code>prototype</code>赋值给实例的<code>__proto__</code></p>
 <p>有兴趣深入看这里：<a href="https://zhuanlan.zhihu.com/p/23987456?refer=study-fe" target="_blank" rel="external">JS 的 new 到底是干什么的？</a></p>
 <blockquote>
 <p>文笔有限，才疏学浅，文中若有不对之处，还望告知。</p>
