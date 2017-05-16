@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JavaScript," />
+  <meta name="keywords" content="杂记 随笔," />
 
 
 
@@ -102,18 +102,16 @@
 
 
 
-<meta name="description" content="前言JavaScript 有一套完全不同于其它语言的对 this 的处理机制。 一般有四种不同的情况下 ，this 指向的各不相同。但是有一个总的原则，那就是this指的是，调用函数的那个对象。">
+<meta name="description" content="前言：霓虹的城市里可否有一盏灯为你而亮？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript的this的值到底是什么？">
-<meta property="og:url" content="http://yoursite.com/2017/04/29/JavaScript的this-的值到底是什么？/index.html">
+<meta property="og:title" content="地下通道">
+<meta property="og:url" content="http://yoursite.com/2017/05/16/地下通道/index.html">
 <meta property="og:site_name" content="石头">
-<meta property="og:description" content="前言JavaScript 有一套完全不同于其它语言的对 this 的处理机制。 一般有四种不同的情况下 ，this 指向的各不相同。但是有一个总的原则，那就是this指的是，调用函数的那个对象。">
-<meta property="og:image" content="http://i1.piimg.com/1949/932cda406890e9ba.jpg">
-<meta property="og:updated_time" content="2017-04-29T07:25:35.000Z">
+<meta property="og:description" content="前言：霓虹的城市里可否有一盏灯为你而亮？">
+<meta property="og:updated_time" content="2017-05-16T14:59:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript的this的值到底是什么？">
-<meta name="twitter:description" content="前言JavaScript 有一套完全不同于其它语言的对 this 的处理机制。 一般有四种不同的情况下 ，this 指向的各不相同。但是有一个总的原则，那就是this指的是，调用函数的那个对象。">
-<meta name="twitter:image" content="http://i1.piimg.com/1949/932cda406890e9ba.jpg">
+<meta name="twitter:title" content="地下通道">
+<meta name="twitter:description" content="前言：霓虹的城市里可否有一盏灯为你而亮？">
 
 
 
@@ -134,10 +132,10 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/29/JavaScript的this-的值到底是什么？/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/16/地下通道/"/>
 
 
-  <title> JavaScript的this的值到底是什么？ | 石头 </title>
+  <title> 地下通道 | 石头 </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -290,7 +288,7 @@
             
             
               
-                JavaScript的this的值到底是什么？
+                地下通道
               
             
           </h1>
@@ -302,8 +300,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-04-29T11:50:38+08:00" content="2017-04-29">
-              2017-04-29
+            <time itemprop="dateCreated" datetime="2017-05-16T21:53:49+08:00" content="2017-05-16">
+              2017-05-16
             </time>
           </span>
 
@@ -316,8 +314,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
+                  <a href="/categories/随笔/" itemprop="url" rel="index">
+                    <span itemprop="name">随笔</span>
                   </a>
                 </span>
 
@@ -332,8 +330,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/04/29/JavaScript的this-的值到底是什么？/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/29/JavaScript的this-的值到底是什么？/" itemprop="commentsCount"></span>
+                <a href="/2017/05/16/地下通道/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/16/地下通道/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -356,34 +354,11 @@
       
 
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>JavaScript 有一套完全不同于其它语言的对 this 的处理机制。 一般有四种不同的情况下 ，this 指向的各不相同。但是有一个总的原则，那就是this指的是，调用函数的那个对象。</p>
-<p><img src="http://i1.piimg.com/1949/932cda406890e9ba.jpg" alt="this"></p>
+        <h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><p>霓虹的城市里可否有一盏灯为你而亮？</p>
 <a id="more"></a>
-<h3 id="一、函数调用"><a href="#一、函数调用" class="headerlink" title="一、函数调用"></a>一、函数调用</h3><p>函数调用时，<code>this</code>指向全局对象，如果是在浏览器中中，这个对象是<code>window</code>。</p>
-<p>请看下面这段代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fn  = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">    <span class="comment">// this 将会被设置为全局对象（译者注：浏览器环境中也就是 window 对象）</span></div><div class="line">    &#125;</div><div class="line">    test();</div><div class="line">&#125;</div><div class="line">fn() <span class="comment">//执行函数fn，结果指向window</span></div></pre></td></tr></table></figure>
-<h3 id="二、方法调用"><a href="#二、方法调用" class="headerlink" title="二、方法调用"></a>二、方法调用</h3><p>当函数作为对象的<code>方法</code>时，this指向该对象</p>
-<p>请看下面这段代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> age = <span class="number">10</span>;</div><div class="line"><span class="keyword">var</span> xiaoming = &#123;&#125;;</div><div class="line"></div><div class="line">xiaoming.age = <span class="number">18</span>;</div><div class="line">xiaoming.getAge = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.age);</div><div class="line">&#125;</div><div class="line"></div><div class="line">xiaoming.getAge(); <span class="comment">//18</span></div></pre></td></tr></table></figure>
-<p>之所以为18不是10，因为this指向xiaoming这个对象，所以打印出来是18</p>
-<h3 id="三、调用构造函数"><a href="#三、调用构造函数" class="headerlink" title="三、调用构造函数"></a>三、调用构造函数</h3><p>如果函数倾向于和 <code>new</code> 关键词一块使用，则我们称这个函数是 构造函数。 在函数内部，<code>this</code> 指向新创建的对象。</p>
-<p>请看下面这段代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> x = <span class="number">0</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　<span class="keyword">this</span>.x = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> test();</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(obj.x); <span class="comment">//  1</span></div></pre></td></tr></table></figure>
-<p>打印出来为1不为0，表明this指向新对象obj，而不是全局对象。</p>
-<h3 id="四、显式的设置-this-apply和call"><a href="#四、显式的设置-this-apply和call" class="headerlink" title="四、显式的设置 this (apply和call)"></a>四、显式的设置 this (apply和call)</h3><p>当使用 Function.prototype 上的 <code>call</code> 或者 <code>apply</code> 方法时，函数内的 <code>this</code> 将会被 显式设置为函数调用的第一个参数.</p>
-<p>当第一参数为<code>null</code> 或者 <code>undefined</code>，在浏览器环境里那么window对象就是默认的this指向。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> age = <span class="number">0</span>;</div><div class="line"><span class="keyword">var</span> xiaoming = &#123;&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">setAge</span>(<span class="params">age</span>)</span>&#123;<span class="keyword">this</span>.age = age;&#125;</div><div class="line"></div><div class="line">xiaoming.age = <span class="number">18</span>;</div><div class="line">xiaoming.setAge = setAge;</div><div class="line"></div><div class="line">xiaoming.setAge.apply(<span class="literal">null</span>,[<span class="number">20</span>]);</div><div class="line">xiaoming.age     <span class="comment">// 18</span></div><div class="line">age              <span class="comment">// 20</span></div><div class="line"></div><div class="line">xiaoming.setAge.call(xiaoming,<span class="number">25</span>);</div><div class="line">xiaoming.age     <span class="comment">// 25</span></div><div class="line">age              <span class="comment">// 20</span></div></pre></td></tr></table></figure></p>
-<p>apply和call区别在于传递参数格式不同，call()接受一个参数列表，而apply()接受包含多个参数的数组（或类数组对象）</p>
-<blockquote>
-<p>文笔有限，才疏学浅，文中若有不对之处，还望告知。</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>参考文章</p>
-</blockquote>
-<p><a href="http://bonsaiden.github.io/JavaScript-Garden/zh/#function.this" target="_blank" rel="external">this 的工作原理</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/23804247" target="_blank" rel="external">this 的值到底是什么？一次说清楚</a></p>
-<p><a href="http://www.ruanyifeng.com/blog/2010/04/using_this_keyword_in_javascript.html" target="_blank" rel="external">Javascript的this用法</a></p>
-<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/apply" target="_blank" rel="external">Function.prototype.apply()</a></p>
+<h3 id="地下通道"><a href="#地下通道" class="headerlink" title="地下通道"></a>地下通道</h3><p>这个地下通道其实很普通，它不过是这个城市渺小的一部分。但是我每天下班回家都会穿过这里到对面街道上去，所以对他格外熟悉一些。</p>
+<p>每次走近通道向下阶梯的时候，人们的脚步声会变得清晰起来，熙熙攘攘的脚步声再次提醒我这是下班时间。不知道为什么，下班的时间里不管是年轻人还是人到中年的大叔和阿姨，大家都喜欢戴上耳机，不过有的人喜欢把放音乐的手机拿在手里、有的喜欢放在裤子前面的裤兜而女士一般都是放在包里，好像戴上耳机后可以短暂隔离这个世界，从而获得自己的空间和时间，当然没那么深刻，可能只是简单的想通过音乐来消去一天的疲惫而已。其次还有一个现象比较奇特，就是不管男女老幼背书包比例比较大。小朋友书包里的课本和作业，对于大部分的小朋友来说都不感冒，我们童年的回忆里，没人会说作业和课本是美好的记忆吧。但是大人背包里的东西可能对他们的工作和生活都很重要，对他们而言没有讨厌、排斥的说法。最后还有一个现象就是大家下班回家的步伐都是那么匆匆，有句话是这么说：“这个城市发展的速度，从人们走路的步伐就能看出来”。嗯，北京发展的节奏看来还是很迅速的。</p>
+<p>我总想放慢自己步伐缓慢的回到家，但是每次穿过这个地下通道，当身边的人们行色匆匆的时候，我总会下意识的身子前倾、加快步伐而且用手把耳机塞得更紧一些了。</p>
 
       
     </div>
@@ -427,7 +402,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+            <a href="/tags/杂记-随笔/" rel="tag">#杂记 随笔</a>
           
         </div>
       
@@ -436,17 +411,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/24/说说Javascript原型链/" rel="next" title="说说Javascript原型链">
-                <i class="fa fa-chevron-left"></i> 说说Javascript原型链
+              <a href="/2017/05/14/开发者关系大会的思考/" rel="next" title="开发者关系大会的思考">
+                <i class="fa fa-chevron-left"></i> 开发者关系大会的思考
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/12/汶川大地震9周年忆/" rel="prev" title="汶川大地震9周年忆">
-                汶川大地震9周年忆 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -472,8 +443,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/04/29/JavaScript的this-的值到底是什么？/"
-           data-title="JavaScript的this的值到底是什么？" data-url="http://yoursite.com/2017/04/29/JavaScript的this-的值到底是什么？/">
+      <div class="ds-thread" data-thread-key="2017/05/16/地下通道/"
+           data-title="地下通道" data-url="http://yoursite.com/2017/05/16/地下通道/">
       </div>
     
   </div>
@@ -575,7 +546,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一、函数调用"><span class="nav-number">2.</span> <span class="nav-text">一、函数调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、方法调用"><span class="nav-number">3.</span> <span class="nav-text">二、方法调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、调用构造函数"><span class="nav-number">4.</span> <span class="nav-text">三、调用构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、显式的设置-this-apply和call"><span class="nav-number">5.</span> <span class="nav-text">四、显式的设置 this (apply和call)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言："><span class="nav-number">1.</span> <span class="nav-text">前言：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#地下通道"><span class="nav-number">2.</span> <span class="nav-text">地下通道</span></a></li></ol></div>
             
           </div>
         </section>
