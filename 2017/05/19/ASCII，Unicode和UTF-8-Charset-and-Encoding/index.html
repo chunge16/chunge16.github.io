@@ -110,11 +110,14 @@
 <meta property="og:site_name" content="石头">
 <meta property="og:description" content="前言：相信很多人都听说过ASCII，Unicode和UTF-8这些词汇，但可能还是不清楚其中的具体含义。当然一开始我也是粗略认识，所以自己决定重新深入学习一下，并且总结如下。
 才疏学浅，多多指教！！！">
-<meta property="og:updated_time" content="2017-05-20T03:12:30.000Z">
+<meta property="og:image" content="http://i1.piimg.com/1949/e14a3c4eb16cf8b9.png">
+<meta property="og:image" content="http://i4.buimg.com/1949/5b8e480100477408.png">
+<meta property="og:updated_time" content="2017-05-20T16:32:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ASCII，Unicode和UTF-8 (Charset and Encoding)">
 <meta name="twitter:description" content="前言：相信很多人都听说过ASCII，Unicode和UTF-8这些词汇，但可能还是不清楚其中的具体含义。当然一开始我也是粗略认识，所以自己决定重新深入学习一下，并且总结如下。
 才疏学浅，多多指教！！！">
+<meta name="twitter:image" content="http://i1.piimg.com/1949/e14a3c4eb16cf8b9.png">
 
 
 
@@ -375,6 +378,7 @@
 <p>一、计算机怎么知道二个字节为一个字符，如何识别二个字节为什么一个字符？</p>
 <p>二、针对英文字符，如果使用大于1个字节来表示，那么低位的前面几个字节全是0。很奢侈浪费空间，因为现在计算机大部分内容还是英文。</p>
 </blockquote>
+<p><img src="http://i1.piimg.com/1949/e14a3c4eb16cf8b9.png" alt="历史大致发展"></p>
 <h3 id="二、Charset-and-Encoding"><a href="#二、Charset-and-Encoding" class="headerlink" title="二、Charset and Encoding"></a>二、Charset and Encoding</h3><p>大家了解一下历史后，应该对字符集有大致了解，那我们来说说字符集和字符编码，其实你可以这样理解：</p>
 <blockquote>
 <p>字符集就是我们用十进制来表示世界上各种字符</p>
@@ -386,6 +390,7 @@
 <li><p>Encoding (Charset Encoding) 字符编码：建立字符集合和计算机系统对应的规则。简单来说就是，将字符转化为计算机可识别的二进制编码的规则。</p>
 </li>
 </ul>
+<p><img src="http://i4.buimg.com/1949/5b8e480100477408.png" alt="Charset and Encoding"></p>
 <h3 id="三、ASCII"><a href="#三、ASCII" class="headerlink" title="三、ASCII"></a>三、ASCII</h3><p>计算机使用二进制保存指令和数据，字节作为计算接处理数据的基本单位，有256(2的8次方)种可能状态。这些状态被人们利用来标记指令和文字。最初前32(0x20)种状态被用来表示终端、打印机等设备的某些特殊动作，比如终端遇到字节0x10则换行，类似的还有回车(CR 0x0D)，震铃(BELL 0x07)等。这前32种状态又被称为控制码。除了这些特殊用途的状态外，还有256-32=224种状态没有被利用，资源浪费怎么能忍，何况除了控制指令外，咱们的文字还没有被表示。于是这些多出来的状态被用来表示文字(English Character)和符号标点等，如此这般，计算机就可以显示和记录文字了，这便是ASCII(American Standard Code for Information Interchange)最初的由来。</p>
 <h3 id="四、Unicode"><a href="#四、Unicode" class="headerlink" title="四、Unicode"></a>四、Unicode</h3><p>Unicode（统一码、万国码、单一码）是计算机科学领域里的一项业界标准,包括字符集、编码方案等。Unicode 是为了解决传统的字符编码方案的局限而产生的，它为每种语言中的每个字符设定了统一并且唯一的二进制编码，以满足跨语言、跨平台进行文本转换、处理的要求。</p>
 <p>在表示一个Unicode的字符时，通常会用“U+”然后紧接着一组十六进制的数字来表示这一个字符。在基本多文种平面（英文为 Basic Multilingual Plane，简写 BMP。它又简称为“零号平面”, plane 0）里的所有字符，要用四位十六进制数（例如U+4AE0，共支持六万多个字符）；在零号平面以外的字符则需要使用五位或六位十六进制数了。Unicode是国际组织制定的可以容纳世界上所有文字和符号的字符编码方案。目前的Unicode字符分为17组编排，0x0000 至 0xFFFF，每组称为平面（Plane），而每平面拥有65536个码位，共1114112个。然而目前只用了少数平面。UTF-8、UTF-16、UTF-32都是将数字转换到程序数据的编码方案。</p>
