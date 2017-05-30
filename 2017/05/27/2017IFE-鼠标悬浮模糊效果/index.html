@@ -110,7 +110,11 @@
 <meta property="og:description" content="前言2017-百度前端技术学院编码任务：鼠标悬浮模糊效果">
 <meta property="og:image" content="http://www.runoob.com/wp-content/uploads/2014/07/7B0CC41A-86DC-4E1B-8A69-A410E6764B91.jpg">
 <meta property="og:image" content="http://i4.buimg.com/1949/71ce3bcfc4fa9f93.jpg">
-<meta property="og:updated_time" content="2017-05-28T15:20:31.000Z">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-b7d5090f1a9bfe7b5238b140808a7ba7_b.png?_=6855595">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-d5b04a7633770a2d6937edc49f95e177_b.png?_=6855595">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-3205cdab7766e05b477bb1cc024f3d43_b.png?_=6855595">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-139942660dceedc936cfb71a6fe948fd_b.png?_=6855595">
+<meta property="og:updated_time" content="2017-05-30T14:49:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2017IFE-鼠标悬浮模糊效果">
 <meta name="twitter:description" content="前言2017-百度前端技术学院编码任务：鼠标悬浮模糊效果">
@@ -413,6 +417,30 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">.box-background::before&#123;</div><div class="line">    position: absolute;</div><div class="line">    left: 50%;</div><div class="line">    top:0;</div><div class="line">    content: &apos;&apos;;</div><div class="line">    border: 3px solid #ffcc00;</div><div class="line">    border-width: 3px 0;</div><div class="line">    width: 0;</div><div class="line">    height: 100%;</div><div class="line">    box-sizing: border-box;</div><div class="line">    transition: all 1s; /*过渡*/</div><div class="line">&#125;</div><div class="line"></div><div class="line">.box-background::after&#123;</div><div class="line">    position: absolute;</div><div class="line">    left: 0;</div><div class="line">    top:50%;</div><div class="line">    content: &apos;&apos;;</div><div class="line">    border: 2px solid #ffcc00;</div><div class="line">    border-width: 0 2px;</div><div class="line">    width: 100%;</div><div class="line">    height: 0;</div><div class="line">    box-sizing: border-box;</div><div class="line">    transition: all 1s;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.box-warp:hover .box-background::before&#123;</div><div class="line">     left: 0;</div><div class="line">     width: 100%;</div><div class="line"> &#125;</div><div class="line">.box-warp:hover .box-background::after&#123;</div><div class="line">    top: 0;</div><div class="line">    height: 100%;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h4 id="隐藏和显示"><a href="#隐藏和显示" class="headerlink" title="隐藏和显示"></a>隐藏和显示</h4><p>隐藏和显示是通过设置<code>opacity</code>属性来实现,初始状态为0，鼠标滑动为1来实现。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.box-warp:hover .box-background&#123;  opacity: 1;  &#125;</div></pre></td></tr></table></figure>
+<h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><p>当我想鼠标移动到a元素上面时产生手指效果，但是却发现无效。通过排查是伪元素覆盖在a元素上面，导致根本无法接触。那么怎么能改变其它们的层叠关系呢？我想到了<code>z-index</code>属性，因为这个问题我重新学习了z-index属性的使用。</p>
+<ul>
+<li>z-index什么时候有效?</li>
+</ul>
+<p>对于一个已经定位的元素（即position属性值是非static的元素)</p>
+<ul>
+<li>z-index值越大元素越靠前，对吗？</li>
+</ul>
+<p>我们现在div(A)和div(B)中再分别创建一个小的div(c)和div(d)</p>
+<p>  <img src="https://pic4.zhimg.com/v2-b7d5090f1a9bfe7b5238b140808a7ba7_b.png?_=6855595" alt=""></p>
+<p>  我们试试把biv(A)的Z-index设置成auto。<br>  <img src="https://pic4.zhimg.com/v2-d5b04a7633770a2d6937edc49f95e177_b.png?_=6855595" alt=""></p>
+<p>  再试试只把div(a)设置为auto</p>
+<p>  <img src="https://pic4.zhimg.com/v2-3205cdab7766e05b477bb1cc024f3d43_b.png?_=6855595" alt=""></p>
+<p>  其实主要是找到对比元素之间的基准堆叠上下文，以此数字越大层级越高。</p>
+<p>  取值：</p>
+<p>   <code>auto</code>: 元素不会建立一个新的本地堆叠上下文。当前堆叠上下文中新生成的元素和父元素堆叠层级相同。</p>
+<p>   <code>&lt;integer&gt;</code>: 整型数字是生成的元素在当前堆叠上下文中的堆叠层级。元素同时会创建一个堆叠层级为0的本地堆叠上下文。这意味着子元素的 z-indexes 不与元素外的其余元素的 z-indexes 进行对比。</p>
+<p>   通俗说，设置auto时元素堆叠等级和父元素一样，遇到堆叠上下文之后根据大小来判断层级。设置具体数字的元素同样遇到堆叠上下文根据大小来判断层级，它的子元素和外界元素进行比较时,采用父元素的Z-index进行比较, 和兄弟元素比较采用自身的Z-index。</p>
+<ul>
+<li><p>z-index 不设置和设置为0有什么区别?</p>
+<p>  如果不设置Z-index那么默认值为auto,则不建立层叠上下文。设置为0则会脱离文档流,建立层叠上下文。</p>
+<p>  <img src="https://pic2.zhimg.com/v2-139942660dceedc936cfb71a6fe948fd_b.png?_=6855595" alt=""></p>
+</li>
+</ul>
 <blockquote>
 <p>由于CSS3的兼容性，在完成此效果时，只在webkit内核的浏览器进行测试，如需兼容其他浏览器，请自行加上浏览器前缀。</p>
 </blockquote>
@@ -425,6 +453,10 @@
 <li><p><a href="http://yanyuanfe.cn/2017/03/18/CSS3%E5%AE%9E%E7%8E%B0%E6%96%87%E5%AD%97%E6%B5%81%E5%85%89%E6%B8%90%E5%8F%98%E5%8A%A8%E7%94%BB/" target="_blank" rel="external">CSS3实现文字流光渐变动画</a></p>
 </li>
 <li><p><a href="http://www.runoob.com/css3/css3-tutorial.html" target="_blank" rel="external">CSS3 教程</a></p>
+</li>
+<li><p><a href="http://www.cnblogs.com/bobodeboke/p/4724841.html" target="_blank" rel="external">css元素position定位和z-index</a></p>
+</li>
+<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/z-index" target="_blank" rel="external">z-index</a></p>
 </li>
 </ol>
 
@@ -616,7 +648,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务描述"><span class="nav-number">2.</span> <span class="nav-text">任务描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现"><span class="nav-number">3.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#页面结构"><span class="nav-number">3.1.</span> <span class="nav-text">页面结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现文字的流光渐变动画"><span class="nav-number">3.2.</span> <span class="nav-text">实现文字的流光渐变动画</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#背景图模糊处理"><span class="nav-number">3.3.</span> <span class="nav-text">背景图模糊处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#按钮边框的从中间到两边扩展开"><span class="nav-number">3.4.</span> <span class="nav-text">按钮边框的从中间到两边扩展开</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#隐藏和显示"><span class="nav-number">3.5.</span> <span class="nav-text">隐藏和显示</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务描述"><span class="nav-number">2.</span> <span class="nav-text">任务描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现"><span class="nav-number">3.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#页面结构"><span class="nav-number">3.1.</span> <span class="nav-text">页面结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现文字的流光渐变动画"><span class="nav-number">3.2.</span> <span class="nav-text">实现文字的流光渐变动画</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#背景图模糊处理"><span class="nav-number">3.3.</span> <span class="nav-text">背景图模糊处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#按钮边框的从中间到两边扩展开"><span class="nav-number">3.4.</span> <span class="nav-text">按钮边框的从中间到两边扩展开</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#隐藏和显示"><span class="nav-number">3.5.</span> <span class="nav-text">隐藏和显示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#问题"><span class="nav-number">3.6.</span> <span class="nav-text">问题</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
