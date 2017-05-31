@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -68,7 +68,7 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="前端," />
@@ -80,7 +80,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
 
 
 
@@ -110,7 +110,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
@@ -394,7 +394,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//CSS</span></div><div class="line">.text:first-letter&#123;</div><div class="line">  <span class="attr">color</span>: red</div><div class="line">&#125;</div><div class="line"> &lt;p <span class="class"><span class="keyword">class</span></span>=<span class="string">'text'</span>&gt;文本啊&lt;<span class="regexp">/p&gt;</span></div></pre></td></tr></table></figure>
 <p><img src="http://p1.bpimg.com/1949/f656321e33062a2d.jpg" alt="Markdown"></p>
 <p>但是，如果我们不用伪元素<code>::first-letter</code>，应该怎么显示这个效果呢？<br>我们继续来尝试一下</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//css</span></div><div class="line">.text-one&#123;</div><div class="line">   <span class="attr">color</span>: red;</div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;p&gt;&lt;span class='text-one'&gt;文&lt;/span&gt;本啊&lt;<span class="regexp">/p&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//css</span></div><div class="line">.text-one&#123;</div><div class="line">   <span class="attr">color</span>: red;</div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;p&gt;<span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">'text-one'</span>&gt;</span>文<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span>本啊&lt;<span class="regexp">/p&gt;</span></div></pre></td></tr></table></figure>
 <p>到达这样的效果，我先添加元素span，然后添加样式。</p>
 <p>到这里伪类和伪元素的区别已经很明显了</p>
 <blockquote>
@@ -418,7 +418,7 @@
       
         
 <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="../img/wechat-qcode.jpg" alt="JACK wechat" style="width: 200px; max-width: 100%;"/>
+    <img id="wechat_subscriber_qcode" src="/img/wechat-qcode.jpg" alt="JACK wechat" style="width: 200px; max-width: 100%;"/>
     <div>欢迎订阅我的个人微信公众号，期待与你的交流</div>
 </div>
 
@@ -651,7 +651,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Mist
   </a>
 </div>
 
@@ -716,32 +716,25 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
 
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
 
 
 
