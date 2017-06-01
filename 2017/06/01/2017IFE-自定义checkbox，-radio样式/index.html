@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/01/2017IFE-自定义checkbox，-radio样式/index.html">
 <meta property="og:site_name" content="石头">
 <meta property="og:description" content="前言2017-百度前端技术学院编码任务：自定义checkbox， radio样式">
-<meta property="og:updated_time" content="2017-06-01T08:08:55.000Z">
+<meta property="og:updated_time" content="2017-06-01T08:35:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2017IFE-自定义checkbox， radio样式">
 <meta name="twitter:description" content="前言2017-百度前端技术学院编码任务：自定义checkbox， radio样式">
@@ -471,8 +471,8 @@
 <p>产生关联可以和控件产生联系，例如：点击标签label元素可以改变<code>&lt;input type=&quot;radio&quot;&gt;</code>的 :checked 状态，或者获得<code>&lt;input type=&quot;text&quot; id=&quot;User&quot; name=&quot;Name&quot; /&gt;</code>的焦点状态。</p>
 <p>之前思考过隐藏input后，为什么要用label元素来伪装表单呢？原因是其他元素无法和input产生关联，点击其他元素是无法改变表单的checked 状态，而点击label是可以的。</p>
 <p><strong>示例</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">/*放在标签元素内产生关联*/</div><div class="line">&lt;label&gt;Click me &lt;input type="text" id="User" name="Name" /&gt;&lt;/label&gt;</div><div class="line"></div><div class="line">/*通过设置for属性产生关联*/</div><div class="line">&lt;label for="User"&gt;Click me&lt;/label&gt;</div><div class="line">&lt;input type="text" id="User" name="Name" /&gt;</div></pre></td></tr></table></figure>
-<h4 id="伪类和伪元素的区别"><a href="#伪类和伪元素的区别" class="headerlink" title="伪类和伪元素的区别"></a>伪类和伪元素的区别</h4><p>其实关于这部分自己之前做过一次总结。结论就是，伪类和伪元素都是给元素添加效果，不同的是伪类是相对于添加一个类<code>class</code>，伪元素相当于添加一个元素<code>element</code>。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">/*放在标签元素内产生关联*/</div><div class="line"><span class="tag">&lt;<span class="name">label</span>&gt;</span>Click me <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"User"</span> <span class="attr">name</span>=<span class="string">"Name"</span> /&gt;</span><span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line"></div><div class="line">/*通过设置for属性产生关联*/</div><div class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"User"</span>&gt;</span>Click me<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"User"</span> <span class="attr">name</span>=<span class="string">"Name"</span> /&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="伪类和伪元素的区别"><a href="#伪类和伪元素的区别" class="headerlink" title="伪类和伪元素的区别"></a>伪类和伪元素的区别</h4><p>其实关于这部分自己之前做过一次总结。结论就是，伪类和伪元素都是给元素添加效果，不同的是伪类是相当于添加一个类<code>class</code>，伪元素相当于添加一个元素<code>element</code>。</p>
 <p>另外<code>:checked</code> CSS 伪类选择器表示任何处于选中状态的radio(<code>&lt;input type=&quot;radio&quot;&gt;</code>), checkbox (<code>&lt;input type=&quot;checkbox&quot;&gt;</code>) 或(“<code>select</code>“) 元素中的option HTML元素(“option”)) 。用户通过点击元素或选择其他的值，可以改变该元素的 :checked 状态，并:checked属性赋给一个新的对象(例如其他的option值)。</p>
 <ul>
 <li><p>input[type=”radio”]:checked<br>表示页面上的所有选中的radio按钮</p>
