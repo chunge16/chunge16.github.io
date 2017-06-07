@@ -92,10 +92,12 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/06/2017IFE-使用CSS实现折叠面板/index.html">
 <meta property="og:site_name" content="石头">
 <meta property="og:description" content="前言2017-百度前端技术学院编码任务：使用CSS实现折叠面板">
-<meta property="og:updated_time" content="2017-06-07T02:00:13.000Z">
+<meta property="og:image" content="http://i4.buimg.com/1949/ce5cfb98126e80d0.png">
+<meta property="og:updated_time" content="2017-06-07T02:04:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2017IFE-使用CSS实现折叠面板">
 <meta name="twitter:description" content="前言2017-百度前端技术学院编码任务：使用CSS实现折叠面板">
+<meta name="twitter:image" content="http://i4.buimg.com/1949/ce5cfb98126e80d0.png">
 
 
 
@@ -413,7 +415,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  354
+                  368
                 </span>
               
 
@@ -459,7 +461,8 @@
 </ul>
 <p><a href="http://chunge2016.online/IFE-Task-2017/stickyRice/Accordion/" target="_blank" rel="external">DEMO</a></p>
 <p><a href="https://github.com/chunge16/IFE-Task-2017/tree/master/stickyRice/Accordion" target="_blank" rel="external">项目地址</a></p>
-<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><blockquote>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p><img src="http://i4.buimg.com/1949/ce5cfb98126e80d0.png" alt=""></p>
+<blockquote>
 <p>思路就是利用input[type=radio]所具有的单选特性,然后利用伪类或者伪元素来显示或者隐藏。</p>
 </blockquote>
 <h4 id="html中radio的特性"><a href="#html中radio的特性" class="headerlink" title="html中radio的特性"></a>html中radio的特性</h4><p><code>label</code>它通常关联一个控件，或者是将控件放置在label元素内，或者是用作其属性。</p>
@@ -470,6 +473,16 @@
 <p><code>a+b</code>    元素a下一个兄弟元素b</p>
 <p><code>a-b</code>    元素后面拥有共同父元素的兄弟元素b</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.Accordion-box</span>  <span class="selector-tag">input</span><span class="selector-attr">[type=radio]</span><span class="selector-pseudo">:checked</span> + <span class="selector-tag">div</span> &#123;</div><div class="line"></div><div class="line">            <span class="attribute">padding</span>: <span class="number">15px</span>;</div><div class="line">            <span class="attribute">opacity</span>: <span class="number">1</span>;</div><div class="line">            <span class="attribute">height</span>: auto;</div><div class="line">            <span class="attribute">border-top</span>: <span class="number">1px</span> solid <span class="number">#ddd</span>;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+<hr>
+<blockquote>
+<p>参考链接</p>
+</blockquote>
+<ol>
+<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/label" target="_blank" rel="external">label</a></p>
+</li>
+<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Adjacent_sibling_selectors" target="_blank" rel="external">相邻兄弟选择器</a></p>
+</li>
+</ol>
 
       
     </div>
