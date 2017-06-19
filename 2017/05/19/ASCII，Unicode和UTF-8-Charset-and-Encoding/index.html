@@ -94,7 +94,7 @@
 <meta property="og:description" content="前言：相信很多人都听说过ASCII，Unicode和UTF-8这些词汇，但可能还是不清楚其中的具体含义。当然一开始我也是粗略认识，所以自己决定重新深入学习一下，并且总结如下。 才疏学浅，多多指教！！！">
 <meta property="og:image" content="http://i1.piimg.com/1949/e14a3c4eb16cf8b9.png">
 <meta property="og:image" content="http://i4.buimg.com/1949/5b8e480100477408.png">
-<meta property="og:updated_time" content="2017-05-20T16:32:32.000Z">
+<meta property="og:updated_time" content="2017-06-19T03:22:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ASCII，Unicode和UTF-8 (Charset and Encoding)">
 <meta name="twitter:description" content="前言：相信很多人都听说过ASCII，Unicode和UTF-8这些词汇，但可能还是不清楚其中的具体含义。当然一开始我也是粗略认识，所以自己决定重新深入学习一下，并且总结如下。 才疏学浅，多多指教！！！">
@@ -405,7 +405,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  3,400
+                  3,399
                 </span>
               
 
@@ -485,7 +485,7 @@
 <p>三字节表示对应Unicode码点0x0800-0xFFFF的字符，有效位为16位，可以容纳65536种字符，我们常用的中文字符也都落在三字节部分。因此UTF-8是以三个字节来表示常用汉字字符的，当然实际上汉字有将近十万个，65536无法容纳如此庞大的汉字体系，因此有些冷门汉字只能用四字节表示了。我们知道Unicode将人们常用的字符都放在BMP平面（U+0000-U+FFFF），而至此，UTF-8已经用1-3个字节表示了BMP平面的全部内容。</p>
 <p>例1：“汉”字的Unicode编码是0x6C49。0x6C49在0x0800-0xFFFF之间，使用用3字节模板了：1110xxxx 10xxxxxx 10xxxxxx。将0x6C49写成二进制是：0110 1100 0100 1001， 用这个比特流依次代替模板中的x，得到：11100110 10110001 10001001，即E6 B1 89。</p>
 <h4 id="UTF-16"><a href="#UTF-16" class="headerlink" title="UTF-16"></a>UTF-16</h4><p>UTF-16是以二字节或四字节表示一个字符的变长编码。Unicode在BMP平面的字符（U+0000~U+FFFF）用二字节来编码，其余字符用四字节来编码。对于二字节编码部分直接用码点值来编码，四字节编码部分的转换规则这里不再详述。我们只需记住常用的中英文字符在UTF-16中使用二字节表示即可。</p>
-<h3 id="乱码"><a href="#乱码" class="headerlink" title="乱码"></a>乱码</h3><p>编码方式不兼容会导致乱码。例如，编码A和编码B采用不同方式来编码，当一个文件使用编码A在只有编码B的设备上解码时候，肯定是乱码，因为不识别啊。打个比方，抗张谍报的密码本，每次传递情报需要使用不同的密码本来解密，但是你用错了，当然翻译的内容是错乱的，读起来肯定不通顺。</p>
+<h3 id="乱码"><a href="#乱码" class="headerlink" title="乱码"></a>乱码</h3><p>编码方式不兼容会导致乱码。例如，编码A和编码B采用不同方式来编码，当一个文件使用编码A在只有编码B的设备上解码时候，肯定是乱码，因为不识别啊。打个比方，战争中谍报的密码本，每次传递情报需要使用不的密码本来解密，但是你用错了，当然翻译的内容是错的，读起来肯定不通顺。</p>
 <p><strong>文笔有限，才疏学浅，文中若有不对之处，还望告知。</strong></p>
 <blockquote>
 <p>参考链接</p>
