@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[常见排序算法]]></title>
+    <url>%2F2017%2F07%2F05%2F%E5%B8%B8%E8%A7%81%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[4-合并排序算法思路 基本思路是化整为零，将数组拆分为n个单个元素的数组，然后不断两两合并，直到排序完成。 以对数组[3,2,5,1,4] 进行从小到大排序为例，步骤如下： 拆分为[3,2] 和 [5,1,4] [3,2]拆分为[3] 、[2],然后合并为[2,3] 将[5,1,4]拆分为[5]和[1,4] [1,4]拆分为[1]和[4],然后合并为[1,4] 在将[1,4]和[5]合并起来为[1,4,5] 最后合并[2,3]和[1,4,5]，返回结果[1,2,3,4,5] 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960/** 合并两个已排序数组，这是关键代码* merge函数将2个已排序的数组进行合并，首先2个数组的第一个元素进行对比，较小的添加到result里，然后较大的元素和另外一个数组的第二个元素继续比较，同时把较小值添加到result，如此循环，直到其中一个数组长度为0,同时result合并截取后的2个数组。*/function merge(left, right)&#123; var result = [], il = 0, ir = 0; while (il &lt; left.length &amp;&amp; ir &lt; right.length)&#123; if (left[il] &lt; right[ir])&#123; result.push(left[il++]); &#125; else &#123; result.push(right[ir++]); &#125; &#125; return result.concat(left.slice(il)).concat(right.slice(ir));&#125;/**mergeSort不断拆分均分数组，直到数组长度为1或0，然后利用merge不断合并**/function mergeSort(myArray) &#123; if(myArray.length &lt; 2)&#123; return myArray; &#125; var middle = Math.floor(myArray.length / 2), left = myArray.slice(0,middle), right = myArray.slice(middle), params = merge(mergeSort(left),mergeSort(right)); //返回的数组头部加2个参数，0 和数组长度 params.unshift(0,params.length); /** * splice的参数无法直接使用数组，所以使用apply， * 第一个参数是开始的位置，第二参数删除元素的个数， 其余参数为需要添加进数组的元素 这样做的原因是避免产生新数组，占用多余空间，直接在原数组修改 * * */ myArray.splice.apply(myArray,params); return myArray;&#125;]]></content>
+      <categories>
+        <category>算法</category>
+        <category>计算机基础</category>
+      </categories>
+      <tags>
+        <tag>计算机基础</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[2017IFE-使用CSS实现折叠面板]]></title>
     <url>%2F2017%2F06%2F06%2F2017IFE-%E4%BD%BF%E7%94%A8CSS%E5%AE%9E%E7%8E%B0%E6%8A%98%E5%8F%A0%E9%9D%A2%E6%9D%BF%2F</url>
     <content type="text"><![CDATA[前言2017-百度前端技术学院编码任务：使用CSS实现折叠面板 任务目的 深入理解html中radio的特性 深入理解CSS选择器以及伪元素的使用 任务描述 使用input的radio单选框特性结合CSS中的伪元素实现bootstrap中折叠面板(点击查看样例)，要求样式一致。 DEMO 项目地址 实现 思路就是利用input[type=radio]所具有的单选特性,然后利用伪类或者伪元素来显示或者隐藏。 html中radio的特性label它通常关联一个控件，或者是将控件放置在label元素内，或者是用作其属性。 我这里是利用属性for来关联控件，而input[type=radio]就是单选按钮，这样我们就可以控制显示和隐藏的效果。 1234&lt;label for="headingOne" class="panel"&gt;Collapsible Group Item #1&lt;/label&gt;&lt;input type="radio" id="headingOne" name="Collapsible" checked="checked" &gt;&lt;div class="Accordion-box__content"&gt;Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson 。。。&lt;/div&gt; CSS选择器以及伪元素的使用这里我没有使用伪元素去实现，假如每个内容是不一样的，通过元素来设置可以更好的自定义。 兄弟选择器(+ 和 ~) a+b 元素a下一个兄弟元素b a-b 元素a后面拥有共同父元素的兄弟元素b 1234567.Accordion-box input[type=radio]:checked + div &#123; padding: 15px; opacity: 1; height: auto; border-top: 1px solid #ddd; &#125; 参考链接 label 相邻兄弟选择器]]></content>

@@ -229,6 +229,16 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
 
       
         <li class="menu-item menu-item-search">
@@ -282,6 +292,215 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/05/常见排序算法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JACK">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="石头">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/05/常见排序算法/" itemprop="url">
+                  常见排序算法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-05T20:10:00+08:00">
+                2017-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/计算机基础/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/07/05/常见排序算法/" class="leancloud_visitors" data-flag-title="常见排序算法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  490
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="4-合并排序"><a href="#4-合并排序" class="headerlink" title="4-合并排序"></a>4-合并排序</h1><h2 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h2><blockquote>
+<p>基本思路是化整为零，将数组拆分为n个单个元素的数组，然后不断两两合并，直到排序完成。</p>
+</blockquote>
+<p>以对数组[3,2,5,1,4] 进行从小到大排序为例，步骤如下：</p>
+<blockquote>
+<ol>
+<li>拆分为[3,2] 和 [5,1,4]</li>
+<li>[3,2]拆分为[3] 、[2],然后合并为[2,3]</li>
+<li>将[5,1,4]拆分为[5]和[1,4]</li>
+<li>[1,4]拆分为[1]和[4],然后合并为[1,4]</li>
+<li>在将[1,4]和[5]合并起来为[1,4,5]</li>
+<li>最后合并[2,3]和[1,4,5]，返回结果[1,2,3,4,5]</li>
+</ol>
+</blockquote>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line">* 合并两个已排序数组，这是关键代码</div><div class="line">* merge函数将2个已排序的数组进行合并，首先2个数组的第一个元素进行对比，</div><div class="line">较小的添加到result里，然后较大的元素和另外一个数组的第二个元素继续比较，</div><div class="line">同时把较小值添加到result，如此循环，直到其中一个数组长度为0,同时result合并截取后的2个数组。</div><div class="line">*/</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">merge</span>(<span class="params">left, right</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> result  = [],</div><div class="line">        il      = <span class="number">0</span>,</div><div class="line">        ir      = <span class="number">0</span>;</div><div class="line"></div><div class="line">    <span class="keyword">while</span> (il &lt; left.length &amp;&amp; ir &lt; right.length)&#123;</div><div class="line">        <span class="keyword">if</span> (left[il] &lt; right[ir])&#123;</div><div class="line">            result.push(left[il++]);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            result.push(right[ir++]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> result.concat(left.slice(il)).concat(right.slice(ir));</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line">mergeSort不断拆分均分数组，直到数组长度为1或0，然后利用merge不断合并</div><div class="line"></div><div class="line"></div><div class="line">**/</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mergeSort</span>(<span class="params">myArray</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(myArray.length &lt; <span class="number">2</span>)&#123;</div><div class="line">        <span class="keyword">return</span> myArray;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">var</span> middle = <span class="built_in">Math</span>.floor(myArray.length / <span class="number">2</span>),</div><div class="line">        left = myArray.slice(<span class="number">0</span>,middle),</div><div class="line">        right = myArray.slice(middle),</div><div class="line">        params = merge(mergeSort(left),mergeSort(right));</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">//返回的数组头部加2个参数，0 和数组长度</span></div><div class="line">    params.unshift(<span class="number">0</span>,params.length);</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * splice的参数无法直接使用数组，所以使用apply，</div><div class="line">     * 第一个参数是开始的位置，第二参数删除元素的个数，</div><div class="line">     其余参数为需要添加进数组的元素</div><div class="line"></div><div class="line">     这样做的原因是避免产生新数组，占用多余空间，直接在原数组修改</div><div class="line">     *</div><div class="line">     * */</div><div class="line">    myArray.splice.apply(myArray,params);</div><div class="line"></div><div class="line"></div><div class="line">    <span class="keyword">return</span> myArray;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -2059,194 +2278,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/14/开发者关系大会的思考/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="JACK">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="石头">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/05/14/开发者关系大会的思考/" itemprop="url">
-                  开发者关系大会的思考
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-14T15:55:40+08:00">
-                2017-05-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/杂文/" itemprop="url" rel="index">
-                    <span itemprop="name">杂文</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/05/14/开发者关系大会的思考/" class="leancloud_visitors" data-flag-title="开发者关系大会的思考">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  1,247
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长</span>
-                
-                <span title="阅读时长">
-                  4
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="http://i4.buimg.com/1949/81dec4c554fb0909.jpg" alt="中国开发者关系大会-logo"></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/05/14/开发者关系大会的思考/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2296,7 +2327,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/index.html">
-                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-count">27</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2307,7 +2338,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -2318,7 +2349,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -2346,6 +2377,15 @@
                     <i class="fa fa-fw fa-dot-circle-o"></i>
                   
                   简书
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://juejin.im/user/5852128f8d6d8100658f9d41" target="_blank" title="掘进">
+                  
+                    <i class="fa fa-fw fa-gg"></i>
+                  
+                  掘进
                 </a>
               </span>
             
@@ -2379,7 +2419,7 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
+  &copy;  2016 - 
   <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
