@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[常见排序算法]]></title>
     <url>%2F2017%2F07%2F05%2F%E5%B8%B8%E8%A7%81%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%2F</url>
-    <content type="text"><![CDATA[4-合并排序算法思路 基本思路是化整为零，将数组拆分为n个单个元素的数组，然后不断两两合并，直到排序完成。 以对数组[3,2,5,1,4] 进行从小到大排序为例，步骤如下： 拆分为[3,2] 和 [5,1,4] [3,2]拆分为[3] 、[2],然后合并为[2,3] 将[5,1,4]拆分为[5]和[1,4] [1,4]拆分为[1]和[4],然后合并为[1,4] 在将[1,4]和[5]合并起来为[1,4,5] 最后合并[2,3]和[1,4,5]，返回结果[1,2,3,4,5] 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960/** 合并两个已排序数组，这是关键代码* merge函数将2个已排序的数组进行合并，首先2个数组的第一个元素进行对比，较小的添加到result里，然后较大的元素和另外一个数组的第二个元素继续比较，同时把较小值添加到result，如此循环，直到其中一个数组长度为0,同时result合并截取后的2个数组。*/function merge(left, right)&#123; var result = [], il = 0, ir = 0; while (il &lt; left.length &amp;&amp; ir &lt; right.length)&#123; if (left[il] &lt; right[ir])&#123; result.push(left[il++]); &#125; else &#123; result.push(right[ir++]); &#125; &#125; return result.concat(left.slice(il)).concat(right.slice(ir));&#125;/**mergeSort不断拆分均分数组，直到数组长度为1或0，然后利用merge不断合并**/function mergeSort(myArray) &#123; if(myArray.length &lt; 2)&#123; return myArray; &#125; var middle = Math.floor(myArray.length / 2), left = myArray.slice(0,middle), right = myArray.slice(middle), params = merge(mergeSort(left),mergeSort(right)); //返回的数组头部加2个参数，0 和数组长度 params.unshift(0,params.length); /** * splice的参数无法直接使用数组，所以使用apply， * 第一个参数是开始的位置，第二参数删除元素的个数， 其余参数为需要添加进数组的元素 这样做的原因是避免产生新数组，占用多余空间，直接在原数组修改 * * */ myArray.splice.apply(myArray,params); return myArray;&#125;]]></content>
+    <content type="text"><![CDATA[最近看到一篇介绍排序算法的文章，自己在此学习总结一下。 1-冒泡排序算法思路 依次比较相邻2个数的大小，如果不符合要求则交换。这样第一轮循环结束，最大值或最小值排在数组最后一位。剩下的数值重复以上步骤，直到排序结束。 以对数组[3,2,5,1,4] 进行从小到大排序为例，步骤如下： 3和2比较，3大于2。交换位置，数组为[2,3,5,1,4] 3和5比较，3小于5。不交换位置，数组不变。 5和1比较，5大于1。交换位置，数组为[2,3,1,5,4] 5和4比较，5大于4。交换位置，数组为[2,3,1,4,5] 这样第一轮循环结束，最大值5排在数组最后一位。然后再对剩下的数值重复这个过程，这样下来每次循环都会排到一个正确的数值。直至剩下最后一个位置，所有排序结束。 代码实现1234567891011121314151617181920212223//交互数值函数function swap(myArray, p1, p2)&#123; var temp = myArray[p1]; myArray[p1] = myArray[p2]; myArray[p2] = temp;&#125;//冒泡排序function bubbleSort(myArray) &#123; var len = myArray.length, stop = 0; for(let i = 0; i &lt; len - 1; i++)&#123; for(let j = 0,stop = len - 1 - i; j &lt; stop; j++)&#123; if(myArray[j] &gt; myArray[j+1])&#123; swap(myArray, j, j + 1); &#125; &#125; &#125; return myArray;&#125; 2-选择排序算法思路 选择排序与冒泡类似，也是相邻位2个数比较大小。不同的是当不符合要求时，不是立马交换位置，而是给当前数值标记来表明最小或最大值，并且当前的最小或最大值依次比较数组里的数值。等一轮结束，找出最小或最大值再交换位置，其余位置不变。剩余数值重复以上步骤，直到排序结束。 以对数组[3,2,5,1,4] 进行从小到大排序为例，步骤如下： 假设第一个位置的3为最小值。 最小值3和2比较，3大于2。那么2标记为最小值。 最小值2和5比较，2小于5。最小值标记不变。 最小值2和1比较，2小于1。那么1为最小值。 最小值1和4比较，1小于4。最小值标记不变。 一轮结束后，第一位置的3和第四位置的1交换位置，数组为[1,2,5,3,4] 第一轮结束后，最小值1排到正确位置。剩下数值重复上述步骤，直到排序结束。 代码实现1234567891011121314151617181920212223242526//选择排序function selectionSort(myArray) &#123; let len = myArray.length; for(let i = 0; i &lt; len; i++)&#123; //假设当前位置为最小值 let min = i; //遍历剩下数字是否为最小 for(let j = i + 1; j &lt; len; j++)&#123; if(myArray[j] &lt; myArray[min])&#123; min = j; &#125; &#125; //如果当前位置不是最小值，替换最小值 if(i !== min)&#123; swap(myArray,i,min); &#125; &#125; return myArray;&#125; 3-插入排序算法思路 将数组分为两部分，一个是已排序，一个是未排序。最开始已排序只有一个数值，然后将已排序最后一个元素后面的元素从未排序里取出，插入到已排序里并且进行排序。这样”已排序“增加一个，未排序减少一个。重复以上步骤，直到排序结束。 以对数组[3,2,5,1,4] 进行从小到大排序为例，步骤如下： 数组[3,2,5,1,4]分为已排序为[3]和未排序为[2,5,1,4] 已排序最后一个元素是3，未排序第一个元素是2，2小于3。那么已排序为[2,3]，未排序为[5,1,4] 已排序最后一个元素是3，未排序第一个元素是5，5大于3。那么已排序为[2,3,5]，未排序为[1,4] 已排序最后一个元素是5，未排序第一个元素是1，1小于5。继续比较已排序的前一个元素3，1小于3，继续比较已排序的前一个元素2，1小于2，所以1为第一位元素，那么已排序为[1,2,3,5]，未排序为[4] 已排序最后一个元素是5，未排序第一个元素是4，4小于5。继续比较已排序的前一个元素3，4大于3。因为4是未排序里最后一个元素，所以排序结束，结果为[1,2,3,4,5] 代码实现12345678910111213141516171819202122232425//插入排序function insertionSort(myArray) &#123; let len = myArray.length, value = 0; //需要比较的当前值 for(let i = 0; i &lt; len; i++)&#123; //i 为未排序的当前位置 //负责当前比较的值 value = myArray[i]; /** * 已排序的当当前值大于比较值 * 已排序后移一位再次比较value * **/ for(var j = i - 1; j &gt; -1 &amp;&amp; myArray[j] &gt; value; j--)&#123; //j 为已排序的当前位置 myArray[j+1] = myArray[j]; &#125; myArray[j+1] = value; &#125; return myArray;&#125; 4-合并排序算法思路 基本思路是化整为零，将数组拆分为n个单个元素的数组，然后不断两两合并，直到排序完成。 以对数组[3,2,5,1,4] 进行从小到大排序为例，步骤如下： 拆分为[3,2] 和 [5,1,4] [3,2]拆分为[3] 、[2],然后合并为[2,3] 将[5,1,4]拆分为[5]和[1,4] [1,4]拆分为[1]和[4],然后合并为[1,4] 在将[1,4]和[5]合并起来为[1,4,5] 最后合并[2,3]和[1,4,5]，返回结果[1,2,3,4,5] 代码实现1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859/** 合并两个已排序数组，这是关键代码* merge函数将2个已排序的数组进行合并，首先2个数组的第一个元素进行对比，较小的添加到result里，然后较大的元素和另外一个数组的第二个元素继续比较，同时把较小值添加到result，如此循环，直到其中一个数组长度为0,同时result合并截取后的2个数组。*/function merge(left, right)&#123; var result = [], il = 0, ir = 0; while (il &lt; left.length &amp;&amp; ir &lt; right.length)&#123; if (left[il] &lt; right[ir])&#123; result.push(left[il++]); &#125; else &#123; result.push(right[ir++]); &#125; &#125; return result.concat(left.slice(il)).concat(right.slice(ir));&#125;/**mergeSort不断拆分均分数组，直到数组长度为1或0，然后利用merge不断合并**/function mergeSort(myArray) &#123; if(myArray.length &lt; 2)&#123; return myArray; &#125; var middle = Math.floor(myArray.length / 2), left = myArray.slice(0,middle), right = myArray.slice(middle), params = merge(mergeSort(left),mergeSort(right)); //返回的数组头部加2个参数，0 和数组长度 params.unshift(0,params.length); /** * splice的参数无法直接使用数组，所以使用apply， * 第一个参数是开始的位置，第二参数删除元素的个数， 其余参数为需要添加进数组的元素 这样做的原因是避免产生新数组，占用多余空间，直接在原数组修改 * * */ myArray.splice.apply(myArray,params); return myArray;&#125; 5-快速排序算法思路代码实现 参考链接 排序算法]]></content>
       <categories>
         <category>算法</category>
         <category>计算机基础</category>
@@ -48,8 +48,8 @@
         <category>杂文</category>
       </categories>
       <tags>
-        <tag>杂文</tag>
         <tag>随笔</tag>
+        <tag>杂文</tag>
       </tags>
   </entry>
   <entry>
@@ -98,8 +98,8 @@
         <category>杂文</category>
       </categories>
       <tags>
-        <tag>杂文</tag>
         <tag>随笔</tag>
+        <tag>杂文</tag>
       </tags>
   </entry>
   <entry>
@@ -122,8 +122,8 @@
         <category>杂文</category>
       </categories>
       <tags>
-        <tag>杂文</tag>
         <tag>随笔</tag>
+        <tag>杂文</tag>
       </tags>
   </entry>
   <entry>
