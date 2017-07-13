@@ -92,10 +92,12 @@
 <meta property="og:url" content="http://yoursite.com/2017/07/05/常见排序算法/index.html">
 <meta property="og:site_name" content="石头">
 <meta property="og:description" content="最近看到一篇介绍排序算法的文章，自己在此学习总结一下。">
-<meta property="og:updated_time" content="2017-07-11T17:17:50.000Z">
+<meta property="og:image" content="http://i1.buimg.com/1949/13ccdbf4073e917a.gif">
+<meta property="og:updated_time" content="2017-07-13T04:22:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常见排序算法">
 <meta name="twitter:description" content="最近看到一篇介绍排序算法的文章，自己在此学习总结一下。">
+<meta name="twitter:image" content="http://i1.buimg.com/1949/13ccdbf4073e917a.gif">
 
 
 
@@ -423,7 +425,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,736
+                  2,328
                 </span>
               
 
@@ -439,7 +441,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  7
+                  9
                 </span>
               
             </div>
@@ -459,6 +461,7 @@
 
       
         <p>最近看到一篇介绍排序算法的文章，自己在此学习总结一下。</p>
+<p><img src="http://i1.buimg.com/1949/13ccdbf4073e917a.gif" alt=""></p>
 <a id="more"></a>
 <hr>
 <h3 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1-冒泡排序"></a>1-冒泡排序</h3><h4 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h4><blockquote>
@@ -516,7 +519,33 @@
 </ol>
 <h4 id="代码实现-3"><a href="#代码实现-3" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line">* 合并两个已排序数组，这是关键代码</div><div class="line">* merge函数将2个已排序的数组进行合并，首先2个数组的第一个元素进行对比，</div><div class="line">较小的添加到result里，然后较大的元素和另外一个数组的第二个元素继续比较，</div><div class="line">同时把较小值添加到result，如此循环，直到其中一个数组长度为0,同时result合并截取后的2个数组。</div><div class="line">*/</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">merge</span>(<span class="params">left, right</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> result  = [],</div><div class="line">        il      = <span class="number">0</span>,</div><div class="line">        ir      = <span class="number">0</span>;</div><div class="line"></div><div class="line">    <span class="keyword">while</span> (il &lt; left.length &amp;&amp; ir &lt; right.length)&#123;</div><div class="line">        <span class="keyword">if</span> (left[il] &lt; right[ir])&#123;</div><div class="line">            result.push(left[il++]);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            result.push(right[ir++]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> result.concat(left.slice(il)).concat(right.slice(ir));</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line">mergeSort不断拆分均分数组，直到数组长度为1或0，然后利用merge不断合并</div><div class="line"></div><div class="line"></div><div class="line">**/</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mergeSort</span>(<span class="params">myArray</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(myArray.length &lt; <span class="number">2</span>)&#123;</div><div class="line">        <span class="keyword">return</span> myArray;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">var</span> middle = <span class="built_in">Math</span>.floor(myArray.length / <span class="number">2</span>),</div><div class="line">        left = myArray.slice(<span class="number">0</span>,middle),</div><div class="line">        right = myArray.slice(middle),</div><div class="line">        params = merge(mergeSort(left),mergeSort(right));</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">//返回的数组头部加2个参数，0 和数组长度</span></div><div class="line">    params.unshift(<span class="number">0</span>,params.length);</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * splice的参数无法直接使用数组，所以使用apply，</div><div class="line">     * 第一个参数是开始的位置，第二参数删除元素的个数，</div><div class="line">     其余参数为需要添加进数组的元素</div><div class="line"></div><div class="line">     这样做的原因是避免产生新数组，占用多余空间，直接在原数组修改</div><div class="line">     *</div><div class="line">     * */</div><div class="line">    myArray.splice.apply(myArray,params);</div><div class="line"></div><div class="line"></div><div class="line">    <span class="keyword">return</span> myArray;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <hr>
-<h3 id="5-快速排序"><a href="#5-快速排序" class="headerlink" title="5-快速排序"></a>5-快速排序</h3><h4 id="算法思路-4"><a href="#算法思路-4" class="headerlink" title="算法思路"></a>算法思路</h4><h4 id="代码实现-4"><a href="#代码实现-4" class="headerlink" title="代码实现"></a>代码实现</h4><hr>
+<h3 id="5-快速排序"><a href="#5-快速排序" class="headerlink" title="5-快速排序"></a>5-快速排序</h3><h4 id="算法思路-4"><a href="#算法思路-4" class="headerlink" title="算法思路"></a>算法思路</h4><blockquote>
+<p>先确认一个支点，所以小于支点的数值放到该点的左侧，大于支点的数值放到该点的右侧，然后对左右两侧重复上述操作，直到排序结束。</p>
+</blockquote>
+<p>具体做法是：</p>
+<blockquote>
+<ol>
+<li>先确认支点，一般取数组中间值。</li>
+<li>建立数组两端的指针，左侧指针指向数组第一个元素，右侧指针指向数组最后一个元素。</li>
+<li>左侧指针指向元素值依次与支点比较大小，如果小于支点指针则向后移动，否则指针停止原地。</li>
+<li>右侧指针指向元素值依次与支点比较大小，如果大于支点指针则向前移动，否则指针停止原地。</li>
+<li>左右两侧指针的下标比较，如果左侧小于右侧则交换数值，而大于则本轮排序结束。</li>
+<li>重复以上步骤，排序结束。</li>
+</ol>
+</blockquote>
+<p>以对数组[3,2,5,1,4] 进行从小到大排序为例，步骤如下：</p>
+<ol>
+<li>先确认支点，我们这里取中间值5。</li>
+<li>左侧指针指向数组第一个元素3，3小于5，指针向后移动一位，2小于5，指针向后移动一位，5等于5，指针停止移动。</li>
+<li>右侧指针指向数组最后一个元素4，4小于5，指针停止移动。</li>
+<li>左侧指针下标为2，右侧指针下标为4，所以交换数值，交换后数组为[3，2，4，1，5]</li>
+<li>左侧指针继续向后移动一位，1小于5，指针向后移动一位，5等于5，指针停止移动。</li>
+<li>右侧指针向前移动一位，1是小于5，指针停止移动。</li>
+<li>左右指针下标比较，左指针是4，右指针是3，左侧大于右侧，本轮排序结束。</li>
+<li>[3,2,4,1]和[5],分别继续以上步骤，直到排序结束。</li>
+</ol>
+<h4 id="代码实现-4"><a href="#代码实现-4" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//快速排序</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">partition</span>(<span class="params">myArray, left, right</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> pivot = myArray[<span class="built_in">Math</span>.floor((left + right) / <span class="number">2</span>)],</div><div class="line">        i = left,     <span class="comment">//左侧下标</span></div><div class="line">        j = right;    <span class="comment">//右侧下标</span></div><div class="line"></div><div class="line">    <span class="keyword">while</span> (i &lt;= j)&#123;</div><div class="line"></div><div class="line">        <span class="keyword">while</span> (myArray[i] &lt; pivot)&#123;</div><div class="line">            i++;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">while</span>(myArray[j] &gt; pivot)&#123;</div><div class="line">            j--;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">if</span>(i &lt;= j)&#123;</div><div class="line">            swap(myArray,i,j);</div><div class="line">            i++;</div><div class="line">            j--;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> i;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span>(<span class="params">myArray, left, right</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(myArray.length &lt; <span class="number">2</span>)&#123; <span class="keyword">return</span> myArray;&#125;</div><div class="line"></div><div class="line">    left = (<span class="keyword">typeof</span> left !== <span class="string">'number'</span> ? <span class="number">0</span> : left);</div><div class="line">    right = (<span class="keyword">typeof</span> right !== <span class="string">'number'</span> ? myArray.length - <span class="number">1</span> : right);</div><div class="line"></div><div class="line">    <span class="keyword">var</span> index = partition(myArray, left, right);</div><div class="line"></div><div class="line">    <span class="comment">//递归</span></div><div class="line">    <span class="keyword">if</span>(left &lt; index <span class="number">-1</span>)&#123;</div><div class="line">        quickSort(myArray,left,index - <span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(index &lt; right)&#123;</div><div class="line">        quickSort(myArray,index,right);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> myArray;</div><div class="line"></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
 <blockquote>
 <p>参考链接</p>
 </blockquote>
