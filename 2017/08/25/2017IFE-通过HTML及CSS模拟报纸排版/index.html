@@ -1,0 +1,1236 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="IFE,前端," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="前言2017-百度前端技术学院编码任务：通过HTML及CSS模拟报纸排版 任务目的 深入掌握CSS中的字体、背景、颜色等属性的设置 进一步练习CSS布局  任务描述 参考 PDS设计稿（点击下载），实现页面开发，要求实现效果与 样例（点击查看） 基本一致 页面中的各字体大小，内外边距等可参看 标注图（点击查看） 页面宽度固定（定宽）  实现DEMO 项目地址  字体 font简写字体属性 1/*">
+<meta name="keywords" content="IFE,前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2017IFE-通过HTML及CSS模拟报纸排版">
+<meta property="og:url" content="http://yoursite.com/2017/08/25/2017IFE-通过HTML及CSS模拟报纸排版/index.html">
+<meta property="og:site_name" content="石头">
+<meta property="og:description" content="前言2017-百度前端技术学院编码任务：通过HTML及CSS模拟报纸排版 任务目的 深入掌握CSS中的字体、背景、颜色等属性的设置 进一步练习CSS布局  任务描述 参考 PDS设计稿（点击下载），实现页面开发，要求实现效果与 样例（点击查看） 基本一致 页面中的各字体大小，内外边距等可参看 标注图（点击查看） 页面宽度固定（定宽）  实现DEMO 项目地址  字体 font简写字体属性 1/*">
+<meta property="og:updated_time" content="2017-08-25T15:48:09.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2017IFE-通过HTML及CSS模拟报纸排版">
+<meta name="twitter:description" content="前言2017-百度前端技术学院编码任务：通过HTML及CSS模拟报纸排版 任务目的 深入掌握CSS中的字体、背景、颜色等属性的设置 进一步练习CSS布局  任务描述 参考 PDS设计稿（点击下载），实现页面开发，要求实现效果与 样例（点击查看） 基本一致 页面中的各字体大小，内外边距等可参看 标注图（点击查看） 页面宽度固定（定宽）  实现DEMO 项目地址  字体 font简写字体属性 1/*">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/08/25/2017IFE-通过HTML及CSS模拟报纸排版/"/>
+
+
+
+
+
+  <title> 2017IFE-通过HTML及CSS模拟报纸排版 | 石头 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">石头</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/index.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/index.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/index.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/25/2017IFE-通过HTML及CSS模拟报纸排版/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JACK">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="石头">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                2017IFE-通过HTML及CSS模拟报纸排版
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-25T23:43:48+08:00">
+                2017-08-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IFE/" itemprop="url" rel="index">
+                    <span itemprop="name">IFE</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IFE/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2017/08/25/2017IFE-通过HTML及CSS模拟报纸排版/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/08/25/2017IFE-通过HTML及CSS模拟报纸排版/" class="leancloud_visitors" data-flag-title="2017IFE-通过HTML及CSS模拟报纸排版">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  1,801
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>2017-百度前端技术学院编码任务：<strong>通过HTML及CSS模拟报纸排版</strong></p>
+<h3 id="任务目的"><a href="#任务目的" class="headerlink" title="任务目的"></a>任务目的</h3><ul>
+<li>深入掌握CSS中的字体、背景、颜色等属性的设置</li>
+<li>进一步练习CSS布局</li>
+</ul>
+<h3 id="任务描述"><a href="#任务描述" class="headerlink" title="任务描述"></a>任务描述</h3><ul>
+<li>参考 <a href="http://7xrp04.com1.z0.glb.clouddn.com/task_1_6_1.psd" target="_blank" rel="external">PDS设计稿（点击下载）</a>，实现页面开发，要求实现效果与 <a href="http://7xrp04.com1.z0.glb.clouddn.com/task_1_6_2.jpg" target="_blank" rel="external">样例（点击查看）</a> 基本一致</li>
+<li>页面中的各字体大小，内外边距等可参看 <a href="http://7xrp04.com1.z0.glb.clouddn.com/task_1_6_3.jpg" target="_blank" rel="external">标注图（点击查看）</a></li>
+<li>页面宽度固定（定宽）</li>
+</ul>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p><a href="http://chunge2016.online/IFE-Task-2017/HTML-CSS/task-06/" target="_blank" rel="external">DEMO</a></p>
+<p><a href="https://github.com/chunge16/IFE-Task-2017/tree/master/HTML-CSS/task-06" target="_blank" rel="external">项目地址</a></p>
+<hr>
+<h4 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h4><ul>
+<li><p><a href="http://www.w3school.com.cn/cssref/pr_font_font.asp" target="_blank" rel="external">font</a><br>简写字体属性</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* font简写声明顺序：style | variant | weight | size/line-height | family */</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/font-style" target="_blank" rel="external">font-style</a><br>定义字体风格</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">.normal &#123;</div><div class="line">  font-style: normal; //选择 font-family常规字体</div><div class="line">&#125;</div><div class="line">.italic &#123;</div><div class="line">  font-style: italic; //选择斜体，如果当前字体没有可用的斜体版本，会选用倾斜体（oblique ）替代</div><div class="line">&#125;</div><div class="line">.oblique &#123;</div><div class="line">  font-style: oblique; //选择倾斜体，如果当前字体没有可用的倾斜体版本，会选用斜体（ italic ）替代</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="http://www.w3school.com.cn/cssref/pr_font_font-variant.asp" target="_blank" rel="external">font-variant</a><br>定义小型大写字母的字体</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">p.small</div><div class="line">  &#123;</div><div class="line">  font-variant:small-caps; //设置为小型大写字母的字体</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="http://www.w3school.com.cn/cssref/pr_font_weight.asp" target="_blank" rel="external">font-weight</a><br>定义字体的粗细</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">/* normal	默认值。定义标准的字符。</div><div class="line">bold	定义粗体字符。</div><div class="line">bolder	定义更粗的字符。</div><div class="line">lighter	定义更细的字符。</div><div class="line">100</div><div class="line">200</div><div class="line">300</div><div class="line">400</div><div class="line">500</div><div class="line">600</div><div class="line">700</div><div class="line">800</div><div class="line">900</div><div class="line">定义由粗到细的字符。400 等同于 normal，而 700 等同于 bold。</div><div class="line">*/</div><div class="line">p.normal &#123;font-weight:normal;&#125; //默认正常</div><div class="line">p.thick &#123;font-weight:bold;&#125;         //字体为粗体</div><div class="line">p.thicker &#123;font-weight:900;&#125;      //可设置数字，由小到大设置粗细</div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="http://www.w3school.com.cn/cssref/pr_font_font-size.asp" target="_blank" rel="external">font-size</a><br>定义字体的尺寸</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">smaller	把 font-size 设置为比父元素更小的尺寸。</div><div class="line">larger	把 font-size 设置为比父元素更大的尺寸。</div><div class="line">length	把 font-size 设置为一个固定的值。</div><div class="line">%	把 font-size 设置为基于父元素的一个百分比值。</div><div class="line">*/</div><div class="line"><span class="selector-tag">h1</span> &#123;<span class="attribute">font-size</span>:<span class="number">18px</span>;&#125;</div><div class="line"><span class="selector-tag">h2</span> &#123;<span class="attribute">font-size</span>: smaller;&#125;</div><div class="line"><span class="selector-tag">p</span> &#123;<span class="attribute">font-size</span>: larger;&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="http://www.w3school.com.cn/cssref/pr_font_font-family.asp" target="_blank" rel="external">font-family</a><br>定义元素的字体系列</p>
+<blockquote>
+<p>浏览器会使用识别的第一个字体系列，如果没有就使用浏览器默认字体</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*amily-name</span></div><div class="line">generic-family</div><div class="line">用于某个元素的字体族名称或/及类族名称的一个优先表。</div><div class="line">默认值：取决于浏览器。*/</div><div class="line"></div><div class="line"><span class="selector-tag">p</span></div><div class="line">  &#123;</div><div class="line">  <span class="attribute">font-family</span>:<span class="string">"Times New Roman"</span>,Georgia,Serif;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><ul>
+<li><p><a href="http://www.w3school.com.cn/cssref/pr_background.asp" target="_blank" rel="external">background</a><br>简写背景属性</p>
+<blockquote>
+<p> <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-size" target="_blank" rel="external">background-size
+</a> 这个属性的定义必须在 <strong><position> 之后</position></strong>, 并使用 ‘/‘ 符号分隔</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">background-color</div><div class="line">background-position/background-size</div><div class="line">background-repeat</div><div class="line">background-origin</div><div class="line">background-clip</div><div class="line">background-attachment</div><div class="line">background-image</div><div class="line"></div><div class="line">body</div><div class="line">  &#123;</div><div class="line">  background: #00FF00 url(bgimage.gif) no-repeat fixed top;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p><em><a href="http://www.w3school.com.cn/cssref/pr_background-color.asp" target="_blank" rel="external">background-color</a></em><br>设置背景颜色</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">color_name	规定颜色值为颜色名称的背景颜色（比如 red）。</div><div class="line">hex_number	规定颜色值为十六进制值的背景颜色（比如 #ff0000）。</div><div class="line">rgb_number	规定颜色值为 rgb 代码的背景颜色（比如 rgb(255,0,0)）。</div><div class="line">transparent	默认。背景颜色为透明。</div><div class="line">**/</div><div class="line"><span class="selector-tag">body</span></div><div class="line">  &#123;</div><div class="line">  <span class="attribute">background-color</span>:yellow;</div><div class="line">  &#125;</div><div class="line"><span class="selector-tag">h1</span></div><div class="line">  &#123;</div><div class="line">  <span class="attribute">background-color</span>:<span class="number">#00ff00</span>;</div><div class="line">  &#125;</div><div class="line"><span class="selector-tag">p</span></div><div class="line">  &#123;</div><div class="line">  <span class="attribute">background-color</span>:<span class="built_in">rgb</span>(255,0,255);</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="http://www.w3school.com.cn/cssref/pr_background-position.asp" target="_blank" rel="external">background-position</a><br>设置元素背景图片的位置</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> 默认左上角</div><div class="line"><span class="selector-tag">-</span> 关键词：<span class="selector-tag">left</span>,<span class="selector-tag">top</span></div><div class="line"><span class="selector-tag">-</span> 百分比：25%，50%，如果只设置一个值，另外自动为50%</div><div class="line"><span class="selector-tag">-</span> 像素：24<span class="selector-tag">px</span>,40<span class="selector-tag">px</span>,</div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="http://www.w3school.com.cn/cssref/pr_background-size.asp" target="_blank" rel="external">background-size</a><br>设置元素背景图片的尺寸</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">background-size: length|percentage|cover|contain;</div><div class="line">length: 固定的像素</div><div class="line">percentage：百分比设置</div><div class="line">cover：缩放背景图片以完全覆盖背景区，可能背景图片部分看不见</div><div class="line">contain：缩放背景图片以完全装入背景区，可能背景区部分空白</div></pre></td></tr></table></figure>
+</li>
+<li><p><em><a href="http://www.w3school.com.cn/cssref/pr_background-repeat.asp" target="_blank" rel="external">background-repeat</a></em><br>设置背景图片的平铺模式</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">repeat</span>	默认。背景图像将在垂直方向和水平方向重复。</div><div class="line"><span class="selector-tag">repeat-x</span>	背景图像将在水平方向重复。</div><div class="line"><span class="selector-tag">repeat-y</span>	背景图像将在垂直方向重复。</div><div class="line"><span class="selector-tag">no-repeat</span>	背景图像将仅显示一次。</div></pre></td></tr></table></figure>
+</li>
+<li><p><em><a href="http://www.w3school.com.cn/cssref/pr_background-origin.asp" target="_blank" rel="external">background-origin</a></em><br>background-origin 属性规定 background-position 属性相对于什么位置来定位。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">padding-box</span></div><div class="line">(默认)背景图像相对于内边距框来定位。</div><div class="line"></div><div class="line"><span class="selector-tag">border-box</span></div><div class="line">背景图像相对于边框盒来定位。</div><div class="line"></div><div class="line"><span class="selector-tag">content-box</span></div><div class="line">背景图像相对于内容框来定位。</div></pre></td></tr></table></figure>
+</li>
+<li><p><em><a href="http://www.w3school.com.cn/cssref/pr_background-clip.asp" target="_blank" rel="external">background-clip</a></em><br>设置背景的绘制区域</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">border-box</span></div><div class="line">(默认)背景被裁剪到边框盒。</div><div class="line"></div><div class="line"><span class="selector-tag">padding-box</span></div><div class="line">背景被裁剪到内边距框。</div><div class="line"></div><div class="line"><span class="selector-tag">content-box</span></div><div class="line">背景被裁剪到内容框。</div></pre></td></tr></table></figure>
+</li>
+<li><p><em><a href="http://www.w3school.com.cn/cssref/pr_background-attachment.asp" target="_blank" rel="external">background-attachment</a></em><br>设置背景图片是否固定或者随着页面滚动</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">scroll</span>	默认值。背景图像会随着页面其余部分的滚动而移动。</div><div class="line"><span class="selector-tag">fixed</span>	当页面的其余部分滚动时，背景图像不会移动。</div></pre></td></tr></table></figure>
+</li>
+<li><p><em><a href="http://www.w3school.com.cn/cssref/pr_background-image.asp" target="_blank" rel="external">background-image</a></em><br>设置元素的背景图片</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">url('URL')	指向图像的路径。</div><div class="line">none	默认值。不显示背景图像。</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h4><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/color_value" target="_blank" rel="external"><color></color></a><br>三种方式描述颜色</p>
+<ul>
+<li>关键字：red</li>
+<li>RGB系统： rgb(255,0,51) rgba(255,0,51,.5)</li>
+<li>HSL系统：hsl(240,100%,50%)或hsla(240,100%,50%,0.05)</li>
+</ul>
+<blockquote>
+<p>currentColor 关键字<br>表示和当前元素的color一样的颜色</p>
+</blockquote>
+<h4 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h4><ul>
+<li><p><a href="http://www.w3school.com.cn/cssref/pr_text_text-indent.asp" target="_blank" rel="external">text-indent</a><br>文本缩进</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">length	定义固定的缩进。默认值：0。</div><div class="line">%	定义基于父元素宽度的百分比的缩进。</div><div class="line"></div><div class="line">// 文本缩进2字符</div><div class="line">text-indent：2em;</div><div class="line">em默认父元素字体大小的倍数，</div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="http://www.w3school.com.cn/cssref/pr_text_text-align.asp" target="_blank" rel="external">text-align</a><br>规定文本水平对齐方式</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">left</span>	把文本排列到左边。默认值：由浏览器决定。</div><div class="line"><span class="selector-tag">right</span>	把文本排列到右边。</div><div class="line"><span class="selector-tag">center</span>	把文本排列到中间。</div><div class="line"><span class="selector-tag">justify</span>	实现两端对齐文本效果。</div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="http://www.w3school.com.cn/cssref/pr_text_word-spacing.asp" target="_blank" rel="external">word-spacing </a><br>字（单词）间距；</p>
+<blockquote>
+<p>象形文字的语言或非罗马书写体往往无法指定字间隔，注意对<strong>中文无效</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">normal</span>	默认。定义单词间的标准空间。</div><div class="line"><span class="selector-tag">length</span>	定义单词间的固定空间。</div><div class="line"><span class="selector-tag">p</span></div><div class="line">  &#123;</div><div class="line">  <span class="attribute">word-spacing</span>:<span class="number">25px</span>;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p><a href="http://www.w3school.com.cn/cssref/pr_text_letter-spacing.asp" target="_blank" rel="external">letter-spacing</a><br>字母间距</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">与<span class="selector-tag">word-spacing</span>类似，区别在于它是对字母或单个字符产生影响</div><div class="line"></div><div class="line"><span class="selector-tag">h1</span> &#123;<span class="attribute">letter-spacing</span>:<span class="number">2px</span>&#125;</div><div class="line"><span class="selector-tag">h2</span> &#123;<span class="attribute">letter-spacing</span>:-<span class="number">3px</span>&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="http://www.w3school.com.cn/cssref/pr_text_text-transform.asp" target="_blank" rel="external">text-transform </a><br>文本大小写</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">none</span>	默认。定义带有小写字母和大写字母的标准的文本。</div><div class="line"><span class="selector-tag">capitalize</span>	文本中的每个单词以大写字母开头。</div><div class="line"><span class="selector-tag">uppercase</span>	定义仅有大写字母。</div><div class="line"><span class="selector-tag">lowercase</span>	定义无大写字母，仅有小写字母。</div></pre></td></tr></table></figure>
+<ul>
+<li><a href="http://www.w3school.com.cn/cssref/pr_text_text-decoration.asp" target="_blank" rel="external">text-decoration </a><br>文本的装饰<blockquote>
+<ul>
+<li>一个规则中结合多种装饰</li>
+<li>text-decoration属性是一种简写属性，并且可以使用普通属性三个值中的任何一个。普通属性如下：<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-decoration-line" target="_blank" rel="external">text-decoration-line
+</a>，<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-decoration-color" target="_blank" rel="external">text-decoration-color</a>和<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/textdecoration-style" target="_blank" rel="external">text-decoration-style</a></li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">none</span>	默认。定义标准的文本。</div><div class="line"><span class="selector-tag">underline</span>	定义文本下的一条线。</div><div class="line"><span class="selector-tag">overline</span>	定义文本上的一条线。</div><div class="line"><span class="selector-tag">line-through</span>	定义穿过文本下的一条线。</div><div class="line"><span class="selector-tag">blink</span>	定义闪烁的文本。</div></pre></td></tr></table></figure>
+<ul>
+<li><p><a href="http://www.w3school.com.cn/cssref/pr_text_white-space.asp" target="_blank" rel="external">white-space</a><br>处理元素内的空白</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">normal</span>	默认。空白会被浏览器忽略。</div><div class="line"><span class="selector-tag">pre</span>	空白会被浏览器保留。其行为方式类似 <span class="selector-tag">HTML</span> 中的 &lt;<span class="selector-tag">pre</span>&gt; 标签。</div><div class="line"><span class="selector-tag">nowrap</span>	文本不会换行，文本会在在同一行上继续，直到遇到 &lt;<span class="selector-tag">br</span>&gt; 标签为止。</div><div class="line"><span class="selector-tag">pre-wrap</span>	保留空白符序列，但是正常地进行换行。</div><div class="line"><span class="selector-tag">pre-line</span>	合并空白符序列，但是保留换行符。</div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="http://www.w3school.com.cn/cssref/pr_text_direction.asp" target="_blank" rel="external">direction</a><br>属性规定文本的方向 / 书写方向</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ltr</span>	默认。文本方向从左到右。</div><div class="line"><span class="selector-tag">rtl</span>	文本方向从右到左。</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><ul>
+<li>首行字母大写的长宽过大，布局变形<br>解答：利用伪元素 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/::first-letter" target="_blank" rel="external">first-letter</a> 针对整体第一行的首字母进行处理<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 使每段开头的第一个字母变红变大 */</span></div><div class="line"></div><div class="line"><span class="selector-tag">p</span><span class="selector-pseudo">::first-letter</span> &#123;  <span class="comment">/* 使用:first来兼容IE8- */</span></div><div class="line">  <span class="attribute">color</span>: red;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">130%</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h3 id="查看链接"><a href="#查看链接" class="headerlink" title="查看链接"></a>查看链接</h3><ul>
+<li><a href="http://www.w3school.com.cn/css/css_text.asp" target="_blank" rel="external">CSS 文本</a></li>
+<li><a href="http://www.w3school.com.cn/css/css_background.asp" target="_blank" rel="external">CSS 背景</a></li>
+<li><a href="http://www.w3school.com.cn/css/css_font.asp" target="_blank" rel="external">CSS 字体</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/color_value" target="_blank" rel="external">color</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/img/wechat-qcode.jpg" alt="JACK wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎订阅我的个人微信公众号，期待与你的交流</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/IFE/" rel="tag"><i class="fa fa-tag"></i> IFE</a>
+          
+            <a href="/tags/前端/" rel="tag"><i class="fa fa-tag"></i> 前端</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/29/js浅拷贝和深拷贝的区别/" rel="next" title="js浅拷贝和深拷贝的区别">
+                <i class="fa fa-chevron-left"></i> js浅拷贝和深拷贝的区别
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/img/head.jpg"
+               alt="JACK" />
+          <p class="site-author-name" itemprop="name">JACK</p>
+           
+              <p class="site-description motion-element" itemprop="description">行到水穷处，坐看云起时。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/index.html">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/chunge16" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/u/1ab246a07e40" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-dot-circle-o"></i>
+                  
+                  简书
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://juejin.im/user/5852128f8d6d8100658f9d41" target="_blank" title="掘进">
+                  
+                    <i class="fa fa-fw fa-gg"></i>
+                  
+                  掘进
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务目的"><span class="nav-number">2.</span> <span class="nav-text">任务目的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务描述"><span class="nav-number">3.</span> <span class="nav-text">任务描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现"><span class="nav-number">4.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字体"><span class="nav-number">4.1.</span> <span class="nav-text">字体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#背景"><span class="nav-number">4.2.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#颜色"><span class="nav-number">4.3.</span> <span class="nav-text">颜色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文本"><span class="nav-number">4.4.</span> <span class="nav-text">文本</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题"><span class="nav-number">5.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看链接"><span class="nav-number">6.</span> <span class="nav-text">查看链接</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JACK</span>
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+
+
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "cb405d02c6694ba49d446167276a04fd",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("lBPGxmcl07nTBCbSFdT7W68f-gzGzoHsz", "t2gyrsF2Knky1MFF3xQBSRYl");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

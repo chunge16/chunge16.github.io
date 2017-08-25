@@ -302,6 +302,491 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/25/2017IFE-通过HTML及CSS模拟报纸排版/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JACK">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="石头">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/25/2017IFE-通过HTML及CSS模拟报纸排版/" itemprop="url">
+                  2017IFE-通过HTML及CSS模拟报纸排版
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-25T23:43:48+08:00">
+                2017-08-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IFE/" itemprop="url" rel="index">
+                    <span itemprop="name">IFE</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IFE/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/08/25/2017IFE-通过HTML及CSS模拟报纸排版/" class="leancloud_visitors" data-flag-title="2017IFE-通过HTML及CSS模拟报纸排版">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  1,801
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>2017-百度前端技术学院编码任务：<strong>通过HTML及CSS模拟报纸排版</strong></p>
+<h3 id="任务目的"><a href="#任务目的" class="headerlink" title="任务目的"></a>任务目的</h3><ul>
+<li>深入掌握CSS中的字体、背景、颜色等属性的设置</li>
+<li>进一步练习CSS布局</li>
+</ul>
+<h3 id="任务描述"><a href="#任务描述" class="headerlink" title="任务描述"></a>任务描述</h3><ul>
+<li>参考 <a href="http://7xrp04.com1.z0.glb.clouddn.com/task_1_6_1.psd" target="_blank" rel="external">PDS设计稿（点击下载）</a>，实现页面开发，要求实现效果与 <a href="http://7xrp04.com1.z0.glb.clouddn.com/task_1_6_2.jpg" target="_blank" rel="external">样例（点击查看）</a> 基本一致</li>
+<li>页面中的各字体大小，内外边距等可参看 <a href="http://7xrp04.com1.z0.glb.clouddn.com/task_1_6_3.jpg" target="_blank" rel="external">标注图（点击查看）</a></li>
+<li>页面宽度固定（定宽）</li>
+</ul>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p><a href="http://chunge2016.online/IFE-Task-2017/HTML-CSS/task-06/" target="_blank" rel="external">DEMO</a></p>
+<p><a href="https://github.com/chunge16/IFE-Task-2017/tree/master/HTML-CSS/task-06" target="_blank" rel="external">项目地址</a></p>
+<hr>
+<h4 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h4><ul>
+<li><p><a href="http://www.w3school.com.cn/cssref/pr_font_font.asp" target="_blank" rel="external">font</a><br>简写字体属性</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* font简写声明顺序：style | variant | weight | size/line-height | family */</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/font-style" target="_blank" rel="external">font-style</a><br>定义字体风格</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">.normal &#123;</div><div class="line">  font-style: normal; //选择 font-family常规字体</div><div class="line">&#125;</div><div class="line">.italic &#123;</div><div class="line">  font-style: italic; //选择斜体，如果当前字体没有可用的斜体版本，会选用倾斜体（oblique ）替代</div><div class="line">&#125;</div><div class="line">.oblique &#123;</div><div class="line">  font-style: oblique; //选择倾斜体，如果当前字体没有可用的倾斜体版本，会选用斜体（ italic ）替代</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="http://www.w3school.com.cn/cssref/pr_font_font-variant.asp" target="_blank" rel="external">font-variant</a><br>定义小型大写字母的字体</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">p.small</div><div class="line">  &#123;</div><div class="line">  font-variant:small-caps; //设置为小型大写字母的字体</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="http://www.w3school.com.cn/cssref/pr_font_weight.asp" target="_blank" rel="external">font-weight</a><br>定义字体的粗细</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">/* normal	默认值。定义标准的字符。</div><div class="line">bold	定义粗体字符。</div><div class="line">bolder	定义更粗的字符。</div><div class="line">lighter	定义更细的字符。</div><div class="line">100</div><div class="line">200</div><div class="line">300</div><div class="line">400</div><div class="line">500</div><div class="line">600</div><div class="line">700</div><div class="line">800</div><div class="line">900</div><div class="line">定义由粗到细的字符。400 等同于 normal，而 700 等同于 bold。</div><div class="line">*/</div><div class="line">p.normal &#123;font-weight:normal;&#125; //默认正常</div><div class="line">p.thick &#123;font-weight:bold;&#125;         //字体为粗体</div><div class="line">p.thicker &#123;font-weight:900;&#125;      //可设置数字，由小到大设置粗细</div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="http://www.w3school.com.cn/cssref/pr_font_font-size.asp" target="_blank" rel="external">font-size</a><br>定义字体的尺寸</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">smaller	把 font-size 设置为比父元素更小的尺寸。</div><div class="line">larger	把 font-size 设置为比父元素更大的尺寸。</div><div class="line">length	把 font-size 设置为一个固定的值。</div><div class="line">%	把 font-size 设置为基于父元素的一个百分比值。</div><div class="line">*/</div><div class="line"><span class="selector-tag">h1</span> &#123;<span class="attribute">font-size</span>:<span class="number">18px</span>;&#125;</div><div class="line"><span class="selector-tag">h2</span> &#123;<span class="attribute">font-size</span>: smaller;&#125;</div><div class="line"><span class="selector-tag">p</span> &#123;<span class="attribute">font-size</span>: larger;&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="http://www.w3school.com.cn/cssref/pr_font_font-family.asp" target="_blank" rel="external">font-family</a><br>定义元素的字体系列</p>
+<blockquote>
+<p>浏览器会使用识别的第一个字体系列，如果没有就使用浏览器默认字体</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*amily-name</span></div><div class="line">generic-family</div><div class="line">用于某个元素的字体族名称或/及类族名称的一个优先表。</div><div class="line">默认值：取决于浏览器。*/</div><div class="line"></div><div class="line"><span class="selector-tag">p</span></div><div class="line">  &#123;</div><div class="line">  <span class="attribute">font-family</span>:<span class="string">"Times New Roman"</span>,Georgia,Serif;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><ul>
+<li><p><a href="http://www.w3school.com.cn/cssref/pr_background.asp" target="_blank" rel="external">background</a><br>简写背景属性</p>
+<blockquote>
+<p> <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-size" target="_blank" rel="external">background-size
+</a> 这个属性的定义必须在 <strong><position> 之后</position></strong>, 并使用 ‘/‘ 符号分隔</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">background-color</div><div class="line">background-position/background-size</div><div class="line">background-repeat</div><div class="line">background-origin</div><div class="line">background-clip</div><div class="line">background-attachment</div><div class="line">background-image</div><div class="line"></div><div class="line">body</div><div class="line">  &#123;</div><div class="line">  background: #00FF00 url(bgimage.gif) no-repeat fixed top;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p><em><a href="http://www.w3school.com.cn/cssref/pr_background-color.asp" target="_blank" rel="external">background-color</a></em><br>设置背景颜色</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">color_name	规定颜色值为颜色名称的背景颜色（比如 red）。</div><div class="line">hex_number	规定颜色值为十六进制值的背景颜色（比如 #ff0000）。</div><div class="line">rgb_number	规定颜色值为 rgb 代码的背景颜色（比如 rgb(255,0,0)）。</div><div class="line">transparent	默认。背景颜色为透明。</div><div class="line">**/</div><div class="line"><span class="selector-tag">body</span></div><div class="line">  &#123;</div><div class="line">  <span class="attribute">background-color</span>:yellow;</div><div class="line">  &#125;</div><div class="line"><span class="selector-tag">h1</span></div><div class="line">  &#123;</div><div class="line">  <span class="attribute">background-color</span>:<span class="number">#00ff00</span>;</div><div class="line">  &#125;</div><div class="line"><span class="selector-tag">p</span></div><div class="line">  &#123;</div><div class="line">  <span class="attribute">background-color</span>:<span class="built_in">rgb</span>(255,0,255);</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="http://www.w3school.com.cn/cssref/pr_background-position.asp" target="_blank" rel="external">background-position</a><br>设置元素背景图片的位置</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> 默认左上角</div><div class="line"><span class="selector-tag">-</span> 关键词：<span class="selector-tag">left</span>,<span class="selector-tag">top</span></div><div class="line"><span class="selector-tag">-</span> 百分比：25%，50%，如果只设置一个值，另外自动为50%</div><div class="line"><span class="selector-tag">-</span> 像素：24<span class="selector-tag">px</span>,40<span class="selector-tag">px</span>,</div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="http://www.w3school.com.cn/cssref/pr_background-size.asp" target="_blank" rel="external">background-size</a><br>设置元素背景图片的尺寸</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">background-size: length|percentage|cover|contain;</div><div class="line">length: 固定的像素</div><div class="line">percentage：百分比设置</div><div class="line">cover：缩放背景图片以完全覆盖背景区，可能背景图片部分看不见</div><div class="line">contain：缩放背景图片以完全装入背景区，可能背景区部分空白</div></pre></td></tr></table></figure>
+</li>
+<li><p><em><a href="http://www.w3school.com.cn/cssref/pr_background-repeat.asp" target="_blank" rel="external">background-repeat</a></em><br>设置背景图片的平铺模式</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">repeat</span>	默认。背景图像将在垂直方向和水平方向重复。</div><div class="line"><span class="selector-tag">repeat-x</span>	背景图像将在水平方向重复。</div><div class="line"><span class="selector-tag">repeat-y</span>	背景图像将在垂直方向重复。</div><div class="line"><span class="selector-tag">no-repeat</span>	背景图像将仅显示一次。</div></pre></td></tr></table></figure>
+</li>
+<li><p><em><a href="http://www.w3school.com.cn/cssref/pr_background-origin.asp" target="_blank" rel="external">background-origin</a></em><br>background-origin 属性规定 background-position 属性相对于什么位置来定位。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">padding-box</span></div><div class="line">(默认)背景图像相对于内边距框来定位。</div><div class="line"></div><div class="line"><span class="selector-tag">border-box</span></div><div class="line">背景图像相对于边框盒来定位。</div><div class="line"></div><div class="line"><span class="selector-tag">content-box</span></div><div class="line">背景图像相对于内容框来定位。</div></pre></td></tr></table></figure>
+</li>
+<li><p><em><a href="http://www.w3school.com.cn/cssref/pr_background-clip.asp" target="_blank" rel="external">background-clip</a></em><br>设置背景的绘制区域</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">border-box</span></div><div class="line">(默认)背景被裁剪到边框盒。</div><div class="line"></div><div class="line"><span class="selector-tag">padding-box</span></div><div class="line">背景被裁剪到内边距框。</div><div class="line"></div><div class="line"><span class="selector-tag">content-box</span></div><div class="line">背景被裁剪到内容框。</div></pre></td></tr></table></figure>
+</li>
+<li><p><em><a href="http://www.w3school.com.cn/cssref/pr_background-attachment.asp" target="_blank" rel="external">background-attachment</a></em><br>设置背景图片是否固定或者随着页面滚动</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">scroll</span>	默认值。背景图像会随着页面其余部分的滚动而移动。</div><div class="line"><span class="selector-tag">fixed</span>	当页面的其余部分滚动时，背景图像不会移动。</div></pre></td></tr></table></figure>
+</li>
+<li><p><em><a href="http://www.w3school.com.cn/cssref/pr_background-image.asp" target="_blank" rel="external">background-image</a></em><br>设置元素的背景图片</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">url('URL')	指向图像的路径。</div><div class="line">none	默认值。不显示背景图像。</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h4><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/color_value" target="_blank" rel="external"><color></color></a><br>三种方式描述颜色</p>
+<ul>
+<li>关键字：red</li>
+<li>RGB系统： rgb(255,0,51) rgba(255,0,51,.5)</li>
+<li>HSL系统：hsl(240,100%,50%)或hsla(240,100%,50%,0.05)</li>
+</ul>
+<blockquote>
+<p>currentColor 关键字<br>表示和当前元素的color一样的颜色</p>
+</blockquote>
+<h4 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h4><ul>
+<li><p><a href="http://www.w3school.com.cn/cssref/pr_text_text-indent.asp" target="_blank" rel="external">text-indent</a><br>文本缩进</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">length	定义固定的缩进。默认值：0。</div><div class="line">%	定义基于父元素宽度的百分比的缩进。</div><div class="line"></div><div class="line">// 文本缩进2字符</div><div class="line">text-indent：2em;</div><div class="line">em默认父元素字体大小的倍数，</div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="http://www.w3school.com.cn/cssref/pr_text_text-align.asp" target="_blank" rel="external">text-align</a><br>规定文本水平对齐方式</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">left</span>	把文本排列到左边。默认值：由浏览器决定。</div><div class="line"><span class="selector-tag">right</span>	把文本排列到右边。</div><div class="line"><span class="selector-tag">center</span>	把文本排列到中间。</div><div class="line"><span class="selector-tag">justify</span>	实现两端对齐文本效果。</div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="http://www.w3school.com.cn/cssref/pr_text_word-spacing.asp" target="_blank" rel="external">word-spacing </a><br>字（单词）间距；</p>
+<blockquote>
+<p>象形文字的语言或非罗马书写体往往无法指定字间隔，注意对<strong>中文无效</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">normal</span>	默认。定义单词间的标准空间。</div><div class="line"><span class="selector-tag">length</span>	定义单词间的固定空间。</div><div class="line"><span class="selector-tag">p</span></div><div class="line">  &#123;</div><div class="line">  <span class="attribute">word-spacing</span>:<span class="number">25px</span>;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p><a href="http://www.w3school.com.cn/cssref/pr_text_letter-spacing.asp" target="_blank" rel="external">letter-spacing</a><br>字母间距</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">与<span class="selector-tag">word-spacing</span>类似，区别在于它是对字母或单个字符产生影响</div><div class="line"></div><div class="line"><span class="selector-tag">h1</span> &#123;<span class="attribute">letter-spacing</span>:<span class="number">2px</span>&#125;</div><div class="line"><span class="selector-tag">h2</span> &#123;<span class="attribute">letter-spacing</span>:-<span class="number">3px</span>&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="http://www.w3school.com.cn/cssref/pr_text_text-transform.asp" target="_blank" rel="external">text-transform </a><br>文本大小写</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">none</span>	默认。定义带有小写字母和大写字母的标准的文本。</div><div class="line"><span class="selector-tag">capitalize</span>	文本中的每个单词以大写字母开头。</div><div class="line"><span class="selector-tag">uppercase</span>	定义仅有大写字母。</div><div class="line"><span class="selector-tag">lowercase</span>	定义无大写字母，仅有小写字母。</div></pre></td></tr></table></figure>
+<ul>
+<li><a href="http://www.w3school.com.cn/cssref/pr_text_text-decoration.asp" target="_blank" rel="external">text-decoration </a><br>文本的装饰<blockquote>
+<ul>
+<li>一个规则中结合多种装饰</li>
+<li>text-decoration属性是一种简写属性，并且可以使用普通属性三个值中的任何一个。普通属性如下：<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-decoration-line" target="_blank" rel="external">text-decoration-line
+</a>，<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-decoration-color" target="_blank" rel="external">text-decoration-color</a>和<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/textdecoration-style" target="_blank" rel="external">text-decoration-style</a></li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">none</span>	默认。定义标准的文本。</div><div class="line"><span class="selector-tag">underline</span>	定义文本下的一条线。</div><div class="line"><span class="selector-tag">overline</span>	定义文本上的一条线。</div><div class="line"><span class="selector-tag">line-through</span>	定义穿过文本下的一条线。</div><div class="line"><span class="selector-tag">blink</span>	定义闪烁的文本。</div></pre></td></tr></table></figure>
+<ul>
+<li><p><a href="http://www.w3school.com.cn/cssref/pr_text_white-space.asp" target="_blank" rel="external">white-space</a><br>处理元素内的空白</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">normal</span>	默认。空白会被浏览器忽略。</div><div class="line"><span class="selector-tag">pre</span>	空白会被浏览器保留。其行为方式类似 <span class="selector-tag">HTML</span> 中的 &lt;<span class="selector-tag">pre</span>&gt; 标签。</div><div class="line"><span class="selector-tag">nowrap</span>	文本不会换行，文本会在在同一行上继续，直到遇到 &lt;<span class="selector-tag">br</span>&gt; 标签为止。</div><div class="line"><span class="selector-tag">pre-wrap</span>	保留空白符序列，但是正常地进行换行。</div><div class="line"><span class="selector-tag">pre-line</span>	合并空白符序列，但是保留换行符。</div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="http://www.w3school.com.cn/cssref/pr_text_direction.asp" target="_blank" rel="external">direction</a><br>属性规定文本的方向 / 书写方向</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ltr</span>	默认。文本方向从左到右。</div><div class="line"><span class="selector-tag">rtl</span>	文本方向从右到左。</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><ul>
+<li>首行字母大写的长宽过大，布局变形<br>解答：利用伪元素 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/::first-letter" target="_blank" rel="external">first-letter</a> 针对整体第一行的首字母进行处理<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 使每段开头的第一个字母变红变大 */</span></div><div class="line"></div><div class="line"><span class="selector-tag">p</span><span class="selector-pseudo">::first-letter</span> &#123;  <span class="comment">/* 使用:first来兼容IE8- */</span></div><div class="line">  <span class="attribute">color</span>: red;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">130%</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h3 id="查看链接"><a href="#查看链接" class="headerlink" title="查看链接"></a>查看链接</h3><ul>
+<li><a href="http://www.w3school.com.cn/css/css_text.asp" target="_blank" rel="external">CSS 文本</a></li>
+<li><a href="http://www.w3school.com.cn/css/css_background.asp" target="_blank" rel="external">CSS 背景</a></li>
+<li><a href="http://www.w3school.com.cn/css/css_font.asp" target="_blank" rel="external">CSS 字体</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/color_value" target="_blank" rel="external">color</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/29/js浅拷贝和深拷贝的区别/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JACK">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="石头">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/29/js浅拷贝和深拷贝的区别/" itemprop="url">
+                  js浅拷贝和深拷贝的区别
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-29T11:24:31+08:00">
+                2017-07-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/07/29/js浅拷贝和深拷贝的区别/" class="leancloud_visitors" data-flag-title="js浅拷贝和深拷贝的区别">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  0
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/05/常见排序算法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1878,397 +2363,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/19/ASCII，Unicode和UTF-8-Charset-and-Encoding/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="JACK">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="石头">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/05/19/ASCII，Unicode和UTF-8-Charset-and-Encoding/" itemprop="url">
-                  ASCII，Unicode和UTF-8 (Charset and Encoding)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-19T10:54:10+08:00">
-                2017-05-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/计算机基础/" itemprop="url" rel="index">
-                    <span itemprop="name">计算机基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/05/19/ASCII，Unicode和UTF-8-Charset-and-Encoding/" class="leancloud_visitors" data-flag-title="ASCII，Unicode和UTF-8 (Charset and Encoding)">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  3,399
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长</span>
-                
-                <span title="阅读时长">
-                  12
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><p>相信很多人都听说过<code>ASCII</code>，<code>Unicode</code>和<code>UTF-8</code>这些词汇，但可能还是不清楚其中的具体含义。当然一开始我也是粗略认识，所以自己决定重新深入学习一下，并且总结如下。</p>
-<p>才疏学浅，多多指教！！！</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/05/19/ASCII，Unicode和UTF-8-Charset-and-Encoding/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/16/地下通道/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="JACK">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="石头">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/05/16/地下通道/" itemprop="url">
-                  地下通道
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-16T21:53:49+08:00">
-                2017-05-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/杂文/" itemprop="url" rel="index">
-                    <span itemprop="name">杂文</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/05/16/地下通道/" class="leancloud_visitors" data-flag-title="地下通道">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  535
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长</span>
-                
-                <span title="阅读时长">
-                  2
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><p><img src="http://i1.piimg.com/1949/aac199c196424a23.jpg" alt=""></p>
-<blockquote>
-<p>地下通道中一束光照射在路人身上，如同地狱中的希望之光。-《地狱》</p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/05/16/地下通道/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2318,7 +2412,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/index.html">
-                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-count">29</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
