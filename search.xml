@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[2017IFE-听指令的小方块（一）]]></title>
+    <url>%2F2017%2F10%2F15%2F2017IFE-%E5%90%AC%E6%8C%87%E4%BB%A4%E7%9A%84%E5%B0%8F%E6%96%B9%E5%9D%97%EF%BC%88%E4%B8%80%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[前言2017-百度前端技术学院编码任务：听指令的小方块（一） 任务目的 练习JavaScript在DOM、字符串处理相关知识 练习对于复杂UI，如何进行数据机构建模 任务描述 实现与 （点击查看） 实现一个类似棋盘的格子空间 DEMO 项目地址 实现思路 设置小方块绝对定位，然后通过JS去控制它前进和转向。 但是这里主要有2个问题 复杂UI数据构造 UI构造我是根据自己的DOM棋盘结构来封装构造函数。 小方块的动作设置。格子的动作分为前进和旋转2个动作，前进判断旋转角度后设置left或top的数值来实现前进，旋转通过改变方块CSS3 transform rotate的属性进行旋转角度。 问题如何读写元素最终的CSS属性值呢？ style-可读可写使用style属性，仅仅只能获取和设置行内的样式，如果是通过内联或链接提供的样式规则就无可奈何了 123var box = document.querySelector('.box')box.style.transform // "" 为空字符串，无法获取非style的CSS属性值 getComputedStyle-可读不可写 使用getComputedStyle可以读取元素最终的CSS属性值，但是无法设置。 12345let elem = document.getElementById("elem-container");let theCSSprop = window.getComputedStyle(elem,null).getPropertyValue("height");// window.getComputedStyle(elem,null).height;// getPropertyValue方法可以获取CSS样式申明对象上的属性值（直接属性名称） CSSStyleSheet-对象可读可写 CSSStyleSheet类型表示通过元素和元素（注意这两种形式的都包括）包含的样式表，找到该元素CSSStyleRule对象，通过对style属性进行读写。123456789document.styleSheets; //StyleSheetList，集合var sheet = document.styleSheets[0];// 查看元素leftsheet.rules[9].style.getPropertyValue('left') // "80px"// 设置元素leftsheet.rules[9].style.left = '120px' 参考链接获取元素CSS值之getComputedStyle方法获得div元素的translateY值getComputedStyleDOM系列—DOM操作样式]]></content>
+      <categories>
+        <category>IFE</category>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>IFE</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[《硅谷钢铁侠》的读书笔记]]></title>
     <url>%2F2017%2F10%2F14%2F%E3%80%8A%E7%A1%85%E8%B0%B7%E9%92%A2%E9%93%81%E4%BE%A0%E3%80%8B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%2F</url>
     <content type="text"><![CDATA[前言 最近读了《硅谷钢铁侠》一书，这本书让我对全球科技界的传奇人物“埃隆·马斯克”有了深刻的了解，在他做出一系列令人叹为观止的事情后，让人不禁思考究竟是什么成就了现在的硅谷钢铁侠。 1. 家庭的环境 小时候的成长环境确实很重要，这个道理其实达尔文的进化论早就告诉大家了。这里主要有2点，第一是母亲家族极富冒险主义的基因，从小耳濡目染母亲家族的冒险故事；第二是和他父亲的关系，文中埃隆·马斯克对父亲闭口不提。这样的环境下造就他天使和魔鬼的化身，一部分人认为他果断，睿智，勇敢；另外一部分人认为他冷酷，无情、残忍。其实这就是他本人，我觉得不幸的童年导致他这样特性，同时也造就了他的人生。 2. 梦想的价值 梦想还是要有的，万一实现呢？从小对太空有浓厚兴趣的埃隆·马斯克，通过SpaceX在一步步实现儿时的梦想。从他参加火星协会、提问公司火箭工程师、学习大量专业知识看出，他是真的喜欢。 3. 改变世界 “我认为现在有非常多的聪明人都在致力于互联网、金融和法律，”马斯克在路上说，“这是我们没能看到更多创新的部分原因。” 早期他自己非常想做游戏，但是没有从事的原因是：游戏做的再好，又不能改变世界。他觉得应该对人类的未来发展做出贡献和帮助才行，所以他提出非常大胆的想法，例如移民火星、超级高铁等等。 硅谷钢铁侠]]></content>
@@ -72,8 +85,8 @@
         <category>杂文</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
         <tag>杂文</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -122,8 +135,8 @@
         <category>杂文</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
         <tag>杂文</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -146,8 +159,8 @@
         <category>杂文</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
         <tag>杂文</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
