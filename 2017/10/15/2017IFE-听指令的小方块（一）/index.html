@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/10/15/2017IFE-听指令的小方块（一）/index.html">
 <meta property="og:site_name" content="石头">
 <meta property="og:description" content="前言2017-百度前端技术学院编码任务：听指令的小方块（一）">
-<meta property="og:updated_time" content="2017-10-15T12:46:26.000Z">
+<meta property="og:updated_time" content="2017-10-15T12:48:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2017IFE-听指令的小方块（一）">
 <meta name="twitter:description" content="前言2017-百度前端技术学院编码任务：听指令的小方块（一）">
@@ -423,7 +423,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  497
+                  494
                 </span>
               
 
@@ -478,17 +478,17 @@
 <li>小方块的动作设置。<br>格子的动作分为前进和旋转2个动作，前进判断旋转角度后设置<code>left</code>或<code>top</code>的数值来实现前进，旋转通过改变方块CSS3 <code>transform rotate</code>的属性进行旋转角度。</li>
 </ul>
 <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>如何读写元素最终的CSS属性值呢？</p>
-<ol>
+<ul>
 <li>style-可读可写<br>使用style属性，仅仅只能获取和设置行内的样式，如果是通过内联<code>&lt;style&gt;</code>或链接<code>&lt;link&gt;</code>提供的样式规则就无可奈何了</li>
-</ol>
+</ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> box = <span class="built_in">document</span>.querySelector(<span class="string">'.box'</span>)</div><div class="line"></div><div class="line">box.style.transform <span class="comment">//  "" 为空字符串，无法获取非style的CSS属性值</span></div></pre></td></tr></table></figure>
-<ol>
-<li>getComputedStyle-可读不可写<br> 使用getComputedStyle可以读取元素最终的CSS属性值，但是无法设置。</li>
-</ol>
+<ul>
+<li>getComputedStyle-可读不可写<br>  使用getComputedStyle可以读取元素最终的CSS属性值，但是无法设置。</li>
+</ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> elem = <span class="built_in">document</span>.getElementById(<span class="string">"elem-container"</span>);</div><div class="line"></div><div class="line"><span class="keyword">let</span> theCSSprop = <span class="built_in">window</span>.getComputedStyle(elem,<span class="literal">null</span>).getPropertyValue(<span class="string">"height"</span>);</div><div class="line"><span class="comment">// window.getComputedStyle(elem,null).height;</span></div><div class="line"><span class="comment">// getPropertyValue方法可以获取CSS样式申明对象上的属性值（直接属性名称）</span></div></pre></td></tr></table></figure>
-<ol>
-<li>CSSStyleSheet-对象可读可写<br> CSSStyleSheet类型表示通过<code>&lt;link&gt;</code>元素和<code>&lt;style&gt;</code>元素（注意这两种形式的都包括）包含的样式表，找到该元素CSSStyleRule对象，通过对style属性进行读写。</li>
-</ol>
+<ul>
+<li>CSSStyleSheet-对象可读可写<br>  CSSStyleSheet类型表示通过<code>&lt;link&gt;</code>元素和<code>&lt;style&gt;</code>元素（注意这两种形式的都包括）包含的样式表，找到该元素CSSStyleRule对象，通过对style属性进行读写。</li>
+</ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="built_in">document</span>.styleSheets;                       <span class="comment">//StyleSheetList，集合</span></div><div class="line"><span class="keyword">var</span> sheet = <span class="built_in">document</span>.styleSheets[<span class="number">0</span>];</div><div class="line"></div><div class="line"><span class="comment">// 查看元素left</span></div><div class="line">sheet.rules[<span class="number">9</span>].style.getPropertyValue(<span class="string">'left'</span>)     <span class="comment">// "80px"</span></div><div class="line"></div><div class="line"><span class="comment">// 设置元素left</span></div><div class="line">sheet.rules[<span class="number">9</span>].style.left = <span class="string">'120px'</span></div></pre></td></tr></table></figure>
 <hr>
 <h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
