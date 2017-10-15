@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/10/15/2017IFE-听指令的小方块（一）/index.html">
 <meta property="og:site_name" content="石头">
 <meta property="og:description" content="前言2017-百度前端技术学院编码任务：听指令的小方块（一）">
-<meta property="og:updated_time" content="2017-10-15T12:42:36.000Z">
+<meta property="og:updated_time" content="2017-10-15T12:46:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2017IFE-听指令的小方块（一）">
 <meta name="twitter:description" content="前言2017-百度前端技术学院编码任务：听指令的小方块（一）">
@@ -423,7 +423,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  265
+                  497
                 </span>
               
 
@@ -439,7 +439,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -479,7 +479,7 @@
 </ul>
 <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>如何读写元素最终的CSS属性值呢？</p>
 <ol>
-<li>style-可读可写<br>使用style属性，仅仅只能获取和设置行内的样式，如果是通过内联<style>或链接<link>提供的样式规则就无可奈何了</li>
+<li>style-可读可写<br>使用style属性，仅仅只能获取和设置行内的样式，如果是通过内联<code>&lt;style&gt;</code>或链接<code>&lt;link&gt;</code>提供的样式规则就无可奈何了</li>
 </ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> box = <span class="built_in">document</span>.querySelector(<span class="string">'.box'</span>)</div><div class="line"></div><div class="line">box.style.transform <span class="comment">//  "" 为空字符串，无法获取非style的CSS属性值</span></div></pre></td></tr></table></figure>
 <ol>
@@ -487,12 +487,17 @@
 </ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> elem = <span class="built_in">document</span>.getElementById(<span class="string">"elem-container"</span>);</div><div class="line"></div><div class="line"><span class="keyword">let</span> theCSSprop = <span class="built_in">window</span>.getComputedStyle(elem,<span class="literal">null</span>).getPropertyValue(<span class="string">"height"</span>);</div><div class="line"><span class="comment">// window.getComputedStyle(elem,null).height;</span></div><div class="line"><span class="comment">// getPropertyValue方法可以获取CSS样式申明对象上的属性值（直接属性名称）</span></div></pre></td></tr></table></figure>
 <ol>
-<li>CSSStyleSheet-对象可读可写<br> CSSStyleSheet类型表示通过<link>元素和<style>元素（注意这两种形式的都包括）包含的样式表，找到该元素CSSStyleRule对象，通过对style属性进行读写。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="built_in">document</span>.styleSheets;                       <span class="comment">//StyleSheetList，集合</span></div><div class="line"><span class="keyword">var</span> sheet = <span class="built_in">document</span>.styleSheets[<span class="number">0</span>];</div><div class="line"></div><div class="line"><span class="comment">// 查看元素left</span></div><div class="line">sheet.rules[<span class="number">9</span>].style.getPropertyValue(<span class="string">'left'</span>)     <span class="comment">// "80px"</span></div><div class="line"></div><div class="line"><span class="comment">// 设置元素left</span></div><div class="line">sheet.rules[<span class="number">9</span>].style.left = <span class="string">'120px'</span></div></pre></td></tr></table></figure>
-</li>
+<li>CSSStyleSheet-对象可读可写<br> CSSStyleSheet类型表示通过<code>&lt;link&gt;</code>元素和<code>&lt;style&gt;</code>元素（注意这两种形式的都包括）包含的样式表，找到该元素CSSStyleRule对象，通过对style属性进行读写。</li>
 </ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="built_in">document</span>.styleSheets;                       <span class="comment">//StyleSheetList，集合</span></div><div class="line"><span class="keyword">var</span> sheet = <span class="built_in">document</span>.styleSheets[<span class="number">0</span>];</div><div class="line"></div><div class="line"><span class="comment">// 查看元素left</span></div><div class="line">sheet.rules[<span class="number">9</span>].style.getPropertyValue(<span class="string">'left'</span>)     <span class="comment">// "80px"</span></div><div class="line"></div><div class="line"><span class="comment">// 设置元素left</span></div><div class="line">sheet.rules[<span class="number">9</span>].style.left = <span class="string">'120px'</span></div></pre></td></tr></table></figure>
 <hr>
-<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="http://madong.net.cn/index.php/2017/04/592/">获取元素CSS值之getComputedStyle方法</a><br><a href="https://segmentfault.com/q/1010000003068938">获得div元素的translateY值</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/getComputedStyle">getComputedStyle</a><br><a href="http://www.cnblogs.com/ttcc/p/3766190.html">DOM系列—DOM操作样式</a></p>
-</style></li></ol>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
+<li><a href="http://madong.net.cn/index.php/2017/04/592/" target="_blank" rel="external">获取元素CSS值之getComputedStyle方法</a></li>
+<li><a href="https://segmentfault.com/q/1010000003068938" target="_blank" rel="external">获得div元素的translateY值</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/getComputedStyle" target="_blank" rel="external">getComputedStyle</a></li>
+<li><a href="http://www.cnblogs.com/ttcc/p/3766190.html" target="_blank" rel="external">DOM系列—DOM操作样式</a></li>
+</ul>
+
       
     </div>
 
@@ -715,7 +720,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务目的"><span class="nav-number">2.</span> <span class="nav-text">任务目的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务描述"><span class="nav-number">3.</span> <span class="nav-text">任务描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现"><span class="nav-number">4.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#思路"><span class="nav-number">4.1.</span> <span class="nav-text">思路</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题"><span class="nav-number">5.</span> <span class="nav-text">问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务目的"><span class="nav-number">2.</span> <span class="nav-text">任务目的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务描述"><span class="nav-number">3.</span> <span class="nav-text">任务描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现"><span class="nav-number">4.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#思路"><span class="nav-number">4.1.</span> <span class="nav-text">思路</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题"><span class="nav-number">5.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考链接"><span class="nav-number">6.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
             
 
           </div>
