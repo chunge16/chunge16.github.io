@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[北京的秋]]></title>
+    <url>%2F2017%2F11%2F11%2F%E5%8C%97%E4%BA%AC%E7%9A%84%E7%A7%8B%2F</url>
+    <content type="text"><![CDATA[前言孤独的秋，温暖的光 秋天一定要住北平。天堂是什么样子，我不知道，但是从我的生活经验去判断，北平之秋便是天堂。论天气，不冷不热。论吃的，苹果、梨、柿子、枣儿、葡萄，每样都有若干种。论花草，菊花种类之多，花式之奇，可以甲天下。西山有红叶可见，北海可以划船——虽然荷花已残，荷叶可还有一片清香。衣食住行，在北平的秋天，是没有一项不使人满意的。 ——老舍《住的梦》 不少中国文人骚客书写过关于北京秋天各样的美丽的描述，但北京的秋天给我的第一感觉是孤独的、落寞的，当然不完全是看似不好的一面，秋天的阳光还是很温暖的。传统文学里对秋的描述是“悲”字，这个其实应该是每个人对其的第一感觉，因为四季里春天给人感觉是生机的，夏天是繁盛的，而秋天是悲凉的，冬天是冰冷的。一个完美的大自然循环，其实你再看看人的生命走势，太阳的起起落落大概如此。 有点说远了，来北京快一年多，一直想好好感受一下这古都的四季，最令我向往的是秋天和冬天。我喜欢秋天的萧瑟和冬天的安静，因为这两个季节总能触动你心里那一丝丝心弦。特别是每当你看见那落叶从树上落下，飘落在空中时，我总会停下脚步默默欣赏这缓慢的一瞬间。 北京的秋天似乎只有两种颜色可以代表，一种是红色，一种是黄色，红色的代表当然是枫叶，而北京最为有名是香山的枫叶，漫山遍野的枫叶红美不胜收；而黄色的代表则是古老的银杏了。不过香山枫叶的名气太大，所以观赏枫叶的季节人总是很多，所以不推荐大家去看，如果实在想看枫叶，可以推荐去隔壁的西山八大处。而银杏相对就没那么辛苦去观赏了，北京几处观赏银杏的地方基本都在老北京城内，推荐西城钓鱼台的银杏大道、地坛公园的银杏大道、三里屯东五街，这几个地方你可以慢慢观赏。 图片均取景地坛公园]]></content>
+      <tags>
+        <tag>杂文</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[2017IFE-听指令的小方块（一）]]></title>
     <url>%2F2017%2F10%2F15%2F2017IFE-%E5%90%AC%E6%8C%87%E4%BB%A4%E7%9A%84%E5%B0%8F%E6%96%B9%E5%9D%97%EF%BC%88%E4%B8%80%EF%BC%89%2F</url>
     <content type="text"><![CDATA[前言2017-百度前端技术学院编码任务：听指令的小方块（一） 任务目的 练习JavaScript在DOM、字符串处理相关知识 练习对于复杂UI，如何进行数据机构建模 任务描述 实现与 （点击查看） 实现一个类似棋盘的格子空间 DEMO 项目地址 实现思路 设置小方块绝对定位，然后通过JS去控制它前进和转向。 但是这里主要有2个问题 复杂UI数据构造 UI构造我是根据自己的DOM棋盘结构来封装构造函数。 小方块的动作设置。格子的动作分为前进和旋转2个动作，前进判断旋转角度后设置left或top的数值来实现前进，旋转通过改变方块CSS3 transform rotate的属性进行旋转角度。 问题如何读写元素最终的CSS属性值呢？ style-可读可写使用style属性，仅仅只能获取和设置行内的样式，如果是通过内联&lt;style&gt;或链接&lt;link&gt;提供的样式规则就无可奈何了 123var box = document.querySelector('.box')box.style.transform // "" 为空字符串，无法获取非style的CSS属性值 getComputedStyle-可读不可写 使用getComputedStyle可以读取元素最终的CSS属性值，但是无法设置。 12345let elem = document.getElementById("elem-container");let theCSSprop = window.getComputedStyle(elem,null).getPropertyValue("height");// window.getComputedStyle(elem,null).height;// getPropertyValue方法可以获取CSS样式申明对象上的属性值（直接属性名称） CSSStyleSheet-对象可读可写 CSSStyleSheet类型表示通过&lt;link&gt;元素和&lt;style&gt;元素（注意这两种形式的都包括）包含的样式表，找到该元素CSSStyleRule对象，通过对style属性进行读写。 123456789document.styleSheets; //StyleSheetList，集合var sheet = document.styleSheets[0];// 查看元素leftsheet.rules[9].style.getPropertyValue('left') // "80px"// 设置元素leftsheet.rules[9].style.left = '120px' 参考链接 获取元素CSS值之getComputedStyle方法 获得div元素的translateY值 getComputedStyle DOM系列—DOM操作样式]]></content>
