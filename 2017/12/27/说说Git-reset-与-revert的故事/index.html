@@ -102,7 +102,7 @@
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/c6497b58ly1fmvtsc2uy9j20q20h4775.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/c6497b58ly1fmvtpzhk7gj20lm054zl9.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/c6497b58ly1fmvtpzhgqoj20q806sgn5.jpg">
-<meta property="og:updated_time" content="2017-12-27T17:11:52.312Z">
+<meta property="og:updated_time" content="2017-12-27T17:37:07.727Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="说说Git reset 与 revert 的故事">
 <meta name="twitter:description" content="俗话说一入Git深似海，单独说Git一本书恐怕都不够，今天只是浅尝止渴而已。 简单说说reset和revert2个主要命令。">
@@ -445,7 +445,7 @@
 <li>Index / Stage：暂存区</li>
 <li>Repository：仓库区（或本地仓库）</li>
 </ul>
-<p>搞懂了这四个区域，才能更好理解这些Git命令是在干什么。</p>
+<p>搞懂了这三个区域，才能更好理解这些Git命令是在干什么。</p>
 <h3 id="一、reset"><a href="#一、reset" class="headerlink" title="一、reset"></a>一、reset</h3><h4 id="reset命令的作用？"><a href="#reset命令的作用？" class="headerlink" title="reset命令的作用？"></a>reset命令的作用？</h4><p><code>reset</code>命令把当前分支指向另外一个位置（提交的ID版本号），并且有选择性的变动<code>暂存区</code>和<code>工作区</code>的内容。</p>
 <p>原理是基于本地仓库的文件去覆盖暂存区或工作区的内容</p>
 <h4 id="reset主要参数的区别"><a href="#reset主要参数的区别" class="headerlink" title="reset主要参数的区别"></a>reset主要参数的区别</h4><p>当没有指定ID的时候，默认使用<code>HEAD</code>，如果指定ID，那么就是基于指向ID去变动暂存区或工作区的内容</p>

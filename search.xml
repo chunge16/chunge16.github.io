@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[说说Git reset 与 revert 的故事]]></title>
     <url>%2F2017%2F12%2F27%2F%E8%AF%B4%E8%AF%B4Git-reset-%E4%B8%8E-revert%E7%9A%84%E6%95%85%E4%BA%8B%2F</url>
-    <content type="text"><![CDATA[俗话说一入Git深似海，单独说Git一本书恐怕都不够，今天只是浅尝止渴而已。 简单说说reset和revert2个主要命令。 要学习Git，首先要明白Git几个基本概念 Workspace：工作区 Index / Stage：暂存区 Repository：仓库区（或本地仓库） 搞懂了这四个区域，才能更好理解这些Git命令是在干什么。 一、resetreset命令的作用？reset命令把当前分支指向另外一个位置（提交的ID版本号），并且有选择性的变动暂存区和工作区的内容。 原理是基于本地仓库的文件去覆盖暂存区或工作区的内容 reset主要参数的区别当没有指定ID的时候，默认使用HEAD，如果指定ID，那么就是基于指向ID去变动暂存区或工作区的内容 12345// 没有指定ID, 暂存区的内容会被当前ID版本号的内容覆盖，工作区不变git reset// 指定ID，暂存区的内容会被指定ID版本号的内容覆盖，工作区不变git reset &lt;ID&gt; –mixed（默认） 默认的时候，只有暂存区变化 –hard参数 如果使用--hard参数，那么工作区也会变化 –soft 如果使用--soft参数，那么暂存区和工作区都不会变化 二、revertrevert命令撤销指定的commit并且新建一个commit，新建comment的内容由指定commit前一个提交内容保持一致 1git revert &lt;commit&gt; 参考链接 图解Git 猴子都能懂的Git入门 以上图片来源于图解Git]]></content>
+    <content type="text"><![CDATA[俗话说一入Git深似海，单独说Git一本书恐怕都不够，今天只是浅尝止渴而已。 简单说说reset和revert2个主要命令。 要学习Git，首先要明白Git几个基本概念 Workspace：工作区 Index / Stage：暂存区 Repository：仓库区（或本地仓库） 搞懂了这三个区域，才能更好理解这些Git命令是在干什么。 一、resetreset命令的作用？reset命令把当前分支指向另外一个位置（提交的ID版本号），并且有选择性的变动暂存区和工作区的内容。 原理是基于本地仓库的文件去覆盖暂存区或工作区的内容 reset主要参数的区别当没有指定ID的时候，默认使用HEAD，如果指定ID，那么就是基于指向ID去变动暂存区或工作区的内容 12345// 没有指定ID, 暂存区的内容会被当前ID版本号的内容覆盖，工作区不变git reset// 指定ID，暂存区的内容会被指定ID版本号的内容覆盖，工作区不变git reset &lt;ID&gt; –mixed（默认） 默认的时候，只有暂存区变化 –hard参数 如果使用--hard参数，那么工作区也会变化 –soft 如果使用--soft参数，那么暂存区和工作区都不会变化 二、revertrevert命令撤销指定的commit并且新建一个commit，新建comment的内容由指定commit前一个提交内容保持一致 1git revert &lt;commit&gt; 参考链接 图解Git 猴子都能懂的Git入门 以上图片来源于图解Git]]></content>
       <tags>
         <tag>Git</tag>
       </tags>
