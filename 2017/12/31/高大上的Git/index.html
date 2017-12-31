@@ -92,18 +92,18 @@
 <meta property="og:url" content="http://yoursite.com/2017/12/31/高大上的Git/index.html">
 <meta property="og:site_name" content="石头">
 <meta property="og:description" content="最近学习Git感觉真是是高大上，用简易的方式解决了复杂的版本管理问题。如果要深入介绍Git，其实够一本书了，所以我根据最近学习情况，总结一下Git的基本知识点吧。">
-<meta property="og:image" content="https://cdn.liaoxuefeng.com/cdn/files/attachments/0013848605496402772ffdb6ab448deb7eef7baa124171b000/0">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/c6497b58ly1fmzuijm1r9j20cn05ajre.jpg">
 <meta property="og:image" content="https://marklodato.github.io/visual-git-guide/basic-usage.svg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/c6497b58ly1fmzt8ly8ykj21mq0ymjyw.jpg">
-<meta property="og:image" content="https://cdn.liaoxuefeng.com/cdn/files/attachments/001384908811773187a597e2d844eefb11f5cf5d56135ca000/0">
-<meta property="og:image" content="https://cdn.liaoxuefeng.com/cdn/files/attachments/0013849088235627813efe7649b4f008900e5365bb72323000/0">
-<meta property="og:image" content="https://cdn.liaoxuefeng.com/cdn/files/attachments/00138490883510324231a837e5d4aee844d3e4692ba50f5000/0">
-<meta property="og:image" content="https://cdn.liaoxuefeng.com/cdn/files/attachments/001384908867187c83ca970bf0f46efa19badad99c40235000/0">
-<meta property="og:updated_time" content="2017-12-31T04:34:12.528Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/mw690/c6497b58ly1fmzukh6xrvj20a706hwee.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/mw690/c6497b58ly1fmzuls1hgqj20dq06ha9z.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/mw690/c6497b58ly1fmzumc8yqqj20br0663yf.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/c6497b58ly1fmzun1l3nhj20br04fdfp.jpg">
+<meta property="og:updated_time" content="2017-12-31T04:43:06.129Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="高大上的Git">
 <meta name="twitter:description" content="最近学习Git感觉真是是高大上，用简易的方式解决了复杂的版本管理问题。如果要深入介绍Git，其实够一本书了，所以我根据最近学习情况，总结一下Git的基本知识点吧。">
-<meta name="twitter:image" content="https://cdn.liaoxuefeng.com/cdn/files/attachments/0013848605496402772ffdb6ab448deb7eef7baa124171b000/0">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/c6497b58ly1fmzuijm1r9j20cn05ajre.jpg">
 
 
 
@@ -434,8 +434,7 @@
 
       
         <p>最近学习Git感觉真是是高大上，用简易的方式解决了复杂的版本管理问题。如果要深入介绍Git，其实够一本书了，所以我根据最近学习情况，总结一下Git的基本知识点吧。</p>
-<p><img src="https://cdn.liaoxuefeng.com/cdn/files/attachments/0013848605496402772ffdb6ab448deb7eef7baa124171b000/0" alt=""></p>
-<a id="more"></a>
+<p><img src="https://ws1.sinaimg.cn/large/c6497b58ly1fmzuijm1r9j20cn05ajre.jpg" alt=""><br><a id="more"></a></p>
 <hr>
 <h3 id="一、Git是什么？"><a href="#一、Git是什么？" class="headerlink" title="一、Git是什么？"></a>一、Git是什么？</h3><p>Git是目前非常流行的分布式版本管理系统。</p>
 <p>开发Git最初目的是为更好地管理Linux内核开发而设计。</p>
@@ -543,15 +542,15 @@
 <h4 id="5-2-分支管理"><a href="#5-2-分支管理" class="headerlink" title="5.2 分支管理"></a>5.2 分支管理</h4><p>Git还有一个优势就是分支设计非常优秀，之前说过<code>HEAD</code>是指向分支的，当你初始化仓库时会默认产生<code>master</code>分支，所以默认HEAD是指向maser分支的。</p>
 <p>其实切换分支的本质就是改变<code>HEAD</code>的指向，工作区什么都没有变。</p>
 <p>新建一个分支<code>dev</code>，其实就是新建一个指针dev，并且指向和master相同的提交，同时让<code>HEAD</code>指向dev</p>
-<p><img src="https://cdn.liaoxuefeng.com/cdn/files/attachments/001384908811773187a597e2d844eefb11f5cf5d56135ca000/0" alt=""></p>
+<p><img src="https://ws1.sinaimg.cn/mw690/c6497b58ly1fmzukh6xrvj20a706hwee.jpg" alt=""></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// 新建分支dev</div><div class="line">git branch dev</div><div class="line"></div><div class="line">// 切换到分支dev</div><div class="line">git checkout dev</div><div class="line"></div><div class="line">----------------</div><div class="line">// 其实可以一步到位，加参数-b就可以</div><div class="line">git checkout -b dev</div></pre></td></tr></table></figure>
 <p>那现在工作区改变文件，提交文件就是在dev上面了，假如新提交一个commit，那么dev指针向前一步，但maser不变</p>
-<p><img src="https://cdn.liaoxuefeng.com/cdn/files/attachments/0013849088235627813efe7649b4f008900e5365bb72323000/0" alt=""></p>
+<p><img src="https://ws1.sinaimg.cn/mw690/c6497b58ly1fmzuls1hgqj20dq06ha9z.jpg" alt=""></p>
 <p>OK，那我们现在来合并分支，其实原理就是把master指向dev当前的提交</p>
-<p><img src="https://cdn.liaoxuefeng.com/cdn/files/attachments/00138490883510324231a837e5d4aee844d3e4692ba50f5000/0" alt=""></p>
+<p><img src="https://ws1.sinaimg.cn/mw690/c6497b58ly1fmzumc8yqqj20br0663yf.jpg" alt=""></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">// 首先切换到master分支</div><div class="line">git checkout master</div><div class="line"></div><div class="line">// 查看分支，带`*`的符合就是当前分支</div><div class="line"></div><div class="line">git branch</div><div class="line"></div><div class="line">// 把dev分支合并到master分支上</div><div class="line"></div><div class="line">git merge dev</div></pre></td></tr></table></figure>
 <p>dev的分支使命已经完成了，那我们那删除dev分支，其实删除分支就是删除dev指针而已。</p>
-<p><img src="https://cdn.liaoxuefeng.com/cdn/files/attachments/001384908867187c83ca970bf0f46efa19badad99c40235000/0" alt=""></p>
+<p><img src="https://ws1.sinaimg.cn/large/c6497b58ly1fmzun1l3nhj20br04fdfp.jpg" alt=""></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch -d dev</div></pre></td></tr></table></figure>
 <p>Git上面操作分支就是这样简单有效</p>
 <p><strong>总结一下：</strong></p>
