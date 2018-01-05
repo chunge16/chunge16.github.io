@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="石头">
 <meta property="og:description" content="CSRF是什么？跨站请求伪造（英语：Cross-site request forgery），维基百科的解释是一种挟制用户在当前已登录的Web应用程序上执行非本意的操作的攻击方法，听起来很厉害的样子。 简单来说，攻击者利用一些技术手段去欺骗用户浏览器去访问一些曾经认证过的网站而执行一些操作。由于认证过，所以浏览器认为是用户的本意。 其实咋们可以简单理解为虎符调兵，正常是大将军颁发虎符才能调兵，但是军">
 <meta property="og:image" content="http://p1tm0s0k3.bkt.clouddn.com/18-1-5/75094214.jpg">
-<meta property="og:updated_time" content="2018-01-05T10:18:04.217Z">
+<meta property="og:updated_time" content="2018-01-05T10:22:47.613Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="说说CSRF">
 <meta name="twitter:description" content="CSRF是什么？跨站请求伪造（英语：Cross-site request forgery），维基百科的解释是一种挟制用户在当前已登录的Web应用程序上执行非本意的操作的攻击方法，听起来很厉害的样子。 简单来说，攻击者利用一些技术手段去欺骗用户浏览器去访问一些曾经认证过的网站而执行一些操作。由于认证过，所以浏览器认为是用户的本意。 其实咋们可以简单理解为虎符调兵，正常是大将军颁发虎符才能调兵，但是军">
@@ -430,6 +430,7 @@
         <h3 id="CSRF是什么？"><a href="#CSRF是什么？" class="headerlink" title="CSRF是什么？"></a>CSRF是什么？</h3><p><strong>跨站请求伪造（英语：Cross-site request forgery）</strong>，维基百科的解释是一种挟制用户在当前已登录的Web应用程序上执行非本意的操作的攻击方法，听起来很厉害的样子。</p>
 <p>简单来说，攻击者利用一些技术手段去欺骗用户浏览器去访问一些曾经认证过的网站而执行一些操作。由于认证过，所以浏览器认为是用户的本意。</p>
 <p>其实咋们可以简单理解为<code>虎符调兵</code>，正常是大将军颁发虎符才能调兵，但是军队只认虎符不认人，假如奸臣偷取虎符假传命令私自调兵造反，那可就大事不好！<br>。</p>
+<a id="more"></a>
 <h3 id="CSRF原理"><a href="#CSRF原理" class="headerlink" title="CSRF原理"></a>CSRF原理</h3><p>那我们具体看看攻击细节</p>
 <p><img src="http://p1tm0s0k3.bkt.clouddn.com/18-1-5/75094214.jpg" alt=""></p>
 <p>看图说话，<br>当我访问登录一个正常网站，成功访问后服务器会产生一个标识用户身份的cookie给用户的浏览器保存，在标识cookie还存在时访问恶意网站，在该网站里攻击者会让你不知不觉的访问之前的正常网站并且执行一些操作，由于标识用户身份的cookie还存在，所以用户浏览器认为是用户的本意操作而执行该请求，从而攻击成功。</p>
