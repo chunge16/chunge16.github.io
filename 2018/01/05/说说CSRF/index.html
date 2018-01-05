@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="石头">
 <meta property="og:description" content="CSRF是什么？跨站请求伪造（英语：Cross-site request forgery），维基百科的解释是一种挟制用户在当前已登录的Web应用程序上执行非本意的操作的攻击方法，听起来很厉害的样子。 简单来说，攻击者利用一些技术手段去欺骗用户浏览器去访问一些曾经认证过的网站而执行一些操作。由于认证过，所以浏览器认为是用户的本意。 其实咋们可以简单理解为虎符调兵，正常是大将军颁发虎符才能调兵，但是军">
 <meta property="og:image" content="http://p1tm0s0k3.bkt.clouddn.com/18-1-5/75094214.jpg">
-<meta property="og:updated_time" content="2018-01-05T10:22:47.613Z">
+<meta property="og:updated_time" content="2018-01-05T10:51:11.723Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="说说CSRF">
 <meta name="twitter:description" content="CSRF是什么？跨站请求伪造（英语：Cross-site request forgery），维基百科的解释是一种挟制用户在当前已登录的Web应用程序上执行非本意的操作的攻击方法，听起来很厉害的样子。 简单来说，攻击者利用一些技术手段去欺骗用户浏览器去访问一些曾经认证过的网站而执行一些操作。由于认证过，所以浏览器认为是用户的本意。 其实咋们可以简单理解为虎符调兵，正常是大将军颁发虎符才能调兵，但是军">
@@ -392,7 +392,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  680
+                  831
                 </span>
               
 
@@ -408,7 +408,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  2
+                  3
                 </span>
               
             </div>
@@ -433,7 +433,16 @@
 <a id="more"></a>
 <h3 id="CSRF原理"><a href="#CSRF原理" class="headerlink" title="CSRF原理"></a>CSRF原理</h3><p>那我们具体看看攻击细节</p>
 <p><img src="http://p1tm0s0k3.bkt.clouddn.com/18-1-5/75094214.jpg" alt=""></p>
-<p>看图说话，<br>当我访问登录一个正常网站，成功访问后服务器会产生一个标识用户身份的cookie给用户的浏览器保存，在标识cookie还存在时访问恶意网站，在该网站里攻击者会让你不知不觉的访问之前的正常网站并且执行一些操作，由于标识用户身份的cookie还存在，所以用户浏览器认为是用户的本意操作而执行该请求，从而攻击成功。</p>
+<p>看图说话</p>
+<h4 id="大致过程"><a href="#大致过程" class="headerlink" title="大致过程"></a>大致过程</h4><ul>
+<li><strong>用户访问浏览正常网站</strong></li>
+<li><strong>正常网站服务器响应并且返回标识该用户身份的cookie</strong></li>
+<li><strong>用户未注销正常网站的情况下，访问恶意网站</strong></li>
+<li><strong>恶意网站里访问正常网站并且带着标识用户的cookie</strong></li>
+<li><strong>正常网站服务器接受来自恶意网站的请求</strong></li>
+</ul>
+<p>再次访问正常网站时，浏览器会自动带上标识该用户身份的cookie发送请求，所以正常网站服务器会接受来自恶意网站的请求，从而完成攻击。</p>
+<p>当我访问登录一个正常网站，成功访问后服务器会产生一个标识用户身份的cookie给用户的浏览器保存，在标识cookie还存在时访问恶意网站，在该网站里攻击者会让你不知不觉的访问之前的正常网站并且执行一些操作，由于标识用户身份的cookie还存在，所以用户浏览器认为是用户的本意操作而执行该请求，从而攻击成功。</p>
 <p>这些欺骗的访问方式有很多，例如“点击小广告、找回密码”等等诱导用户去点击操作。</p>
 <h3 id="如何预防CSRF"><a href="#如何预防CSRF" class="headerlink" title="如何预防CSRF"></a>如何预防CSRF</h3><p>我去，感觉都不敢上网冲浪了。。。</p>
 <p>其实现在浏览器和服务端都做了很多安全防范措施，大家还是可以安全上网的。</p>
@@ -674,7 +683,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSRF是什么？"><span class="nav-number">1.</span> <span class="nav-text">CSRF是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSRF原理"><span class="nav-number">2.</span> <span class="nav-text">CSRF原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何预防CSRF"><span class="nav-number">3.</span> <span class="nav-text">如何预防CSRF</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSRF是什么？"><span class="nav-number">1.</span> <span class="nav-text">CSRF是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSRF原理"><span class="nav-number">2.</span> <span class="nav-text">CSRF原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#大致过程"><span class="nav-number">2.1.</span> <span class="nav-text">大致过程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何预防CSRF"><span class="nav-number">3.</span> <span class="nav-text">如何预防CSRF</span></a></li></ol></div>
             
 
           </div>
