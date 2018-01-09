@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[聊聊字体如何变小]]></title>
+    <url>%2F2018%2F01%2F09%2F%E8%81%8A%E8%81%8A%E5%AD%97%E4%BD%93%E5%A6%82%E4%BD%95%E5%8F%98%E5%B0%8F%2F</url>
+    <content type="text"><![CDATA[有时候在中文Chrome设置font-size小于12px的时候，依然显示为12px.（注意只是中文Chrome，英文Chrome是没有限制的） 那我们怎么才能成功设置小于12px的字体大小呢？？ 解决方法我先开门见山的介绍解决方法吧 transform scale 缩小（推荐） 12345 font-size: 9px;-webkit-transform: scale(0.75);-webkit-transform-origin-x: 0; scale其实本质就是利用缩放的效果，来达到字体变小的效果。 元素变形基点默认是中心点，所以需要通过设置-webkit-transform-origin-x让变形基点基于left，这样元素布局才不会乱。 字体变小在其他浏览器都是OK的，但是-webkit-transform特性在Safari和Firefox下是生效的（亲测有效），所以此CSS必须在Chrome下才能给元素使用，那么如何判断当前浏览器是Chrome呢？？ 你可以在JavaScript里使用!!wiondw.chrome 返回的布尔值进行判断 手动设置Chrome最小字体 （不推荐，不要给用户添堵） 中文Chrome默认最小字体是12px，如果用户自己手动改变浏览器最小字体，这样设置小于12px，浏览器就可以显示出来了。 目前Chrome-63最小可以设置为6px -webkit-text-size-adjust:none（已废弃） 我看见很多网上资料还在说这个方法，可是人家Chrome 27以后正式取消该特性了，很误导人啊！！！ 参考链接 Chrome取消-webkit-text-size-adjust后的那些事 compatible-with-less-than-12px-fontsize]]></content>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[说说CSRF]]></title>
     <url>%2F2018%2F01%2F05%2F%E8%AF%B4%E8%AF%B4CSRF%2F</url>
     <content type="text"><![CDATA[CSRF是什么？跨站请求伪造（英语：Cross-site request forgery），维基百科的解释是一种挟制用户在当前已登录的Web应用程序上执行非本意的操作的攻击方法，听起来很厉害的样子。 简单来说，攻击者利用一些技术手段去欺骗用户浏览器去访问一些曾经认证过的网站而执行一些操作。由于认证过，所以浏览器认为是用户的本意。 其实咋们可以简单理解为虎符调兵，正常是大将军颁发虎符才能调兵，但是军队只认虎符不认人，假如奸臣偷取虎符假传命令私自调兵造反，那可就大事不好！ CSRF原理那我们具体看看攻击细节 看图说话 大致过程 用户访问浏览正常网站 正常网站服务器响应并且返回标识该用户身份的cookie 用户未注销正常网站的情况下，访问恶意网站 恶意网站里访问正常网站并且带着标识用户的cookie 正常网站服务器接受来自恶意网站的请求 再次访问正常网站时，浏览器会自动带上标识该用户身份的cookie发送请求，所以正常网站服务器会接受来自恶意网站的请求，从而完成攻击。 当我访问登录一个正常网站，成功访问后服务器会产生一个标识用户身份的cookie给用户的浏览器保存，在标识cookie还存在时访问恶意网站，在该网站里攻击者会让你不知不觉的访问之前的正常网站并且执行一些操作，由于标识用户身份的cookie还存在，所以用户浏览器认为是用户的本意操作而执行该请求，从而攻击成功。 这些欺骗的访问方式有很多，例如“点击小广告、找回密码”等等诱导用户去点击操作。 如何预防CSRF我去，感觉都不敢上网冲浪了。。。 其实现在浏览器和服务端都做了很多安全防范措施，大家还是可以安全上网的。 目前预防方式有二种： 检查Referer字段 HTTP请求head里有个Referer字段，用于表明请求的来源地址。正常情况下，Referer字段和请求的地址是位于同一域名下的，如果是CSRF攻击发起的请求，那么Referer字段和请求的地址就不是同一域名了，那么服务器就能识别出恶意访问。 这个方法缺点是攻击者有可能篡改该Referer字段内容，从而欺骗服务器。 添加校验token 当用户正常访问网站时，服务器会生产一个随机数，并且把该随机数埋入该页面里（一般放在form表单，&lt;input type=&quot;hidden&quot; name=&quot;_csrf_token&quot; value=&quot;xxxx&quot;&gt;）。正常访问，客户的浏览器是能够得到并且返回该字段，而CSRF一开始是不知道该字段的数值，服务器接受请求发现该字段的异常，从而拒绝该请求。 参考资料 跨站请求伪造 CSRF 是什么？]]></content>
