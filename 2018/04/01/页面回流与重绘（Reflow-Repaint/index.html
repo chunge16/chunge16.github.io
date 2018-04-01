@@ -85,18 +85,18 @@
 
 
 
-<meta name="description" content="一、什么是Repaint/Reflow?我们首先来说明一下浏览器渲染的大致流程：   解析HTML文档，构建DOM树 解析CSS属性，构建CSSOM树 结合DOM树和CSSOM树，构建render树 在render树上计算每个节点的几何结构 把每个节点绘制在屏幕上  一个页面可以简单看成由两个部分组成：  DOM节点：描述页面的结构 DOM节点的style属性：描述页面如何呈现  Repaint（">
+<meta name="description" content="一、什么是Repaint/Reflow?我们首先来说明一下浏览器渲染的大致流程：   解析HTML文档，构建DOM树 解析CSS属性，构建CSSOM树 结合DOM树和CSSOM树，构建render树 在render树的基础上进行布局, 计算每个节点的几何结构 把每个节点绘制在屏幕上  一个页面可以简单看成由两个部分组成：  DOM节点：描述页面的结构 DOM节点的style属性：描述页面如何呈现">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="页面回流与重绘（Reflow &amp; Repaint)">
 <meta property="og:url" content="http://yoursite.com/2018/04/01/页面回流与重绘（Reflow-Repaint/index.html">
 <meta property="og:site_name" content="石头">
-<meta property="og:description" content="一、什么是Repaint/Reflow?我们首先来说明一下浏览器渲染的大致流程：   解析HTML文档，构建DOM树 解析CSS属性，构建CSSOM树 结合DOM树和CSSOM树，构建render树 在render树上计算每个节点的几何结构 把每个节点绘制在屏幕上  一个页面可以简单看成由两个部分组成：  DOM节点：描述页面的结构 DOM节点的style属性：描述页面如何呈现  Repaint（">
+<meta property="og:description" content="一、什么是Repaint/Reflow?我们首先来说明一下浏览器渲染的大致流程：   解析HTML文档，构建DOM树 解析CSS属性，构建CSSOM树 结合DOM树和CSSOM树，构建render树 在render树的基础上进行布局, 计算每个节点的几何结构 把每个节点绘制在屏幕上  一个页面可以简单看成由两个部分组成：  DOM节点：描述页面的结构 DOM节点的style属性：描述页面如何呈现">
 <meta property="og:image" content="http://p1tm0s0k3.bkt.clouddn.com/18-4-1/49762979.jpg">
-<meta property="og:updated_time" content="2018-04-01T09:40:48.639Z">
+<meta property="og:updated_time" content="2018-04-01T09:44:00.677Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="页面回流与重绘（Reflow &amp; Repaint)">
-<meta name="twitter:description" content="一、什么是Repaint/Reflow?我们首先来说明一下浏览器渲染的大致流程：   解析HTML文档，构建DOM树 解析CSS属性，构建CSSOM树 结合DOM树和CSSOM树，构建render树 在render树上计算每个节点的几何结构 把每个节点绘制在屏幕上  一个页面可以简单看成由两个部分组成：  DOM节点：描述页面的结构 DOM节点的style属性：描述页面如何呈现  Repaint（">
+<meta name="twitter:description" content="一、什么是Repaint/Reflow?我们首先来说明一下浏览器渲染的大致流程：   解析HTML文档，构建DOM树 解析CSS属性，构建CSSOM树 结合DOM树和CSSOM树，构建render树 在render树的基础上进行布局, 计算每个节点的几何结构 把每个节点绘制在屏幕上  一个页面可以简单看成由两个部分组成：  DOM节点：描述页面的结构 DOM节点的style属性：描述页面如何呈现">
 <meta name="twitter:image" content="http://p1tm0s0k3.bkt.clouddn.com/18-4-1/49762979.jpg">
 
 
@@ -382,7 +382,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  719
+                  726
                 </span>
               
 
@@ -423,7 +423,7 @@
 <li>解析HTML文档，构建DOM树</li>
 <li>解析CSS属性，构建CSSOM树</li>
 <li>结合DOM树和CSSOM树，构建render树</li>
-<li>在render树上计算每个节点的几何结构</li>
+<li>在render树的基础上进行布局, 计算每个节点的几何结构</li>
 <li>把每个节点绘制在屏幕上</li>
 </ul>
 <p>一个页面可以简单看成由两个部分组成：</p>
