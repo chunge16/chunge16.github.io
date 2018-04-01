@@ -373,7 +373,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  700
+                  742
                 </span>
               
 
@@ -419,6 +419,7 @@
 <li>在render树的基础上进行布局, 计算每个节点的几何结构</li>
 <li>把每个节点绘制在屏幕上</li>
 </ul>
+<p>一个页面可以简单看成由两个部分组成：<br>DOM节点：描述页面的结构<br>DOM节点的属性：描述DOM节点如何呈现</p>
 <h4 id="Reflow-（回流）"><a href="#Reflow-（回流）" class="headerlink" title="Reflow （回流）"></a>Reflow （回流）</h4><p>当涉及到DOM节点的<strong>布局属性</strong>发生变化时，就会重新计算该属性，浏览器会重新描绘相应的元素，此过程叫 <strong>回流</strong>（Reflow）。</p>
 <h4 id="Repaint（重绘）"><a href="#Repaint（重绘）" class="headerlink" title="Repaint（重绘）"></a>Repaint（重绘）</h4><p>当影响DOM元素可见性的属性发生变化 (如 color) 时, 浏览器会重新描绘相应的元素, 此过程称为 <strong>重绘</strong>（Repaint)。因此回流必然会引起重绘。</p>
 <h3 id="二、引起Repaint和Reflow的一些操作"><a href="#二、引起Repaint和Reflow的一些操作" class="headerlink" title="二、引起Repaint和Reflow的一些操作"></a>二、引起Repaint和Reflow的一些操作</h3><p>浏览器在处理回流时，会递归处理DOM节点，所以导致回流的成本高于重绘。</p>
