@@ -85,22 +85,21 @@
 
 
 
-<meta name="description" content="前言在写复杂的 JavaScript 应用之前，充分理解原型链继承的工作方式是每个 JavaScript 程序员必修的功课。">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="说说Javascript原型链">
-<meta property="og:url" content="http://yoursite.com/2017/04/24/说说Javascript原型链/index.html">
+<meta property="og:title" content="说说原型、原型链和原型继承">
+<meta property="og:url" content="http://yoursite.com/2018/04/16/说说原型、原型链和原型继承/index.html">
 <meta property="og:site_name" content="石头">
-<meta property="og:description" content="前言在写复杂的 JavaScript 应用之前，充分理解原型链继承的工作方式是每个 JavaScript 程序员必修的功课。">
-<meta property="og:image" content="http://i1.piimg.com/1949/bdc8244102045bc1.png">
-<meta property="og:image" content="http://i1.piimg.com/1949/e19b8b5fe093ed93.jpg">
-<meta property="og:image" content="http://i2.muimg.com/1949/9831c6c4fbaaae31.jpg">
-<meta property="og:image" content="http://i1.piimg.com/1949/8eaf7886aa90ef2f.jpg">
-<meta property="og:updated_time" content="2017-04-26T15:39:47.000Z">
+<meta property="og:image" content="http://p1tm0s0k3.bkt.clouddn.com/18-4-16/11909902.jpg">
+<meta property="og:image" content="http://p1tm0s0k3.bkt.clouddn.com/18-4-16/11909902.jpg">
+<meta property="og:image" content="http://p1tm0s0k3.bkt.clouddn.com/18-4-16/27657412.jpg">
+<meta property="og:image" content="http://p1tm0s0k3.bkt.clouddn.com/18-4-16/38816990.jpg">
+<meta property="og:image" content="http://p1tm0s0k3.bkt.clouddn.com/18-4-16/9497051.jpg">
+<meta property="og:image" content="http://p1tm0s0k3.bkt.clouddn.com/18-4-17/41221362.jpg">
+<meta property="og:updated_time" content="2018-04-17T09:27:03.978Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="说说Javascript原型链">
-<meta name="twitter:description" content="前言在写复杂的 JavaScript 应用之前，充分理解原型链继承的工作方式是每个 JavaScript 程序员必修的功课。">
-<meta name="twitter:image" content="http://i1.piimg.com/1949/bdc8244102045bc1.png">
+<meta name="twitter:title" content="说说原型、原型链和原型继承">
+<meta name="twitter:image" content="http://p1tm0s0k3.bkt.clouddn.com/18-4-16/11909902.jpg">
 
 
 
@@ -128,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/24/说说Javascript原型链/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/16/说说原型、原型链和原型继承/"/>
 
 
 
 
 
-  <title> 说说Javascript原型链 | 石头 </title>
+  <title> 说说原型、原型链和原型继承 | 石头 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -297,7 +296,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/24/说说Javascript原型链/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/16/说说原型、原型链和原型继承/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JACK">
@@ -318,7 +317,7 @@
             
             
               
-                说说Javascript原型链
+                说说原型、原型链和原型继承
               
             
           </h1>
@@ -333,8 +332,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-24T22:32:57+08:00">
-                2017-04-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-16T00:21:09+08:00">
+                2018-04-16
               </time>
             
 
@@ -344,28 +343,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -374,7 +351,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2017/04/24/说说Javascript原型链/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2018/04/16/说说原型、原型链和原型继承/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -383,7 +360,7 @@
 
           
           
-             <span id="/2017/04/24/说说Javascript原型链/" class="leancloud_visitors" data-flag-title="说说Javascript原型链">
+             <span id="/2018/04/16/说说原型、原型链和原型继承/" class="leancloud_visitors" data-flag-title="说说原型、原型链和原型继承">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -407,7 +384,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  947
+                  1,554
                 </span>
               
 
@@ -423,7 +400,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  4
+                  6
                 </span>
               
             </div>
@@ -442,52 +419,110 @@
       
 
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在写复杂的 JavaScript 应用之前，充分理解原型链继承的工作方式是每个 JavaScript 程序员必修的功课。</p>
-<p><img src="http://i1.piimg.com/1949/bdc8244102045bc1.png" alt="Markdown"></p>
+        <p><img src="http://p1tm0s0k3.bkt.clouddn.com/18-4-16/11909902.jpg" alt=""></p>
 <a id="more"></a>
-<p><img src="http://i1.piimg.com/1949/e19b8b5fe093ed93.jpg" alt="Markdown"></p>
-<p>JavaScript中并没有类（class）；Js是基于原型（prototype-based）来实现的面向对象（OOP）的编程范式的，但并不是所有的对象都拥有prototype这一属性</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;&#125;,b = <span class="string">'shi'</span>;</div><div class="line"></div><div class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line"></div><div class="line">a.prototype <span class="comment">// undefined</span></div><div class="line"></div><div class="line">b.prototype <span class="comment">// undefined</span></div><div class="line"></div><div class="line">fn.prototype  <span class="comment">// Object &#123;constructor: function&#125;</span></div></pre></td></tr></table></figure>
-<p><code>prototype</code>属性只有 <code>function</code>对象定义时才有，函数本身也是对象。想要明白原型问题我们先明白几个基本概念。</p>
-<h3 id="一、function、Function、Object和"><a href="#一、function、Function、Object和" class="headerlink" title="一、function、Function、Object和{}"></a>一、function、Function、Object和{}</h3><p>  <code>function</code>是JavaScript的关键字，用于定义函数变量，一般有2种定义方式</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;  </div><div class="line">   <span class="built_in">console</span>.log(<span class="string">'This is function f1!'</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">typeof</span>(f1);  <span class="comment">//=&gt; 'function'</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> f2 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'This is function f2!'</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">typeof</span>(f2);  <span class="comment">//=&gt; 'function'</span></div></pre></td></tr></table></figure>
-<p>  <code>Function</code>是函数类型实例的构造函数（constructor）, 本质也是函数，类似还有<code>Object</code>或<code>String</code>、<code>Number</code>等，都是Js内置类型实例的构造函数，构造函数主要作用就是创建相应类型的实例，实现原型链。</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> f3 = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"console.log('This is function f3!');"</span>);  </div><div class="line">f3();        <span class="comment">//=&gt; 'This is function f3!'  </span></div><div class="line"><span class="keyword">typeof</span>(f3);  <span class="comment">//=&gt; 'function'</span></div><div class="line"></div><div class="line"><span class="keyword">typeof</span>(<span class="built_in">Function</span>); <span class="comment">//=&gt; 'function'</span></div></pre></td></tr></table></figure>
-<p>  Object，它用于生成对象类型，其简写形式为{}，其实和function和Function的关系类似。</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> o1 = <span class="keyword">new</span> <span class="built_in">Object</span>();  </div><div class="line"><span class="keyword">typeof</span>(o1);      <span class="comment">//=&gt; 'object'</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> o2 = &#123;&#125;;  </div><div class="line"><span class="keyword">typeof</span>(o2);     <span class="comment">//=&gt; 'object'</span></div><div class="line"></div><div class="line"><span class="keyword">typeof</span>(<span class="built_in">Object</span>); <span class="comment">//=&gt; 'function'</span></div></pre></td></tr></table></figure>
-<h3 id="二、prototype-和-proto"><a href="#二、prototype-和-proto" class="headerlink" title="二、prototype 和 __proto__"></a>二、prototype 和 __proto__</h3><p><code>prototype</code>属性只有函数类型对象才有，上面说的很清楚了。而<code>__proto__</code>是所有JavaScript对象都内置的属性[[Prototype]]，而这个属性指向构造函数（类似父类）的<code>prototype</code>属性，从而继承属性. 通俗一点讲，<code>prototype</code>中定义的属性和方法都是留给自己的“后代”用的，因此，子类完全可以访问prototype中的属性和方法。</p>
-<p>举个例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Person = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;  </div><div class="line">Person.prototype.type = <span class="string">'Person'</span>;  </div><div class="line">Person.prototype.maxAge = <span class="number">100</span>;</div><div class="line"></div><div class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();  </div><div class="line"><span class="built_in">console</span>.log(p.maxAge);  </div><div class="line">p.name = <span class="string">'rainy'</span>;</div><div class="line"></div><div class="line"><span class="comment">// 修正Person.prototype.constructor为Person本身</span></div><div class="line">Person.prototype.constructor === Person;  <span class="comment">//=&gt; true  </span></div><div class="line">p.__proto__ === Person.prototype;         <span class="comment">//=&gt; true  </span></div><div class="line"><span class="built_in">console</span>.log(p.prototype);                 <span class="comment">//=&gt; undefined</span></div></pre></td></tr></table></figure>
-<p><strong>一图胜千言</strong></p>
-<p><img src="http://i2.muimg.com/1949/9831c6c4fbaaae31.jpg" alt="Markdown"></p>
-<p>Person是一个函数类型的变量，因此自带了prototype属性，prototype属性中的constructor又指向Person本身；通过new关键字生成的Person类的实例p1，通过<code>__proto__</code>属性指向了Person的原型。</p>
-<blockquote>
-<p>注意：<br>遵循ECMAScript标准，someObject.[[Prototype]] 符号是用于指派 someObject 的原型。这个等同于 JavaScript 的 <code>__proto__</code>  属性。从 ECMAScript 6 开始, [[Prototype]] 可以用Object.getPrototypeOf()和Object.setPrototypeOf()访问器来访问。</p>
-</blockquote>
-<h3 id="三、原型链"><a href="#三、原型链" class="headerlink" title="三、原型链"></a>三、原型链</h3><p>原型链是基于 <code>__proto__</code> 的。JavaScript 对象有一个指向一个原型对象的链。当试图访问一个对象的属性时，它不仅仅在该对象上搜寻，还会搜寻该对象的原型，以及该对象的原型的原型，依此层层向上搜索，直到找到一个名字匹配的属性或到达原型链的末尾。</p>
-<p>举例说明：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Node</span></div><div class="line"><span class="keyword">var</span> Obj = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;  </div><div class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> Obj();  </div><div class="line">o.__proto__ === Obj.prototype;  <span class="comment">//=&gt; true  </span></div><div class="line">o.__proto__.constructor === Obj; <span class="comment">//=&gt; true</span></div><div class="line"></div><div class="line">Obj.__proto__ === <span class="built_in">Function</span>.prototype; <span class="comment">//=&gt; true  </span></div><div class="line">Obj.__proto__.constructor === <span class="built_in">Function</span>; <span class="comment">//=&gt; true</span></div><div class="line"></div><div class="line"><span class="built_in">Function</span>.__proto__ === <span class="built_in">Function</span>.prototype; <span class="comment">//=&gt; true  </span></div><div class="line"><span class="built_in">Object</span>.__proto__ === <span class="built_in">Object</span>.prototype;     <span class="comment">//=&gt; false  </span></div><div class="line"><span class="built_in">Object</span>.__proto__ === <span class="built_in">Function</span>.prototype;   <span class="comment">//=&gt; true</span></div><div class="line"></div><div class="line"><span class="built_in">Function</span>.__proto__.constructor === <span class="built_in">Function</span>;<span class="comment">//=&gt; true  </span></div><div class="line"><span class="built_in">Function</span>.__proto__.__proto__;               <span class="comment">//=&gt; &#123;&#125;  </span></div><div class="line"><span class="built_in">Function</span>.__proto__.__proto__ === o.__proto__.__proto__; <span class="comment">//=&gt; true  </span></div><div class="line">o.__proto__.__proto__.__proto__ === <span class="literal">null</span>;   <span class="comment">//=&gt; true</span></div></pre></td></tr></table></figure>
-<p>来张图更直观一些</p>
-<p><img src="http://i1.piimg.com/1949/8eaf7886aa90ef2f.jpg" alt="Markdown"></p>
-<p>到了这里，其实有个问题大家没注意，<code>new</code>关键词到底起了什么作用呢？</p>
-<p>其实开头的图已经给出答案：<code>new</code>关键词的作用就是完成上图所示实例与父类原型之间关系的串接，并创建一个新的对象.简单来说，<code>new</code>就是把<code>父类</code>的<code>prototype</code>赋值给实例的<code>__proto__</code></p>
-<p>有兴趣深入看这里：<a href="https://zhuanlan.zhihu.com/p/23987456?refer=study-fe" target="_blank" rel="external">JS 的 new 到底是干什么的？</a></p>
-<blockquote>
-<p>文笔有限，才疏学浅，文中若有不对之处，还望告知。</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>参考文章</p>
-</blockquote>
+<h3 id="一、原型-prototype-和-proto"><a href="#一、原型-prototype-和-proto" class="headerlink" title="一、原型 prototype 和 __proto__"></a>一、原型 <code>prototype</code> 和 <code>__proto__</code></h3><ul>
+<li>每个对象都有一个<code>__proto__</code>属性，并且指向它的<code>prototype</code>原型对象</li>
+<li>每个构造函数都有一个<code>prototype</code>原型对象<ul>
+<li><code>prototype</code>原型对象里的<code>constructor</code>指向构造函数本身</li>
+</ul>
+</li>
+</ul>
+<p><strong>一图胜前言</strong></p>
+<p><img src="http://p1tm0s0k3.bkt.clouddn.com/18-4-16/11909902.jpg" alt=""></p>
+<p><strong>有的同学可能会问<code>prototype</code> 和 <code>__proto__</code>有什么用呢？</strong></p>
+<p>实例对象的<code>__proto__</code>指向构造函数的<code>prototype</code>，从而实现继承。</p>
+<p><code>prototype</code>对象相当于特定类型所有实例对象都可以访问的公共容器</p>
+<p><img src="http://p1tm0s0k3.bkt.clouddn.com/18-4-16/27657412.jpg" alt=""></p>
+<p><strong>看一下代码就清楚了</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">function Person(nick, age)&#123;</div><div class="line">    this.nick = nick;</div><div class="line">    this.age = age;</div><div class="line">&#125;</div><div class="line">Person.prototype.sayName = function()&#123;</div><div class="line">    console.log(this.nick);</div><div class="line">&#125;</div><div class="line"></div><div class="line">var p1 = new Person(&apos;Byron&apos;, 20);</div><div class="line"></div><div class="line">var p2 = new Person(&apos;Casper&apos;, 25);</div><div class="line"></div><div class="line">p1.sayName()  // Byron</div><div class="line"></div><div class="line">p2.sayName()  // Casper</div><div class="line"></div><div class="line">p1.__proto__ === Person.prototype		//true</div><div class="line"></div><div class="line">p2.__proto__ === Person.prototype   //true</div><div class="line"></div><div class="line">p1.__proto__ === p2.__proto__       	//true</div><div class="line"></div><div class="line">Person.prototype.constructor === Person  //true</div></pre></td></tr></table></figure>
+<h3 id="二、原型链"><a href="#二、原型链" class="headerlink" title="二、原型链"></a>二、原型链</h3><p>请看以下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3]</div><div class="line"></div><div class="line">arr.valueOf()  //  [1, 2, 3]</div></pre></td></tr></table></figure>
+<p>我们再来看一张图</p>
+<p><img src="http://p1tm0s0k3.bkt.clouddn.com/18-4-16/38816990.jpg" alt=""></p>
+<p>按照之前的理论，如果自身没有该方法，我们应该去<code>Array.prototype</code>对象里去找，但是你会发现<code>arr.__proto__</code>上压根就没有<code>valueOf</code>方法，那它是从哪里来的呢？</p>
+<p><strong>各位客官，请看这张图</strong></p>
+<p><img src="http://p1tm0s0k3.bkt.clouddn.com/18-4-16/9497051.jpg" alt=""></p>
+<p>很奇怪我们在<code>Array.prototype.__proto__</code>里找到了<code>valueOf</code>方法，为什么呢？</p>
+<h4 id="查找valueOf方法的过程"><a href="#查找valueOf方法的过程" class="headerlink" title="查找valueOf方法的过程"></a>查找<code>valueOf</code>方法的过程</h4><p>当试图访问一个对象的属性时，它不仅仅在该对象上搜寻，还会搜寻该对象的原型，以及该对象的原型的原型，依次层层向上搜索，直到找到一个名字匹配的属性或到达原型链的末尾。</p>
+<p>查找valueOf大致流程</p>
 <ol>
-<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Inheritance_and_the_prototype_chain#使用不同的方法来创建对象和生成原型链" target="_blank" rel="external">继承与原型链</a></p>
+<li>当前实例对象obj，查找obj的属性或方法，找到后返回</li>
+<li>没有找到，通过<code>obj. __proto__</code>，找到obj构造函数的<code>prototype</code>并且查找上面的属性和方法，找到后返回</li>
+<li>没有找到，把<code>Array.prototype</code>当做obj，重复以上步骤</li>
+</ol>
+<p>当然不会一直找下去，原型链是有终点的，最后查找到<code>Object.prototype</code>时<br><code>Object.prototype.__proto__ === null</code>，意味着查找结束</p>
+<p><img src="http://p1tm0s0k3.bkt.clouddn.com/18-4-17/41221362.jpg" alt=""></p>
+<p>我们来看看上图的关系</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">arr.__proto__ === Array.prototype</div><div class="line">true</div><div class="line">Array.prototype.__proto__ === Object.prototype</div><div class="line">true</div><div class="line">arr.__proto__.__proto__ === Object.prototype</div><div class="line">true</div><div class="line"></div><div class="line">// 原型链的终点</div><div class="line">Object.prototype.__proto__ === null</div><div class="line">true</div></pre></td></tr></table></figure>
+<p>原型链如下：</p>
+<p><code>arr ---&gt; Array.prototype ---&gt; Object.prototype ---&gt; null</code></p>
+<p><strong>这就是传说中的原型链，层层向上查找，最后还没有就返回undefined</strong></p>
+<h3 id="三、JavaScript-中的继承"><a href="#三、JavaScript-中的继承" class="headerlink" title="三、JavaScript 中的继承"></a>三、JavaScript 中的继承</h3><h4 id="3-1-什么是继承？"><a href="#3-1-什么是继承？" class="headerlink" title="3.1 什么是继承？"></a>3.1 什么是继承？</h4><blockquote>
+<p>继承是指一个对象直接使用另外一个对象的属性和方法</p>
+</blockquote>
+<p>由此可见只要实现属性和方法的继承，就达到继承的效果</p>
+<ul>
+<li>得到一个对象的属性</li>
+<li>得到一个对象的方法</li>
+</ul>
+<h4 id="3-2-属性如何继承？"><a href="#3-2-属性如何继承？" class="headerlink" title="3.2 属性如何继承？"></a>3.2 属性如何继承？</h4><p>我们先创建一个<code>Person</code>类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function Person (name, age) &#123;</div><div class="line">	this.name = name</div><div class="line">	this.age = age</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 方法定义在构造函数的原型上</div><div class="line">Person.prototype.getName = function () &#123; console.log(this.name)&#125;</div></pre></td></tr></table></figure>
+<p>此时我想创建一个<code>Teacher</code>类，我希望它可以继承<code>Person</code>所有的属性，并且额外添加属于自己特定的属性；</p>
+<ul>
+<li>一个新的属性，subject——这个属性包含了教师教授的学科。</li>
+</ul>
+<p>定义<code>Teacher</code>的构造函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function Teacher (name, age, subject) &#123;</div><div class="line">	Person.call(this, name, age)</div><div class="line">	this.subject = subject</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>属性的继承是通过在一个类内执行另外一个类的构造函数，通过<code>call</code>指定<code>this</code>为当前执行环境，这样就可以得到另外一个类的所有属性。</strong></p>
+<blockquote>
+<p>Person.call(this, name, age)</p>
+</blockquote>
+<p>我们实例化一下看看</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var teacher = new Teacher(&apos;jack&apos;, 25, Math)</div><div class="line"></div><div class="line">teacher.age</div><div class="line">25</div><div class="line">teacher.name</div><div class="line">&quot;jack&quot;</div></pre></td></tr></table></figure>
+<p>很明显<code>Teacher</code>成功继承了<code>Person</code>的属性</p>
+<h4 id="3-3-方法如何继承？"><a href="#3-3-方法如何继承？" class="headerlink" title="3.3 方法如何继承？"></a>3.3 方法如何继承？</h4><p>我们需要让<code>Teacher</code>从<code>Person</code>的原型对象里继承方法。我们要怎么做呢？</p>
+<p>我们都知道类的方法都定义在<code>prototype</code>里，那其实我们只需要把<code>Person.prototype</code>的备份赋值给<code>Teacher.prototype</code>即可</p>
+<blockquote>
+<p>Teacher.prototype = Object.create(Person.prototype)</p>
+</blockquote>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/create" target="_blank" rel="external">Object.create</a>简单说就是新建一个对象，使用现有的对象赋值给新建对象的<code>__proto__</code></p>
+<p>可能有人会问为什么是备份呢？</p>
+<p>因为如果直接赋值，那会是引用关系，意味着修改<code>Teacher. prototype</code>，也会同时修改<code>Person.prototype</code>，这是不合理的。</p>
+<p>另外注意一点就是，在给<code>Teacher</code>类添加方法时，应该在修改<code>prototype</code>以后，否则会被覆盖掉，原因是赋值前后的属性值是不同的对象。</p>
+<p>最后还有一个问题，我们都知道<code>prototype</code>里有个属性<code>constructor</code>指向构造函数本身，但是因为我们是复制其他类的<code>prototype</code>，所以这个指向是不对的，需要更正一下。<br>如果不修改，会导致我们类型判断出错</p>
+<blockquote>
+<p>Teacher.prototype.constructor = Teacher</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">Teacher.prototype = Object.create(Person.prototype)</div><div class="line"></div><div class="line">Teacher.prototype.constructor</div><div class="line">ƒ Person(name, age) &#123;</div><div class="line">	this.name = name</div><div class="line">	this.age = age</div><div class="line">&#125;</div><div class="line"></div><div class="line">---</div><div class="line"></div><div class="line">Teacher.prototype.constructor = Teacher</div><div class="line">ƒ Teacher(name, age, subject) &#123;</div><div class="line">	Person.call(this, name, age)</div><div class="line">	this.subject = subject</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>继承方法的最终方案：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Teacher.prototype = Object.create(Person.prototype)</div><div class="line">Teacher.prototype.constructor = Teacher</div></pre></td></tr></table></figure>
+<h4 id="3-4-hasOwnProperty"><a href="#3-4-hasOwnProperty" class="headerlink" title="3.4 hasOwnProperty"></a>3.4 hasOwnProperty</h4><p>在原型链上查询属性比较耗时，对性能有影响，试图访问不存在的属性时会遍历整个原型链。</p>
+<p>遍历对象属性时，每个可枚举的属性都会被枚举出来。 要检查是否具有自己定义的属性，而不是原型链上的属性，必须使用<code>hasOwnProperty</code>方法。</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty" target="_blank" rel="external">hasOwnProperty</a> 是 JavaScript 中唯一处理属性并且不会遍历原型链的方法。</p>
+<h3 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h3><h4 id="prototype-和-proto"><a href="#prototype-和-proto" class="headerlink" title="prototype 和 __proto__"></a><code>prototype</code> 和 <code>__proto__</code></h4><ul>
+<li>每个对象都有一个<code>__proto__</code>属性，并且指向它的<code>prototype</code>原型对象</li>
+<li>每个构造函数都有一个<code>prototype</code>原型对象<ul>
+<li><code>prototype</code>原型对象里的<code>constructor</code>指向构造函数本身</li>
+</ul>
 </li>
-<li><p><a href="http://bonsaiden.github.io/JavaScript-Garden/zh/#object.prototype" target="_blank" rel="external">原型</a></p>
+</ul>
+<h4 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h4><p>每个对象都有一个<code>__proto__</code>，它指向它的<code>prototype</code>原型对象，而<code>prototype</code>原型对象又具有一个自己的<code>prototype</code>原型对象，就这样层层往上直到一个对象的原型<code>prototype</code>为<code>null</code></p>
+<p>这个查询的路径就是<code>原型链</code></p>
+<h4 id="JavaScript-中的继承"><a href="#JavaScript-中的继承" class="headerlink" title="JavaScript 中的继承"></a>JavaScript 中的继承</h4><ul>
+<li><p>属性继承 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function Person (name, age) &#123;</div><div class="line">this.name = name</div><div class="line">this.age = age</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 方法定义在构造函数的原型上</div><div class="line">Person.prototype.getName = function () &#123; console.log(this.name)&#125;</div><div class="line"></div><div class="line">function Teacher (name, age, subject) &#123;</div><div class="line">Person.call(this, name, age)</div><div class="line">this.subject = subject</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
-<li><p><a href="http://blog.rainy.im/2015/07/20/prototype-chain-in-js/" target="_blank" rel="external">图解Javascript原型链</a></p>
+</ul>
+<ul>
+<li><p>方法继承</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Teacher.prototype = Object.create(Person.prototype)</div><div class="line">Teacher.prototype.constructor = Teacher</div></pre></td></tr></table></figure>
 </li>
-<li><p><a href="https://segmentfault.com/q/1010000005182807" target="_blank" rel="external">关于js中,原型对象，原型链，构造函数，实例之间关系的理解与区别</a></p>
-</li>
+</ul>
+<h3 id="五、参考链接"><a href="#五、参考链接" class="headerlink" title="五、参考链接"></a>五、参考链接</h3><ol>
+<li><a href="https://segmentfault.com/q/1010000005182807" target="_blank" rel="external">关于js中,原型对象，原型链，构造函数，实例之间关系的理解与区别</a></li>
+<li><a href="http://book.jirengu.com/fe/前端进阶/面向对象/继承.html" target="_blank" rel="external">原型链和继承</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects/Inheritance" target="_blank" rel="external">JavaScript 中的继承</a></li>
 </ol>
 
       
@@ -536,8 +571,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/16/《一念无明》/" rel="next" title="《一念无明》的感触">
-                <i class="fa fa-chevron-left"></i> 《一念无明》的感触
+              <a href="/2018/04/09/我对从URL输入到页面展现的理解/" rel="next" title="我对从URL输入到页面展现的理解">
+                <i class="fa fa-chevron-left"></i> 我对从URL输入到页面展现的理解
               </a>
             
           </div>
@@ -545,10 +580,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/04/29/JavaScript的this-的值到底是什么？/" rel="prev" title="JavaScript的this的值到底是什么？">
-                JavaScript的this的值到底是什么？ <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -714,7 +745,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一、function、Function、Object和"><span class="nav-number">2.</span> <span class="nav-text">一、function、Function、Object和{}</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、prototype-和-proto"><span class="nav-number">3.</span> <span class="nav-text">二、prototype 和 __proto__</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、原型链"><span class="nav-number">4.</span> <span class="nav-text">三、原型链</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、原型-prototype-和-proto"><span class="nav-number">1.</span> <span class="nav-text">一、原型 prototype 和 __proto__</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、原型链"><span class="nav-number">2.</span> <span class="nav-text">二、原型链</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查找valueOf方法的过程"><span class="nav-number">2.1.</span> <span class="nav-text">查找valueOf方法的过程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、JavaScript-中的继承"><span class="nav-number">3.</span> <span class="nav-text">三、JavaScript 中的继承</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-什么是继承？"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 什么是继承？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-属性如何继承？"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 属性如何继承？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-方法如何继承？"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 方法如何继承？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-4-hasOwnProperty"><span class="nav-number">3.4.</span> <span class="nav-text">3.4 hasOwnProperty</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、总结"><span class="nav-number">4.</span> <span class="nav-text">四、总结</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#prototype-和-proto"><span class="nav-number">4.1.</span> <span class="nav-text">prototype 和 __proto__</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原型链"><span class="nav-number">4.2.</span> <span class="nav-text">原型链</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript-中的继承"><span class="nav-number">4.3.</span> <span class="nav-text">JavaScript 中的继承</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、参考链接"><span class="nav-number">5.</span> <span class="nav-text">五、参考链接</span></a></li></ol></div>
             
 
           </div>
