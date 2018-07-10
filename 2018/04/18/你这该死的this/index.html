@@ -85,17 +85,19 @@
 
 
 
-<meta name="description" content="查看链接  this    看过这篇文章以后不要再提this">
+<meta name="description" content="随着函数使用场合的不同，this的值会发生变化。但是有一个总的原则，那就是this指的是，调用函数的那个对象">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="你这该死的this">
 <meta property="og:url" content="http://yoursite.com/2018/04/18/你这该死的this/index.html">
 <meta property="og:site_name" content="石头">
-<meta property="og:description" content="查看链接  this    看过这篇文章以后不要再提this">
-<meta property="og:updated_time" content="2018-04-19T02:15:02.208Z">
+<meta property="og:description" content="随着函数使用场合的不同，this的值会发生变化。但是有一个总的原则，那就是this指的是，调用函数的那个对象">
+<meta property="og:image" content="http://p1tm0s0k3.bkt.clouddn.com/18-7-10/52460684.jpg">
+<meta property="og:updated_time" content="2018-07-10T14:28:39.159Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="你这该死的this">
-<meta name="twitter:description" content="查看链接  this    看过这篇文章以后不要再提this">
+<meta name="twitter:description" content="随着函数使用场合的不同，this的值会发生变化。但是有一个总的原则，那就是this指的是，调用函数的那个对象">
+<meta name="twitter:image" content="http://p1tm0s0k3.bkt.clouddn.com/18-7-10/52460684.jpg">
 
 
 
@@ -390,7 +392,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  20
+                  982
                 </span>
               
 
@@ -406,7 +408,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  1
+                  4
                 </span>
               
             </div>
@@ -425,16 +427,51 @@
       
 
       
-        <hr>
+        <p>随着函数使用场合的不同，this的值会发生变化。但是有一个总的原则，那就是this指的是，调用函数的那个对象</p>
+<p><img src="http://p1tm0s0k3.bkt.clouddn.com/18-7-10/52460684.jpg" alt=""></p>
+<a id="more"></a>
+<h3 id="一、函数调用的本质"><a href="#一、函数调用的本质" class="headerlink" title="一、函数调用的本质"></a>一、函数调用的本质</h3><p>通常我们有三种函数执行方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1、fn(a, b)</div><div class="line">2、obj.fn(a, b)</div><div class="line">3、fn.call(context, a, b)</div></pre></td></tr></table></figure>
+<p>一般来说前面两种方式大家用的比较多，但是其实第三种才是函数调用的本质。</p>
+<blockquote>
+<p>fn.call(context, a, b)</p>
+</blockquote>
+<p>因为其他两种可以等价于第三种方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">fn(a, b)</div><div class="line">// 等价于</div><div class="line">fn.call(undefind, a, b)</div><div class="line"></div><div class="line">obj.fn(a, b)</div><div class="line">// 等价于</div><div class="line">obj.fn.call(obj, a, b)</div></pre></td></tr></table></figure>
+<ul>
+<li>严格模式，fn的this就是call第一个参数undefined</li>
+<li>非严格模式，call 传递的第一个参数如果是 undefined 或者 null， 那 this 会自动替换为 Window 对象</li>
+</ul>
+<blockquote>
+<p>函数执行的本质：函数的执行，我们可以等价看做为fn.call的调用</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;</div><div class="line">   fn: function(a, b)&#123;</div><div class="line">       console.log(this)</div><div class="line">   &#125;,</div><div class="line">   child: &#123;</div><div class="line">       fn2: function()&#123;</div><div class="line">           console.log(this)</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">obj.fn(2, 3)</div><div class="line">// 等价</div><div class="line">obj.fn.call(obj, 2, 3)  // fn的this 为 obj</div><div class="line"></div><div class="line">obj.child.fn2()</div><div class="line">// 等价</div><div class="line">obj.child.fn2.call(obj.child) // fn2的this 为 obj.child</div></pre></td></tr></table></figure>
+<p>是不是很愉快，很easy，下面咋们自测一下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">var name = &apos;刘德华&apos;</div><div class="line">var people = &#123;</div><div class="line">   name: &apos;重庆刘德华&apos;,</div><div class="line">   sayName: function()&#123;</div><div class="line">       console.log(this.name)</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line">var sayAgain = people.sayName</div><div class="line">function sayName()&#123;</div><div class="line">   console.log(this.name)</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 等价于 sayName.call（undefined）</div><div class="line">// 非严格模式下，sayName的this指向 window，所以输出 ‘刘德华’</div><div class="line">sayName()</div><div class="line"></div><div class="line">// 等价于 people.sayName.call(people)</div><div class="line">// 所以这里输出 ‘重庆刘德华’</div><div class="line">people.sayName()</div><div class="line"></div><div class="line">// 等价于 sayAgain（undefined）</div><div class="line">// 非严格模式下，sayAgain的this指向 window，所以输出 ‘刘德华’</div><div class="line"></div><div class="line">sayAgain()</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var arr = []</div><div class="line">for(var i=0; i&lt;3; i++)&#123;</div><div class="line">   arr[i] = function()&#123; console.log(this) &#125;</div><div class="line">&#125;</div><div class="line">var fn = arr[0]</div><div class="line"></div><div class="line">arr[0]()</div><div class="line">/*</div><div class="line">解析: 因为数组是个特殊的对象，所以 arr 相当于 &#123; &apos;0&apos;: function()&#123;&#125;, &apos;1&apos;: function()&#123;&#125;, &apos;2&apos;: function()&#123;&#125;, length:3&#125;</div><div class="line">arr[0]相当于 `arr[&apos;0&apos;]` 相当于 `arr.0` （当然这种写法不符合规范），所以 arr[0]等价于 arr.0.call(arr), this就是 arr</div><div class="line">*/</div><div class="line"></div><div class="line">fn()</div><div class="line">/*</div><div class="line">解析: 相当于 `fn.call(undefined)`， 所以 fn 里面的 this 是 Window</div><div class="line">*/</div></pre></td></tr></table></figure>
+<h3 id="二、bind"><a href="#二、bind" class="headerlink" title="二、bind"></a>二、bind</h3><p>bind其实作用和call、apply类似</p>
+<p>区别在于bind方法执行会返回一个绑定好this值的新函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;name: &apos;张学友&apos;&#125;</div><div class="line">var name = &apos;刘德华&apos;</div><div class="line">function sayName()&#123;</div><div class="line">   console.log(this.name)</div><div class="line">&#125;</div><div class="line">// 注意 这里 fn 还是一个函数，功能和 sayName 一模一样，区别只在于它里面的 this 绑定为 obj对象，这样无论fn如何调用，this永远指向obj</div><div class="line">var fn = sayName.bind(obj) </div><div class="line">var fn2 = sayName</div><div class="line"></div><div class="line">fn() // &apos;张学友&apos;</div><div class="line">fn2() // &apos;刘德华&apos;</div></pre></td></tr></table></figure>
+<h3 id="三、箭头函数的this"><a href="#三、箭头函数的this" class="headerlink" title="三、箭头函数的this"></a>三、箭头函数的this</h3><blockquote>
+<p>箭头函数不会创建自己的 <code>this</code>，它只会从自己的作用域链的上一层继承<code>this</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var i = 9</div><div class="line">var obj = &#123;</div><div class="line">  i: 10,</div><div class="line">  b: () =&gt; console.log(this.i, this),</div><div class="line">  c: function() &#123;</div><div class="line">    console.log( this.i, this)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">obj.b(); </div><div class="line">// 9, window</div><div class="line">obj.c(); </div><div class="line">// 10, Object &#123;...&#125;</div></pre></td></tr></table></figure>
+<p>咋们来看看复杂点的例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">var app = &#123;</div><div class="line">   fn1: function(a)&#123;</div><div class="line">       console.log(this)  //app</div><div class="line">   &#125;,</div><div class="line">   fn2(a) &#123;</div><div class="line">       consoel.log(this)  //app</div><div class="line">   &#125;,</div><div class="line">   fn3: function () &#123;</div><div class="line">	var obj = &#123;</div><div class="line">		a: () =&gt; console.log(this), // app &#123;fn1: ƒ, fn2: ƒ, fn3: ƒ&#125; </div><div class="line">		b: function () &#123;console.log(this)&#125; // obj &#123;a: ƒ, b: ƒ&#125; </div><div class="line">     &#125;</div><div class="line">     obj.a()</div><div class="line">     obj.b()</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// this === app</div><div class="line">app.fn1()</div><div class="line"></div><div class="line">// this === app</div><div class="line">app.fn2()</div><div class="line"></div><div class="line">// app.fn3() 等价于 app.fn3.call(app)，所以fn3内的this指向app。</div><div class="line">// a是箭头函数，obj.a() 等价于 obj.a.call(a的上一个作用域的this)，也就是fn3函数作用域的this，所以this指向app</div><div class="line">// obj.b() 等价于 obj.b.call(obj)，所以this指向obj</div><div class="line">app.fn3()</div></pre></td></tr></table></figure>
+<h3 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h3><ul>
+<li>函数执行的本质：函数的执行，我们可以等价看做为fn.call的调用。this 就是你 call 一个函数时，传入的第一个参数。</li>
+<li>bind和call、apply区别在于，bind方法会返回一个绑定好this值的新函数。</li>
+<li>箭头函数的<code>this</code>指向自己的作用域链的上一层的<code>this</code>。</li>
+</ul>
+<blockquote>
+<p>注意：call() 和 apply() 方法类似，只有一个区别，就是call()方法接受的是若干个参数的列表，而apply()方法接受的是一个包含多个参数的数组。</p>
+</blockquote>
+<hr>
 <h3 id="查看链接"><a href="#查看链接" class="headerlink" title="查看链接"></a>查看链接</h3><ul>
-<li><ol>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/this" target="_blank" rel="external">this</a></li>
-</ol>
-</li>
-<li><ol>
 <li><a href="https://zhuanlan.zhihu.com/p/31823164" target="_blank" rel="external">看过这篇文章以后不要再提this</a></li>
-</ol>
-</li>
+<li><a href="https://zhuanlan.zhihu.com/p/23804247" target="_blank" rel="external">this 的值到底是什么？一次说清楚</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/25991271" target="_blank" rel="external">你怎么还没搞懂 this？</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/this" target="_blank" rel="external">this-MDN</a></li>
 </ul>
 
       
@@ -661,7 +698,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看链接"><span class="nav-number">1.</span> <span class="nav-text">查看链接</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、函数调用的本质"><span class="nav-number">1.</span> <span class="nav-text">一、函数调用的本质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、bind"><span class="nav-number">2.</span> <span class="nav-text">二、bind</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、箭头函数的this"><span class="nav-number">3.</span> <span class="nav-text">三、箭头函数的this</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、总结"><span class="nav-number">4.</span> <span class="nav-text">四、总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看链接"><span class="nav-number">5.</span> <span class="nav-text">查看链接</span></a></li></ol></div>
             
 
           </div>
